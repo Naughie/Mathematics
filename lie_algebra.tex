@@ -1,0 +1,34 @@
+\newcommand{\gl}{\g{gl}}
+\renewcommand{\sl}{\g{sl}}
+\renewcommand{\o}{\g{o}}
+\section{Lie Algebra}
+\subsection{Fundations}
+\subsubsection{Lie algebra [Definition \ref{lie-algebra}]}\label{lie-algebra}
+A vector space $\g g$ over a field $\bb{K}$ with the Lie bracket satisfying the conditions
+\begin{enumerate}[label=\roman*)]
+\item lie bracket is bilinear
+\item $\forall x \in \g g,\ [x,x] = 0$
+\item $\forall x, y, z \in \g g,\ [[x,y],z]+[[y,z],x]+[[z,x],y] = 0$
+\end{enumerate}
+is called a \textit{Lie algebra} over $\bb{K}$.
+
+\subsubsection{General linear Lie algebra [Definition \ref{general-linear-lie-algebra}]}\label{general-linear-lie-algebra}
+$\g{gl}_n(\bb{R})$ is the Lie algebra $M_n(\bb{R})$ with the Lie bracket $[x,y] = xy - yx$.
+
+\subsubsection{Derivation algebra [Definition \ref{derivation-algebra}]}\label{derivation-algebra}
+A linear endomorphism $D$ of an algebra $\bb{A}$ over $\bb{R}$ satisfying $D(xy) = D(x)y + xD(y)$ is called a \textit{derivation} of $\bb{A}$. The set of all derivations $\mathrm{Der}\, \bb{A}$ with the addition, scaler multiplication, and lie bracket defined as follows:
+\begin{enumerate}[label=\roman*)]
+\item $(D+D')(x) = D(x)+D'(x)$
+\item $(\alpha D)(x) = \alpha D(x)$
+\item $[D,D'](x) = D(D'(x)) - D'(D(x))$  
+\end{enumerate}
+is a Lie algebra called the \textit{derivation algebra} of $\bb{A}$.
+
+\subsubsection{Lie subalgebra [Definition \ref{lie-subalgebra}]}\label{lie-subalgebra}
+A linear subspace $\g h \subset \g g$ of a Lie algebra $\g g$ is a \textit{Lie subalgebra} if it satisfies that $\forall x, y \in \g h$, $[x,y] \in \g h$.
+
+\subsubsection{Special linear Lie algebra [Definition \& Proposition \ref{special-linear-lie-algebra}]}\label{special-linear-lie-algebra}
+$\sl_n(\bb{R}) = \{ x \in \gl_n(\bb{R}) \mid \tr x = 0 \} $ is a Lie subalgebra of $\gl_n(\bb{R})$.
+
+\subsubsection{Orthogonal Lie algebra [Definition \& Proposition \ref{orthogonal-lie-algebra}]}\label{orthogonal-lie-algebra}
+$\o(n) = \{ x \in \gl_n(\bb{R}) \mid {}^tx = -x \}$ is a Lie subalgebra of $\sl_n(\bb{R})$.
