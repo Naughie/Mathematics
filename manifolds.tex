@@ -1,26 +1,3 @@
-\documentclass[13pt,uplatex,dvipdfmx]{jsarticle}
-\usepackage{graphicx,xcolor}
-\usepackage{tikz}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{enumitem}
-\usepackage{textcomp}
-\usepackage{mathcomp}
-\usepackage{mathrsfs}
-\usepackage{bm}
-\usepackage{booktabs}
-\usepackage[dvipdfmx]{hyperref}
-\usepackage{ascmac}
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{proposition}{Proposition}[section]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\newcommand{\bb}[1]{\mathbb{#1}}
-\newcommand{\farc}[2]{\frac{#1}{#2}}
-\newcommand{\pfrac}[2]{\frac{\partial #1}{\partial #2}}
-\begin{document}
 \section{Manifolds}
 \subsection{Manifolds on Euclidean Spaces}
 \subsubsection{Taylor's theorem with remainder [Theorem \ref{taylors-theorem-with-remainder}]}\label{taylors-theorem-with-remainder}
@@ -28,7 +5,7 @@ A smooth function $f$ on an open ball $U \in \mathcal{O}_n$ can be written as
 \[
 f(x) = f(p) + \sum (x^i - p^i) g_i(x)
 \]
-where $p \in U$ and $g_i \in C^\infty (U)$ with $g_i(p) = (\partial f / \partial x^i)(p)$.	
+where $p \in U$ and $g_i \in C^\infty (U)$ with $g_i(p) = (\partial f / \partial x^i)(p)$.
 
 Adapting this to $g_i$ repeatedly gives the Taylor's expansion of $f$.
 
@@ -69,9 +46,3 @@ A \textit{vector field} on $U \in \mathcal{O}_n$ is a map $X \colon U \to T_p(\b
 \[
 X(p) = X_p = \sum a^i(p) \left. \pfrac{}{x^i} \right|_p \quad \text{with } a^i (p) \in \bb{R}
 \]
-
-
-\nocite{loring}
-\bibliographystyle{plain}
-\bibliography{biblio}
-\end{document}

@@ -1,0 +1,54 @@
+\section{P-adic Numbers}
+\subsection{Fundations}
+\subsubsection{Absolute value on a field [Definition \ref{absolute-value-on-a-field}]}\label{absolute-value-on-a-field}
+An \textit{absolute value} on a field $\bb{K}$ is a function $\mid \ \ \mid \colon \bb{K} \to \bb{R}_{>0}$ that satisfies:
+\begin{enumerate}[label=\roman*)]
+\item $\abs{x} = 0$ iff $x = 0$.
+\item $\forall x, y \in \bb{K},\ \abs{xy} = \abs{x}\abs{y}$.
+\item $\forall x, y \in \bb{K},\ \abs{x+y} \le \abs{x}+\abs{y}$.
+\end{enumerate}
+
+An absolute value that satisfies the condition
+\begin{enumerate}[label=\roman*)]
+\setcounter{enumi}{3}
+\item $\forall x, y \in \bb{K},\ \abs{x+y} \le \max \{ \abs{x},\abs{y} \}$
+\end{enumerate}
+is said to be \textit{non-archimedean}; otherwise, it is said to be \textit{archimedean}.
+
+\subsubsection{Trivial absolute value [Definition \ref{trivial-absolute-value}]}\label{trivial-absolute-value}
+The absolute value on a field that assigns 0 to $x = 0$ and $1$ otherwise is called the \textit{trivial absolute value}.
+
+An absolute value on a finite field must be trivial.
+
+\subsubsection{Valuation on a field [Definition \ref{valuation-on-a-field}]}\label{valuation-on-a-field}
+A function $v \colon \bb{A}^\times \to \bb{R}$ with an integral domain $\bb{A}$ is called a \textit{valuation} on $\bb{A}$ if it satisfies the following conditions:
+\begin{enumerate}[label=\roman*)]
+\item $\forall x, y \in \bb{A}^\times,\ v(xy) = v(x) + v(y)$
+\item $\forall x, y \in \bb{A}^\times,\ v(x+y) \ge \min \{ v(x), v(y) \}$
+\end{enumerate}
+
+\subsubsection{Value group of a valuation [Definition \& Proposition \ref{value-group-of-a-valuation}]}\label{value-group-of-a-valuation}
+The image of a valuation $v$ on a field is an additive subgroup of $\bb{R}$. $\im v$ is called the \textit{value group} of $v$.
+
+\subsubsection{Correspondence between valuations and non-archimedean absolute values [Proposition \ref{correspondence-between-valuations-and-non-archimedean-absolute-values}]}\label{correspondence-between-valuations-and-non-archimedean-absolute-values}
+Let $\bb{A}$ be an integral domain and $\bb{K} = \mathrm{Frac} \,\bb{A}$. Let $v\colon \bb{A}^\times \to \bb{R}$ be a valuation on $\bb{A}$ and extend $v$ to $\bb{K}$ by setting $v(a/b) = v(a) - v(b)$, then the function $\mid\ \ \mid_v \colon \bb{K} \to \bb{R}_{>0}$ defined by
+\[
+\abs{x}_v = \left\{ \begin{array}{cl}
+ e^{-v(x)} & \text{for}\ x \neq 0 \\
+ 0 & \text{for}\ x = 0    
+ \end{array} \right.
+ \] is a non-archimedean absolute value on $\bb{K}$. Conversely, $-\log \mid \,\ \mid$ is a valuation on $\bb{K}$ for a non-archimedean absolute value $\mid\ \ \mid$ on $\bb{K}$.
+
+
+\subsubsection{p-adic valuation [Definition \ref{p-adic-valuation}]}\label{p-adic-valuation}
+The \textit{p-adic valuation} on $\bb{Q}$ with a prime $p$ is a valuation $v_p \colon \bb{Q}^\times \to \bb{R}$ defined as follows: for each $n \in \bb{Z}^\times$, let $v_p(n)$ be the greatest integer such that $p^{v_p(n)} \mid n$, and for each $x = a / b \in \bb{Q}^\times$, $v_p(x) = v_p(a) - v_p(b)$.
+
+We often set $v_p(0) = \infty$.
+
+\subsubsection{p-adic absolute value [Definition \ref{p-adic-absolute-value}]}\label{p-adic-absolute-value}
+The \textit{p-adic absolute value} $\mid\ \ \mid_p \colon \bb{Q} \to \bb{R}$ with a prime $p$ is defined as
+\[
+\abs{x}_p = p^{-v_p(x)}.
+\]
+
+The usual absolute value is looked as $\mid\ \ \mid = \mid\ \ \mid_\infty$.
