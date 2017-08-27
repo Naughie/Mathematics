@@ -1,0 +1,77 @@
+\documentclass[13pt,uplatex,dvipdfmx]{jsarticle}
+\usepackage{graphicx,xcolor}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{mathcomp}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage[dvipdfmx]{hyperref}
+\usepackage{ascmac}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\farc}[2]{\frac{#1}{#2}}
+\newcommand{\pfrac}[2]{\frac{\partial #1}{\partial #2}}
+\begin{document}
+\section{Manifolds}
+\subsection{Manifolds on Euclidean Spaces}
+\subsubsection{Taylor's theorem with remainder [Theorem \ref{taylors-theorem-with-remainder}]}\label{taylors-theorem-with-remainder}
+A smooth function $f$ on an open ball $U \in \mathcal{O}_n$ can be written as
+\[
+f(x) = f(p) + \sum (x^i - p^i) g_i(x)
+\]
+where $p \in U$ and $g_i \in C^\infty (U)$ with $g_i(p) = (\partial f / \partial x^i)(p)$.	
+
+Adapting this to $g_i$ repeatedly gives the Taylor's expansion of $f$.
+
+\subsubsection{Tangent vector as an arrow from a point [Definition \ref{tangent-vector-as-an-arrow-from-a-point}]}\label{tangent-vector-as-an-arrow-from-a-point}
+The \textit{tangent space} $T_p (\bb{R}^n)$ at $p \in \bb{R}^n$ is the set of arrows from $p$.
+
+\subsubsection{Directional derivative [Definition \ref{directional-derivative}]}\label{directional-derivative}
+The \textit{directional derivative} of a smooth function $f$ in the direction $v \in T_p(\bb{R}^n)$ at $p \in \bb{R}^n$ is
+\[
+D_v f = \lim_{t \to 0} \frac{f(c(t)) - f(p)}{t} = \left. \frac{d}{dt}\right|_{t=0} f(c(t))
+\]
+with $c^i(t) = p^i + tv^i$.
+
+By the chain rule,
+\[
+D_v f = \sum \frac{dc^i}{dt}(0)\pfrac{f}{x^i}(p) = \sum v^i \pfrac{f}{x^i}(p).
+\]
+
+\subsubsection{Derivation at a point [Definition \& Proposition \ref{derivation-at-a-point}]}\label{derivation-at-a-point}
+A linear map $D \colon C_p^\infty \to \bb{R}$ satisfying the Leibniz rule (i.e., $D(fg) = (D f)g(p) + f(p)D g$ for any $f, g \in C_p^\infty$) is called a \textit{derivation at} $p$ or a \textit{point-derivation} of $C_p^\infty$.
+
+The set of all derivations at $p$ $\mathcal{D}_p(\bb{R}^n)$ is a real vector space, and a map $\phi \colon T_p(\bb{R}^n) \to \mathcal{D}_p(\bb{R}^n)$ assigning $D_v$ to each $v$ is a linear map.
+
+\subsubsection{Point-derivation of a constant is zero [Lemma \ref{point-derivation-of-a-constant-is-zero}]}\label{point-derivation-of-a-constant-is-zero}
+If $D$ is a point-derivation of $C_p^\infty$, then $D(c) = 0$ for any constant function $c$.
+
+\subsubsection{Tangent space is isomorphic to the set of point-derivations [Theorem \ref{tangent-space-is-isomorphic-to-the-set-of-point-derivations}]}\label{tangent-space-is-isomorphic-to-the-set-of-point-derivations}
+The linear map $\phi \to T_p(\bb{R}^n) \to \mathcal{D}_p(\bb{R}^n)$ in \ref{derivation-at-a-point} is an isomorphism of vector spaces.
+
+\subsubsection{Tangent vector as a derivation [Definition \ref{tangent-vector-as-a-derivation}]}\label{tangent-vector-as-a-derivation}
+By \ref{tangent-space-is-isomorphic-to-the-set-of-point-derivations}, $v \in T_p(\bb{R}^n)$ is identified as
+\[
+v = \sum v^i \left.\pfrac{}{x^i}\right|_p \in \mathcal{D}_p(\bb{R}^n).
+\]
+
+\subsubsection{Vector fields on an open set [Definition \ref{vector-fields-on-an-open-set}]}\label{vector-fields-on-an-open-set}
+A \textit{vector field} on $U \in \mathcal{O}_n$ is a map $X \colon U \to T_p(\bb{R}^n)$. $X = \sum a^i \partial / \partial x^i$ means
+\[
+X(p) = X_p = \sum a^i(p) \left. \pfrac{}{x^i} \right|_p \quad \text{with } a^i (p) \in \bb{R}
+\]
+
+
+\nocite{loring}
+\bibliographystyle{plain}
+\bibliography{biblio}
+\end{document}
