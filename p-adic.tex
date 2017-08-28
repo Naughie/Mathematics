@@ -2,14 +2,14 @@
 \subsection{Fundations}
 \subsubsection{Absolute value on a field [Definition \ref{absolute-value-on-a-field}]}\label{absolute-value-on-a-field}
 An \textit{absolute value} on a field $\bb{K}$ is a function $\mid \ \ \mid \colon \bb{K} \to \bb{R}_{\ge0}$ that satisfies:
-\begin{enumerate}[label=\roman*)]
+\begin{enumerate}
 \item $\abs{x} = 0$ iff $x = 0$
 \item $\forall x, y \in \bb{K},\ \abs{xy} = \abs{x}\abs{y}$
 \item $\forall x, y \in \bb{K},\ \abs{x+y} \le \abs{x}+\abs{y}$.
 \end{enumerate}
 
 An absolute value that satisfies the condition
-\begin{enumerate}[label=\roman*)]
+\begin{enumerate}
 \setcounter{enumi}{3}
 \item $\forall x, y \in \bb{K},\ \abs{x+y} \le \max \{ \abs{x},\abs{y} \}$
 \end{enumerate}
@@ -20,7 +20,7 @@ The \textit{trivial absolute value} on a field $\bb{K}$ is a absolute value on $
 \[
 \abs{x} = \left\{ \begin{array}{ll}
  1 & \text{for}\ x \neq 0 \\
- 0 & \text{for}\ x = 0    
+ 0 & \text{for}\ x = 0
  \end{array} \right..
 \]
 
@@ -28,7 +28,7 @@ An absolute value on a finite field must be trivial.
 
 \subsubsection{Valuation on a field [Definition \ref{valuation-on-a-field}]}\label{valuation-on-a-field}
 A function $v \colon \bb{A}^\times \to \bb{R}$ with an integral domain $\bb{A}$ is called a \textit{valuation} on $\bb{A}$ if it satisfies the following conditions:
-\begin{enumerate}[label=\roman*)]
+\begin{enumerate}
 \item $\forall x, y \in \bb{A}^\times,\ v(xy) = v(x) + v(y)$
 \item $\forall x, y \in \bb{A}^\times,\ v(x+y) \ge \min \{ v(x), v(y) \}$
 \end{enumerate}
@@ -41,7 +41,7 @@ Let $\bb{A}$ be an integral domain and $\bb{K} = \mathrm{Frac} \,\bb{A}$. Let $v
 \[
 \abs{x}_v = \left\{ \begin{array}{cl}
  e^{-v(x)} & \text{for}\ x \neq 0 \\
- 0 & \text{for}\ x = 0    
+ 0 & \text{for}\ x = 0
  \end{array} \right.
  \] is a non-archimedean absolute value on $\bb{K}$. Conversely, $-\log \mid \,\ \mid$ is a valuation on $\bb{K}$ for a non-archimedean absolute value $\mid\ \ \mid$ on $\bb{K}$.
 

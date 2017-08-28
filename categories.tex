@@ -1,0 +1,25 @@
+\newcommand{\sets}{\mathbf{Sets}}
+\section{Categories}
+\setcounter{subsection}{1}
+\subsubsection{Fundations}
+\subsubsection{Category [Definition \ref{category}]}\label{category}
+A \textit{category} consists of the followings:
+\begin{itemize}
+\item \textit{Objects} $A$, $B$, $C, \dotsc$
+\item \textit{Arrows} $f$, $g$, $h, \dotsc$ with the objects called the domain $\mathrm{dom}(f)$ and the codomain $\mathrm{cod}(f)$.
+\item \textit{Composites} $g \circ f \colon A \to C$ for given arrows $f \colon A \to B$ and $g \colon B \to C$.
+\item \textit{Identity arrow} $1_A$ of each object $A$.
+\end{itemize}
+satisfying the following laws:
+\begin{enumerate}
+\item $\forall \text{arrows}\ f \colon A \to B, g \colon B \to C, h \colon C \to D,\ h \circ (g \circ f) = (h \circ g) \circ f$
+\item $\forall \text{arrow}\ f \colon A \to B,\ f \circ 1_A = f = 1_B \circ f$.
+\end{enumerate}
+
+\subsubsection{Functor between categories [Definition \ref{functor-between-categories}]}\label{functor-between-categories}
+A \textit{functor} $F\colon \s A \to \s B$ between categories $\s A$ and $\s B$ is a mapping between objects and between arrows in the following ways:
+\begin{enumerate}
+\item $F(f\colon A \to B) = F(f) \colon F(A) \to F(B)$,
+\item $F(1_A) = 1_{F(A)}$,
+\item $F(g \circ f) = F(g) \circ F(f)$.    
+\end{enumerate}

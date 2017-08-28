@@ -46,3 +46,36 @@ A \textit{vector field} on $U \in \mathcal{O}_n$ is a map $X \colon U \to T_p(\b
 \[
 X(p) = X_p = \sum a^i(p) \left. \pfrac{}{x^i} \right|_p \quad \text{with } a^i (p) \in \bb{R}
 \]
+$X$ is said to be $C^\infty$ if all $a^i$s are $C^\infty$ on $U$. The set of all smooth vector fields on $U$ is denoted by $\g X(U)$.
+
+\subsubsection{Multiplication of a smooth vector field and function [Definition \& Proposition \ref{multiplication-of-a-smooth-vector-field-and-function}]}\label{multipliaction-of-a-smooth-vector-field-and-function}
+For $X \in \g X(U)$ and $f \in C^\infty(U)$, define $fX \in \g X(U)$ and $Xf \in C^\infty(U)$ as follows:
+\begin{align*}
+(fX)_p &= f(p)X_p = \sum (f(p)a^i(p)) \left. \pfrac{}{x^i}\right|_p,\\
+(Xf)(p) &= X_p f = \sum a^i (p) \pfrac{f}{x^i} (p).
+\end{align*}
+
+\subsubsection{Leibniz rule for a vector field [Proposition \ref{leibniz-rule-for-a-vector-field}]}\label{leibniz-rule-for-a-vector-field}
+For any $X \in \g X(U), f, g \in C^\infty(U)$,
+\[
+X(fg) = (Xf)g + fXg.
+\]
+
+\subsubsection{Derivations one-to-one-correspond to smooth vector fields [Proposition \ref{derivations-one-to-one-correspond-to-smooth-vector-fields}]}\label{derivations-one-to-one-correspond-to-smooth-vector-fields}
+$\varphi \colon \g X(U) \ni X \mapsto (f \mapsto Xf) \in \mathrm{Der}\, (C^\infty(U))$ is an linear isomorphism.
+
+\subsubsection{k-tensor on a vector space [Definition \ref{k-tensor-on-a-vector-space}]}\label{k-tensor-on-a-vector-space}
+A $k$-linear function on a vector space $V$ $f \colon V^k \to \bb{R}$ is called a \textit{k-tensor} on $V$. The vector space of all $k$-tensors on $V$ is denoted by $L_k(V)$. $k$ is called the degree of $f$.
+
+\subsubsection{Symmetric and alternating k-tensor [Definition \ref{symmetric-and-alternating-k-tensor}]}\label{symmetric-and-alternating-k-tensor}
+A $k$-tensor $f \colon V^k \to \bb{R}$ is \textit{symmetric} if
+\[
+\forall \sigma \in \g S_k,\ f(v_{\sigma(1)},\dotsc, v_{\sigma(k)}) = f(v_1,\dotsc,v_k),
+\]
+and $f$ is \textit{alternating} if
+\[
+\forall \sigma \in \g 1S_k,\ f(v_{\sigma(1)},\dotsc, v_{\sigma(k)}) = (\sgn \sigma) f(v_1,\dotsc, v_k).
+\]
+
+\subsubsection{The set of all alternating k-tensors [Definition \ref{the-set-of-all-alternating-k-tensor}]}\label{the-set-of-all-alternating-k-tensor}
+An alternating $k$-tensor on a vector space $V$ is also called a \textit{k-covector} or a \textit{multicovector of degree k} on $V$. The set of all $k$-covectors on $V$ is denoted by $A_k(v)$ for $k > 0$; for $k = 0$, $A_0 (V) = \bb{R}$.
