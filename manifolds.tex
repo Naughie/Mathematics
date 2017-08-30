@@ -67,15 +67,123 @@ $\varphi \colon \g X(U) \ni X \mapsto (f \mapsto Xf) \in \mathrm{Der}\, (C^\inft
 \subsubsection{k-tensor on a vector space [Definition \ref{k-tensor-on-a-vector-space}]}\label{k-tensor-on-a-vector-space}
 A $k$-linear function on a vector space $V$ $f \colon V^k \to \bb{R}$ is called a \textit{k-tensor} on $V$. The vector space of all $k$-tensors on $V$ is denoted by $L_k(V)$. $k$ is called the degree of $f$.
 
+\subsubsection{Permutation action on k-tensors [Definition \ref{permutation-action-on-k-tensors}]}\label{permutation-action-on-k-tensors}
+For $f \in L_k(V)$ on a vector space $V$ and $\sigma \in \g S_n$, an action of $\sigma $ on $f$ is defined by
+\[
+(\sigma f)(v_1, \dotsc, v_k) = f(v_{\sigma(1)},\dotsc, v_{\sigma(k)}).
+\]
+
 \subsubsection{Symmetric and alternating k-tensor [Definition \ref{symmetric-and-alternating-k-tensor}]}\label{symmetric-and-alternating-k-tensor}
 A $k$-tensor $f \colon V^k \to \bb{R}$ is \textit{symmetric} if
 \[
-\forall \sigma \in \g S_k,\ f(v_{\sigma(1)},\dotsc, v_{\sigma(k)}) = f(v_1,\dotsc,v_k),
+\forall \sigma \in \g S_k,\ \sigma f  =f,
 \]
 and $f$ is \textit{alternating} if
 \[
-\forall \sigma \in \g 1S_k,\ f(v_{\sigma(1)},\dotsc, v_{\sigma(k)}) = (\sgn \sigma) f(v_1,\dotsc, v_k).
+\forall \sigma \in \g 1S_k,\ \sigma f = (\sgn \sigma) f.
 \]
 
 \subsubsection{The set of all alternating k-tensors [Definition \ref{the-set-of-all-alternating-k-tensor}]}\label{the-set-of-all-alternating-k-tensor}
 An alternating $k$-tensor on a vector space $V$ is also called a \textit{k-covector} or a \textit{multicovector of degree k} on $V$. The set of all $k$-covectors on $V$ is denoted by $A_k(v)$ for $k > 0$; for $k = 0$, $A_0 (V) = \bb{R}$.
+
+\subsubsection{Symmetrizing and alternating operators on k-covectors [Definition \& Proposition \ref{symmetrizing-and-alternating-operators-on-k-covectors}]}\label{symmetrizing-and-alternating-operators-on-k-covectors}
+For a $f \in A_k(V)$ on a vector space $V$,
+\[
+Sf = \sum_{\sigma \in \g S_n} \sigma f
+\]
+is symmetric, and
+\[
+Af = \sum_{\sigma \in \g S_n} (\sgn \sigma) \sigma f
+\]
+is alternating.
+
+\subsubsection{Tensor product of two multilinear functions [Definition \ref{tensor-product-of-two-multilinear-functions}]}\label{tensor-product-of-two-multilinear-functions}
+For $f \in L_k(V), g \in L_l(V)$ on a vector space $V$, the \textit{tensor product} $f \otimes g \in L_{k+l}(V)$ is defined by
+\[
+(f \otimes g) (v_1, \dotsc, v_{k+l}) = f(v_1,\dotsc,v_k)g(v_{k+1},\dotsc,v_{k+l}).
+\]
+
+\subsubsection{Bilear map as a tensor product [Example \ref{bilinear-map-as-a-tensor-product}]}\label{bilinear-map-as-a-tensor-product}
+Let $e_1,\dotsc,e_n$ be a basis for a vector space $V$, $\alpha^1,\dotsc,\alpha^n$ the dual basis in $V^*$, and $\langle\ ,\ \rangle \colon V \times V \to \bb{R}$ a bilinear map on $V$. Then,
+\[
+\langle\ , \ \rangle = \sum g_{ij} \alpha^i \otimes \alpha^j,
+\]
+where $g_{ij} = \langle e_i, e_j \rangle$.
+
+\subsubsection{Wedge product of two multilinear functions [Definition \ref{wedge-product-of-two-multilinear-functions}]}\label{wedge-product-of-two-multilinear-functions}
+For $f \in A_k(V), g \in A_l(V)$ on a vector space $V$, their \textit{wedge product} or \textit{exterior product} is
+\begin{align*}
+f \wedge g &= \frac1{k!\, l!} A( f \otimes g).
+\end{align*}
+$f \wedge g$ is alternating.
+
+Explicitly,
+\begin{align*}
+(f \wedge g) (v_1,\dotsc,v_{k+l}) &= \frac1{k!\,l!} \sum_{\sigma \in \g S_{k+l}} (\sgn \sigma)f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+l)}) \\
+&= \sum_{(k,l)\text{-shuffle}\ \sigma} (\sgn \sigma) f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+l)}),
+\end{align*}
+where a $(k,l)$-shuffle means $\sigma(1)<\dotsb<\sigma(k)$ and $\sigma(k+1)<\dotsb < \sigma(k+l)$.
+
+\subsubsection{Wedge product is anticommutative [Proposition \ref{wedge-product-is-anticommutative}]}\label{wedge-product-is-anticommutative}
+For $f \in A_k (V), g \in A_l(V)$ on a vector space $V$,
+\[
+f \wedge g = (-1)^{kl} g \wedge f.
+\]
+
+If the degree of $f$ is odd, then $f \wedge f = 0$.
+
+\subsubsection{Properties of nesting alternating operators [Lemma \ref{properties-of-nesting-alternating-operators}]}\label{properties-of-nesting-alternating-operators}
+For a $k$-tensor $f$ and $l$-tensor $g$ on a vector space $V$,
+\begin{enumerate}
+\item $A(A(f)\otimes g) = k!\,A(f\otimes g)$,
+\item $A(f\otimes A(g)) = l!\,A(f\otimes g)$.    
+\end{enumerate}
+
+\subsubsection{Associativity of the wedge product [Proposition \ref{associativity-of-the-wedge-product}]}\label{associativity-of-the-wedge-product}
+For $f \in A_k(V), g \in A_l(V), h \in A_m(V)$ on a real vector space $V$,
+\[
+(f \wedge g) \wedge h = f \wedge ( g \wedge h).
+\]
+
+Similarly, for $f_i \in A_{d_i}(V)$ $(i = 1, \dotsc, r)$,
+\[
+f_1 \wedge \dotsb \wedge f_r = \frac1{(d_1)!\dotsm (d_r)!} A(f_1 \otimes \dotsm \otimes f_r).
+\]
+
+\subsubsection{Wedge product of covectors is the determinant [Proposition \ref{wedge-product-of-covectors-is-the-determinant}]}\label{wedge-product-of-covectors-is-the-determinant}
+For covectors $\alpha^1, \dotsc , \alpha^k$ on a vector space $V$,
+\[
+(\alpha^1\wedge \dotsm \alpha^k)(v_1,\dotsc, v_k) = \det (\alpha^i (v_j))_{ij}.
+\]
+
+\subsubsection{Graded algebra over a field [Definition \ref{graded-algebra-over-a-field}]}\label{graded-algebra-over-a-field}
+An algebra $\bb{A}$ over a field $\bb{K}$ is said to be \textit{graded} if $\bb{A} = \bigoplus_{k = 0}^\infty A^k$ is a direct sum of vector spaces over $\bb{K}$ such that the multiplication sends $A^k \times A^l$ to $A^{k+l}$. $A = \bigoplus_{k = 0}^\infty A^k$ means each nonzero $a \in \bb{A}$ is uniquely a finite sum $a = a_{i_1} + \dotsb a_{i_m}$ where nonzero $a_{i_j} \in A^{i_j}$.
+
+$\bb{A}$ is \textit{anticommutative} or \textit{graded commutative} if $\forall a \in A^k, b \in A^l$, $ab = (-1)^{kl} ba$.
+
+A \textit{homomorphism} of graded algebras is an algebra homomorphism that preserves the degree.
+
+\subsubsection{Grassmann algebra of multicovectors on a vector space [Definition \& Proposition \ref{grassmann-algebra-of-multicovectors-on-a-vector-space}]}\label{grassmann-algebra-of-multicovectors-on-a-vector-space}
+For a vector space $V$ of degree $n < \infty$, the \textit{exterior algebra} or the \textit{Grassmann algebra} of multicovectors on $V$ is the anticommutative graded algebra
+\[
+A_* (V) = \bigoplus_{k = 0}^\infty A_k(V) = \bigoplus_{k = 0}^n A_k(V)
+\]
+with the wedge product of multicovectors as multiplication.
+
+\subsubsection{Wedge product of the dual basis applying to a basis [Lemma \ref{wedge-product-of-the-dual-basis-applying-to-a-basis}]}\label{wedge-product-of-the-dual-basis-applying-to-a-basis}
+Let $e_1, \dotsc, e_n$ be a basis for a vector space $V$ and $\alpha^1, \dotsc, \alpha^n$ the dual basis in $V^*$. For $I = (i_1, \dotsc, i_k), J = (j_1, \dotsc, j_k)$ with $1 \le i_1 < \dotsb < i_k \le n,\ 1 \le j_1 < \dotsb < j_k \le n$,
+\[
+\alpha^I (e_J) = \delta^I_J.
+\]
+
+\subsubsection{Wedge products of the dual basis form a basis for multicovectors [Proposition \ref{wedge-products-of-the-dual-basis-form-a-basis-for-multicovectors}]}\label{wedge-products-of-the-dual-basis-form-a-basis-for-multicovectors}
+Let $V$ be a vector space and $\alpha^1,\dotsc,\alpha^n$ the dual basis in $V^*$. Then, $\alpha^I$, $I = (i_1 < \dotsb < i_k)$ form a basis for $A_k(V)$.
+
+Therefore,
+\[
+\dim A_k(V) = \binom{n}{k},
+\]
+which implies
+\[
+\text{if}\ k > \dim V,\ \text{then}\ A_k(V) = 0.
+\]
