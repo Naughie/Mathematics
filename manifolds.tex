@@ -187,3 +187,22 @@ which implies
 \[
 \text{if}\ k > \dim V,\ \text{then}\ A_k(V) = 0.
 \]
+
+\subsubsection{Cotangent space to an Euclidean space at a point [Definition \ref{cotangent-space-to-an-euclidean-space-at-a-point}]}\label{cotangent-space-to-an-euclidean-space-at-a-point}
+The \textit{cotangent space} to $\bb{R}^n$ at $p$ is $T^*_p (\bb{R}^n) = (T_p(\bb{R}^n))^*$.
+
+\subsubsection{Differential 1-form on an open subset of an Euclidean space [Definition \ref{differential-1-form-on-an-open-subset-of-an-euclidean-space}]}\label{differential-1-form-on-an-open-subset-of-an-euclidean-space}
+A \textit{covector field} or a \textit{differential 1-form} on $U \in \mathcal{O}_n$ is $\omega \colon U \to \bigcup_{p \in U} T^*_p (\bb{R}^n)$ that maps $U \ni p \mapsto \omega_p \in T^*_p (\bb{R}^n)$.
+
+\subsubsection{Differential of a smooth function [Definition \ref{differential-of-a-smooth-function}]}\label{differential-of-a-smooth-function}
+For $f \in C^\infty (U)$ on $U \in \mathcal{O}_n$, the \textit{differential} $df$ of $f$ is a differential 1-form defined by
+\[
+(df)_p (X_p) = X_p f.
+\]
+
+
+In the expression
+\[
+T_p(\bb{R}^n) \times C^\infty_p (\bb{R}^n) \ni (X_p, f) \mapsto \langle X_p, f \rangle = X_p f \in \bb{R},
+\]
+a tangent vector is considered as $\langle X_p, \cdot \rangle$; a differential at $p$ is considered as $df|_p = (df)_p = \langle \cdot, f \rangle$.
