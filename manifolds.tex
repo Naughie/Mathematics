@@ -10,10 +10,10 @@ where $p \in U$ and $g_i \in C^\infty (U)$ with $g_i(p) = (\partial f / \partial
 Adapting this to $g_i$ repeatedly gives the Taylor's expansion of $f$.
 
 \subsubsection{Tangent vector as an arrow from a point [Definition \ref{tangent-vector-as-an-arrow-from-a-point}]}\label{tangent-vector-as-an-arrow-from-a-point}
-The \textit{tangent space} $T_p (\bb{R}^n)$ at $p \in \bb{R}^n$ is the set of arrows from $p$.
+The \empha{tangent space} $T_p (\bb{R}^n)$ at $p \in \bb{R}^n$ is the set of arrows from $p$.
 
 \subsubsection{Directional derivative [Definition \ref{directional-derivative}]}\label{directional-derivative}
-The \textit{directional derivative} of a smooth function $f$ in the direction $v \in T_p(\bb{R}^n)$ at $p \in \bb{R}^n$ is
+The \empha{directional derivative} of a smooth function $f$ in the direction $v \in T_p(\bb{R}^n)$ at $p \in \bb{R}^n$ is
 \[
 D_v f = \lim_{t \to 0} \frac{f(c(t)) - f(p)}{t} = \left. \frac{d}{dt}\right|_{t=0} f(c(t))
 \]
@@ -25,7 +25,7 @@ D_v f = \sum \frac{dc^i}{dt}(0)\pfrac{f}{x^i}(p) = \sum v^i \pfrac{f}{x^i}(p).
 \]
 
 \subsubsection{Derivation at a point [Definition \& Proposition \ref{derivation-at-a-point}]}\label{derivation-at-a-point}
-A linear map $D \colon C_p^\infty \to \bb{R}$ satisfying the Leibniz rule (i.e., $D(fg) = (D f)g(p) + f(p)D g$ for any $f, g \in C_p^\infty$) is called a \textit{derivation at} $p$ or a \textit{point-derivation} of $C_p^\infty$.
+A linear map $D \colon C_p^\infty \to \bb{R}$ satisfying the Leibniz rule (i.e., $D(fg) = (D f)g(p) + f(p)D g$ for any $f, g \in C_p^\infty$) is called a \empha{derivation} at $p$ or a \empha{point-derivation} of $C_p^\infty$.
 
 The set of all derivations at $p$ $\mathcal{D}_p(\bb{R}^n)$ is a real vector space, and a map $\phi \colon T_p(\bb{R}^n) \to \mathcal{D}_p(\bb{R}^n)$ assigning $D_v$ to each $v$ is a linear map.
 
@@ -42,13 +42,13 @@ v = \sum v^i \left.\pfrac{}{x^i}\right|_p \in \mathcal{D}_p(\bb{R}^n).
 \]
 
 \subsubsection{Vector fields on an open set [Definition \ref{vector-fields-on-an-open-set}]}\label{vector-fields-on-an-open-set}
-A \textit{vector field} on $U \in \mathcal{O}_n$ is a map $X \colon U \to T_p(\bb{R}^n)$. $X = \sum a^i \partial / \partial x^i$ means
+A \empha{vector field} on $U \in \mathcal{O}_n$ is a map $X \colon U \to T_p(\bb{R}^n)$. $X = \sum a^i \partial / \partial x^i$ means
 \[
 X(p) = X_p = \sum a^i(p) \left. \pfrac{}{x^i} \right|_p \quad \text{with } a^i (p) \in \bb{R}
 \]
 $X$ is said to be $C^\infty$ if all $a^i$s are $C^\infty$ on $U$. The set of all smooth vector fields on $U$ is denoted by $\g X(U)$.
 
-\subsubsection{Multiplication of a smooth vector field and function [Definition \& Proposition \ref{multiplication-of-a-smooth-vector-field-and-function}]}\label{multipliaction-of-a-smooth-vector-field-and-function}
+\subsubsection{Multiplication of a smooth vector field and function [Definition \& Proposition \ref{multiplication-of-a-smooth-vector-field-and-function}]}\label{multiplication-of-a-smooth-vector-field-and-function}
 For $X \in \g X(U)$ and $f \in C^\infty(U)$, define $fX \in \g X(U)$ and $Xf \in C^\infty(U)$ as follows:
 \begin{align*}
 (fX)_p &= f(p)X_p = \sum (f(p)a^i(p)) \left. \pfrac{}{x^i}\right|_p,\\
@@ -65,7 +65,7 @@ X(fg) = (Xf)g + fXg.
 $\varphi \colon \g X(U) \ni X \mapsto (f \mapsto Xf) \in \mathrm{Der}\, (C^\infty(U))$ is an linear isomorphism.
 
 \subsubsection{k-tensor on a vector space [Definition \ref{k-tensor-on-a-vector-space}]}\label{k-tensor-on-a-vector-space}
-A $k$-linear function on a vector space $V$ $f \colon V^k \to \bb{R}$ is called a \textit{k-tensor} on $V$. The vector space of all $k$-tensors on $V$ is denoted by $L_k(V)$. $k$ is called the degree of $f$.
+A $k$-linear function on a vector space $V$ $f \colon V^k \to \bb{R}$ is called a \empha{k-tensor} on $V$. The vector space of all $k$-tensors on $V$ is denoted by $L_k(V)$. $k$ is called the degree of $f$.
 
 \subsubsection{Permutation action on k-tensors [Definition \ref{permutation-action-on-k-tensors}]}\label{permutation-action-on-k-tensors}
 For $f \in L_k(V)$ on a vector space $V$ and $\sigma \in \g S_n$, an action of $\sigma $ on $f$ is defined by
@@ -74,17 +74,17 @@ For $f \in L_k(V)$ on a vector space $V$ and $\sigma \in \g S_n$, an action of $
 \]
 
 \subsubsection{Symmetric and alternating k-tensor [Definition \ref{symmetric-and-alternating-k-tensor}]}\label{symmetric-and-alternating-k-tensor}
-A $k$-tensor $f \colon V^k \to \bb{R}$ is \textit{symmetric} if
+A $k$-tensor $f \colon V^k \to \bb{R}$ is \empha{symmetric} if
 \[
 \forall \sigma \in \g S_k,\ \sigma f  =f,
 \]
-and $f$ is \textit{alternating} if
+and $f$ is \empha{alternating} if
 \[
-\forall \sigma \in \g 1S_k,\ \sigma f = (\sgn \sigma) f.
+\forall \sigma \in \g S_k,\ \sigma f = (\sgn \sigma) f.
 \]
 
 \subsubsection{The set of all alternating k-tensors [Definition \ref{the-set-of-all-alternating-k-tensor}]}\label{the-set-of-all-alternating-k-tensor}
-An alternating $k$-tensor on a vector space $V$ is also called a \textit{k-covector} or a \textit{multicovector of degree k} on $V$. The set of all $k$-covectors on $V$ is denoted by $A_k(v)$ for $k > 0$; for $k = 0$, $A_0 (V) = \bb{R}$.
+An alternating $k$-tensor on a vector space $V$ is also called a \empha{k-covector} or a \empha{multicovector of degree k} on $V$. The set of all $k$-covectors on $V$ is denoted by $A_k(v)$ for $k > 0$; for $k = 0$, $A_0 (V) = \bb{R}$.
 
 \subsubsection{Symmetrizing and alternating operators on k-covectors [Definition \& Proposition \ref{symmetrizing-and-alternating-operators-on-k-covectors}]}\label{symmetrizing-and-alternating-operators-on-k-covectors}
 For a $f \in A_k(V)$ on a vector space $V$,
@@ -98,9 +98,9 @@ Af = \sum_{\sigma \in \g S_n} (\sgn \sigma) \sigma f
 is alternating.
 
 \subsubsection{Tensor product of two multilinear functions [Definition \ref{tensor-product-of-two-multilinear-functions}]}\label{tensor-product-of-two-multilinear-functions}
-For $f \in L_k(V), g \in L_l(V)$ on a vector space $V$, the \textit{tensor product} $f \otimes g \in L_{k+l}(V)$ is defined by
+For $f \in L_k(V), g \in L_\ell(V)$ on a vector space $V$, the \empha{tensor product} $f \otimes g \in L_{k+\ell}(V)$ is defined by
 \[
-(f \otimes g) (v_1, \dotsc, v_{k+l}) = f(v_1,\dotsc,v_k)g(v_{k+1},\dotsc,v_{k+l}).
+(f \otimes g) (v_1, \dotsc, v_{k+\ell}) = f(v_1,\dotsc,v_k)g(v_{k+1},\dotsc,v_{k+\ell}).
 \]
 
 \subsubsection{Bilear map as a tensor product [Example \ref{bilinear-map-as-a-tensor-product}]}\label{bilinear-map-as-a-tensor-product}
@@ -111,36 +111,36 @@ Let $e_1,\dotsc,e_n$ be a basis for a vector space $V$, $\alpha^1,\dotsc,\alpha^
 where $g_{ij} = \langle e_i, e_j \rangle$.
 
 \subsubsection{Wedge product of two multilinear functions [Definition \ref{wedge-product-of-two-multilinear-functions}]}\label{wedge-product-of-two-multilinear-functions}
-For $f \in A_k(V), g \in A_l(V)$ on a vector space $V$, their \textit{wedge product} or \textit{exterior product} is
+For $f \in A_k(V), g \in A_\ell(V)$ on a vector space $V$, their \empha{wedge product} or \empha{exterior product} is
 \begin{align*}
-f \wedge g &= \frac1{k!\, l!} A( f \otimes g).
+f \wedge g &= \frac1{k!\, \ell!} A( f \otimes g).
 \end{align*}
 $f \wedge g$ is alternating.
 
 Explicitly,
 \begin{align*}
-(f \wedge g) (v_1,\dotsc,v_{k+l}) &= \frac1{k!\,l!} \sum_{\sigma \in \g S_{k+l}} (\sgn \sigma)f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+l)}) \\
-&= \sum_{(k,l)\text{-shuffle}\ \sigma} (\sgn \sigma) f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+l)}),
+(f \wedge g) (v_1,\dotsc,v_{k+\ell}) &= \frac1{k!\,\ell!} \sum_{\sigma \in \g S_{k+\ell}} (\sgn \sigma)f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+\ell)}) \\
+&= \sum_{(k,\ell)\text{-shuffle}\ \sigma} (\sgn \sigma) f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+\ell)}),
 \end{align*}
-where a $(k,l)$-shuffle means $\sigma(1)<\dotsb<\sigma(k)$ and $\sigma(k+1)<\dotsb < \sigma(k+l)$.
+where a $(k,\ell)$-shuffle means $\sigma(1)<\dotsb<\sigma(k)$ and $\sigma(k+1)<\dotsb < \sigma(k+\ell)$.
 
 \subsubsection{Wedge product is anticommutative [Proposition \ref{wedge-product-is-anticommutative}]}\label{wedge-product-is-anticommutative}
-For $f \in A_k (V), g \in A_l(V)$ on a vector space $V$,
+For $f \in A_k (V), g \in A_\ell(V)$ on a vector space $V$,
 \[
-f \wedge g = (-1)^{kl} g \wedge f.
+f \wedge g = (-1)^{k\ell} g \wedge f.
 \]
 
 If the degree of $f$ is odd, then $f \wedge f = 0$.
 
 \subsubsection{Properties of nesting alternating operators [Lemma \ref{properties-of-nesting-alternating-operators}]}\label{properties-of-nesting-alternating-operators}
-For a $k$-tensor $f$ and $l$-tensor $g$ on a vector space $V$,
+For a $k$-tensor $f$ and $\ell$-tensor $g$ on a vector space $V$,
 \begin{enumerate}
 \item $A(A(f)\otimes g) = k!\,A(f\otimes g)$,
-\item $A(f\otimes A(g)) = l!\,A(f\otimes g)$.    
+\item $A(f\otimes A(g)) = \ell!\,A(f\otimes g)$.    
 \end{enumerate}
 
 \subsubsection{Associativity of the wedge product [Proposition \ref{associativity-of-the-wedge-product}]}\label{associativity-of-the-wedge-product}
-For $f \in A_k(V), g \in A_l(V), h \in A_m(V)$ on a real vector space $V$,
+For $f \in A_k(V), g \in A_\ell(V), h \in A_m(V)$ on a real vector space $V$,
 \[
 (f \wedge g) \wedge h = f \wedge ( g \wedge h).
 \]
@@ -157,14 +157,14 @@ For covectors $\alpha^1, \dotsc , \alpha^k$ on a vector space $V$,
 \]
 
 \subsubsection{Graded algebra over a field [Definition \ref{graded-algebra-over-a-field}]}\label{graded-algebra-over-a-field}
-An algebra $\bb{A}$ over a field $\bb{K}$ is said to be \textit{graded} if $\bb{A} = \bigoplus_{k = 0}^\infty A^k$ is a direct sum of vector spaces over $\bb{K}$ such that the multiplication sends $A^k \times A^l$ to $A^{k+l}$. $A = \bigoplus_{k = 0}^\infty A^k$ means each nonzero $a \in \bb{A}$ is uniquely a finite sum $a = a_{i_1} + \dotsb a_{i_m}$ where nonzero $a_{i_j} \in A^{i_j}$.
+An algebra $\bb{A}$ over a field $\bb{K}$ is said to be \empha{graded} if $\bb{A} = \bigoplus_{k = 0}^\infty A^k$ is a direct sum of vector spaces over $\bb{K}$ such that the multiplication sends $A^k \times A^l$ to $A^{k+l}$. $A = \bigoplus_{k = 0}^\infty A^k$ means each nonzero $a \in \bb{A}$ is uniquely a finite sum $a = a_{i_1} + \dotsb a_{i_m}$ where nonzero $a_{i_j} \in A^{i_j}$.
 
-$\bb{A}$ is \textit{anticommutative} or \textit{graded commutative} if $\forall a \in A^k, b \in A^l$, $ab = (-1)^{kl} ba$.
+$\bb{A}$ is \empha{anticommutative} or \empha{graded commutative} if $\forall a \in A^k, b \in A^\ell$, $ab = (-1)^{k\ell} ba$.
 
-A \textit{homomorphism} of graded algebras is an algebra homomorphism that preserves the degree.
+A \empha{homomorphism} of graded algebras is an algebra homomorphism that preserves the degree.
 
 \subsubsection{Grassmann algebra of multicovectors on a vector space [Definition \& Proposition \ref{grassmann-algebra-of-multicovectors-on-a-vector-space}]}\label{grassmann-algebra-of-multicovectors-on-a-vector-space}
-For a vector space $V$ of degree $n < \infty$, the \textit{exterior algebra} or the \textit{Grassmann algebra} of multicovectors on $V$ is the anticommutative graded algebra
+For a vector space $V$ of degree $n < \infty$, the \empha{exterior algebra} or the \empha{Grassmann algebra} of multicovectors on $V$ is the anticommutative graded algebra
 \[
 A_* (V) = \bigoplus_{k = 0}^\infty A_k(V) = \bigoplus_{k = 0}^n A_k(V)
 \]
@@ -189,13 +189,13 @@ which implies
 \]
 
 \subsubsection{Cotangent space to an Euclidean space at a point [Definition \ref{cotangent-space-to-an-euclidean-space-at-a-point}]}\label{cotangent-space-to-an-euclidean-space-at-a-point}
-The \textit{cotangent space} to $\bb{R}^n$ at $p$ is $T^*_p (\bb{R}^n) = (T_p(\bb{R}^n))^*$.
+The \empha{cotangent space} to $\bb{R}^n$ at $p$ is $T^*_p (\bb{R}^n) = (T_p(\bb{R}^n))^*$.
 
 \subsubsection{Differential 1-form on an open subset of an Euclidean space [Definition \ref{differential-1-form-on-an-open-subset-of-an-euclidean-space}]}\label{differential-1-form-on-an-open-subset-of-an-euclidean-space}
-A \textit{covector field} or a \textit{differential 1-form} on $U \in \mathcal{O}_n$ is $\omega \colon U \to \bigcup_{p \in U} T^*_p (\bb{R}^n)$ that maps $U \ni p \mapsto \omega_p \in T^*_p (\bb{R}^n)$.
+A \empha{covector field} or a \empha{differential 1-form} on $U \in \mathcal{O}_n$ is $\omega \colon U \to \bigcup_{p \in U} T^*_p (\bb{R}^n)$ that maps $U \ni p \mapsto \omega_p \in T^*_p (\bb{R}^n)$.
 
 \subsubsection{Differential of a smooth function [Definition \ref{differential-of-a-smooth-function}]}\label{differential-of-a-smooth-function}
-For $f \in C^\infty (U)$ on $U \in \mathcal{O}_n$, the \textit{differential} $df$ of $f$ is a differential 1-form defined by
+For $f \in C^\infty (U)$ on $U \in \mathcal{O}_n$, the \empha{differential} $df$ of $f$ is a differential 1-form defined by
 \[
 (df)_p (X_p) = X_p f.
 \]

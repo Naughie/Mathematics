@@ -1,14 +1,13 @@
 \newcommand{\sets}{\mathbf{Sets}}
 \section{Categories}
-\setcounter{subsection}{1}
-\subsubsection{Fundations}
+\subsection{Fundations}
 \subsubsection{Category [Definition \ref{category}]}\label{category}
-A \textit{category} consists of the followings:
+A \empha{category} consists of the followings:
 \begin{itemize}
-\item \textit{Objects} $A$, $B$, $C, \dotsc$
-\item \textit{Arrows} $f$, $g$, $h, \dotsc$ with the objects called the domain $\mathrm{dom}(f)$ and the codomain $\mathrm{cod}(f)$.
-\item \textit{Composites} $g \circ f \colon A \to C$ for given arrows $f \colon A \to B$ and $g \colon B \to C$.
-\item \textit{Identity arrow} $1_A$ of each object $A$.
+\item \empha{Objects} $A$, $B$, $C, \dotsc$
+\item \empha{Arrows} $f$, $g$, $h, \dotsc$ with the objects called the domain $\mathrm{dom}(f)$ and the codomain $\mathrm{cod}(f)$.
+\item \empha{Composites} $g \circ f \colon A \to C$ for given arrows $f \colon A \to B$ and $g \colon B \to C$.
+\item \empha{Identity arrow} $1_A$ of each object $A$.
 \end{itemize}
 satisfying the following laws:
 \begin{enumerate}
@@ -17,7 +16,7 @@ satisfying the following laws:
 \end{enumerate}
 
 \subsubsection{Functor between categories [Definition \ref{functor-between-categories}]}\label{functor-between-categories}
-A \textit{functor} $F\colon \s A \to \s B$ between categories $\s A$ and $\s B$ is a mapping between objects and between arrows in the following ways:
+A \empha{functor} $F\colon \s A \to \s B$ between categories $\s A$ and $\s B$ is a mapping between objects and between arrows in the following ways:
 \begin{enumerate}
 \item $F(f\colon A \to B) = F(f) \colon F(A) \to F(B)$,
 \item $F(1_A) = 1_{F(A)}$,
@@ -25,8 +24,8 @@ A \textit{functor} $F\colon \s A \to \s B$ between categories $\s A$ and $\s B$ 
 \end{enumerate}
 
 \subsubsection{Isomorphism between categories [Definition \ref{isomorphism-between-categories}]}\label{isomorphism-between-categories}
-In a category $\c C$, an arrow $f \colon A \to B$ is called an \textit{isomorphism} if
+In a category $\c C$, an arrow $f \colon A \to B$ is called an \empha{isomorphism} if
 \[
 \exists g = f^{-1} \colon B \to A,\ g \circ f = 1_A,\ f \circ g = 1_B.
 \]
-If there is an isomorphism between objects $A$ and $B$, $A$ is said to be \textit{isomorphic} to $B$, written $A \cong B$.
+If there is an isomorphism between objects $A$ and $B$, $A$ is said to be \empha{isomorphic} to $B$, written $A \cong B$.
