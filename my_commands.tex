@@ -1,10 +1,17 @@
 \makeatletter
 \def\@cite#1{\textsuperscript{\,[#1]}}
+\def\@biblabel#1{[#1]}
 \makeatother
 \renewcommand{\familydefault}{\rmdefault}
 \renewcommand{\sfdefault}{phv}
 \renewcommand{\rmdefault}{cmbr}
 \newcommand{\empha}[1]{{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont #1}}
+\newcommand{\myTitle}{{\fontfamily{lmr}\selectfont Notes of Mathematics}}
+\newcommand{\myAuthor}{{\fontfamily{lmr}\selectfont Masato Nakata}}
+\newcommand{\myAffil}{{\fontfamily{lmr}\selectfont Department of Science, Kyoto University}}
+\newcommand{\myDate}{{\fontfamily{lmr}\selectfont Since Aug 27, 2017}}
+\renewcommand{\refname}{References}
+\renewcommand{\contentsname}{Contents}
 \renewcommand{\labelenumi}{\roman{enumi})}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
