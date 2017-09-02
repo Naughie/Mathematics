@@ -1,15 +1,18 @@
 \makeatletter
 \def\@cite#1{\textsuperscript{\,[#1]}}
 \def\@biblabel#1{[#1]}
+\def\includeall#1{{%
+\@for\next:=#1\do{\include{\next}}
+}}
 \makeatother
-\renewcommand{\familydefault}{\rmdefault}
+\renewcommand{\familydefault}{cmbr}
 \renewcommand{\sfdefault}{phv}
-\renewcommand{\rmdefault}{cmbr}
+\renewcommand{\rmdefault}{lmr}
 \newcommand{\empha}[1]{{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont #1}}
-\newcommand{\myTitle}{{\fontfamily{lmr}\selectfont Notes of Mathematics}}
-\newcommand{\myAuthor}{{\fontfamily{lmr}\selectfont Masato Nakata}}
-\newcommand{\myAffil}{{\fontfamily{lmr}\selectfont Department of Science, Kyoto University}}
-\newcommand{\myDate}{{\fontfamily{lmr}\selectfont Since Aug 27, 2017}}
+\newcommand{\myTitle}{{\rmfamily Notes of Mathematics}}
+\newcommand{\myAuthor}{{\rmfamily Masato Nakata}}
+\newcommand{\myAffil}{{\rmfamily Department of Science, Kyoto University}}
+\newcommand{\myDate}{{\rmfamily Since Aug 27, 2017}}
 \renewcommand{\refname}{References}
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\labelenumi}{\roman{enumi})}
