@@ -1,7 +1,7 @@
 \section{Manifolds\cite{loring}}
 \subsection{Manifolds on Euclidean Spaces}
 \subsubsection{Taylor's theorem with remainder [Theorem \ref{taylors-theorem-with-remainder}]}\label{taylors-theorem-with-remainder}
-A smooth function $f$ on an open ball $U \in \mathcal{O}_n$ can be written as
+A smooth function $f$ on an open ball $U \in \usualtop$ can be written as
 \[
 f(x) = f(p) + \sum (x^i - p^i) g_i(x)
 \]
@@ -42,7 +42,7 @@ v = \sum v^i \left.\pfr{}{x^i}\right|_p \in \mathcal{D}_p(\bb{R}^n).
 \]
 
 \subsubsection{Vector fields on an open set [Definition \ref{vector-fields-on-an-open-set}]}\label{vector-fields-on-an-open-set}
-A \empha{vector field} on $U \in \mathcal{O}_n$ is a map $X \colon U \to T_p(\bb{R}^n)$. $X = \sum a^i \partial / \partial x^i$ means
+A \empha{vector field} on $U \in \usualtop$ is a map $X \colon U \to T_p(\bb{R}^n)$. $X = \sum a^i \partial / \partial x^i$ means
 \[
 X(p) = X_p = \sum a^i(p) \left. \pfr{}{x^i} \right|_p \quad \text{with } a^i (p) \in \bb{R}
 \]
@@ -192,10 +192,10 @@ which implies
 The \empha{cotangent space} to $\bb{R}^n$ at $p$ is $T^*_p (\bb{R}^n) = (T_p(\bb{R}^n))^*$.
 
 \subsubsection{Differential 1-form on an open subset of an Euclidean space [Definition \ref{differential-1-form-on-an-open-subset-of-an-euclidean-space}]}\label{differential-1-form-on-an-open-subset-of-an-euclidean-space}
-A \empha{covector field} or a \empha{differential 1-form} on $U \in \mathcal{O}_n$ is $\omega \colon U \to \bigcup_{p \in U} T^*_p (\bb{R}^n)$ that maps $U \ni p \mapsto \omega_p \in T^*_p (\bb{R}^n)$.
+A \empha{covector field} or a \empha{differential 1-form} on $U \in \usualtop$ is $\omega \colon U \to \bigcup_{p \in U} T^*_p (\bb{R}^n)$ that maps $U \ni p \mapsto \omega_p \in T^*_p (\bb{R}^n)$.
 
 \subsubsection{Differential of a smooth function [Definition \ref{differential-of-a-smooth-function}]}\label{differential-of-a-smooth-function}
-For $f \in C^\infty (U)$ on $U \in \mathcal{O}_n$, the \empha{differential} $df$ of $f$ is a differential 1-form defined by
+For $f \in C^\infty (U)$ on $U \in \usualtop$, the \empha{differential} $df$ of $f$ is a differential 1-form defined by
 \[
 (df)_p (X_p) = X_p f.
 \]
@@ -210,3 +210,48 @@ a tangent vector is considered as $\langle X_p, \cdot \rangle$; a differential a
 
 \subsubsection{Differentials of coordinates is the dual basis for the cotangent space [Proposition \ref{differentials-of-the-coordinates-is-the-dual-basis-for-the-cotangent-space}]}\label{differentials-of-the-coordinates-is-the-dual-basis-for-the-cotangent-space}
 For $p \in \bb{R}^n$, $\{ (dx^1)_p, \dotsc, (dx^n)_p \} $ is the dual basis for $T_p^* (\bb{R}^n)$ to $\{ \partial / \partial x^1|_p, \dotsc, \partial/\partial x^n|_p \} \subset T_p (\bb{R}^n)$, where $x^1, \dotsc, x^n$ are the standard coordinates on $\bb{R}^n$.
+
+For any differential 1-form $\omega$ on $U \in \usualtop$ and $p \in U$,
+\[
+\omega_p = \sum a_i(p) (dx^i)_p
+\]
+for some $a_i (p)$. In this case, $\omega$ is written as $\omega = \sum a_i dx^i$.
+
+\subsubsection{Smoothness of a differential 1-form [Definition \ref{smoothness-of-a-differential-1-form}]}\label{smoothness-of-a-differential-1-form}
+A differential 1-form $\omega = \sum a_i dx^i$ on $U \in \usualtop$ is \empha{smooth} if all $a_i \colon U \to \bb{R}$ are smooth.
+
+\subsubsection{Differentials can be written in terms of partial derivatives [Proposition \ref{differentials-can-be-written-in-terms-of-partial-derivatives}]}\label{differentials-can-be-written-in-terms-of-partial-derivatives}
+For $f \in C^\infty(U)$ on $U \in \usualtop$,
+\[
+df = \sum \pfr{f}{x^i} dx^i.
+\]
+Smoothness of $f$ implies that of $df$.
+
+\subsubsection{Differential $k$-forms on an Euclidean space [Definition \ref{differential-k-forms-on-an-euclidean-space}]}\label{differential-k-forms-on-an-euclidean-space}
+A \empha{differential k-form} or \empha{differential form of degree k} on $U \in \usualtop$ is $\omega \colon U \ni p \mapsto \omega_p \in A_k (T_p(\bb{R}^n))$.
+
+\subsubsection{Basis for differential forms [Definition \& Proposition \ref{basis-for-differential-forms}]}\label{basis-for-differential-forms}
+Since $\{ dx^I_p \mid I = (1 \le i_1 < \dotsb < i_k \le n) \}$ is a basis for $A_k (T_p(\bb{R}^n)$, for a differential $k$-form $\omega$ on $U \in \usualtop$ and $p \in U$,
+\[
+\omega_p = \sum a_I (p) dx^I_p,\quad \omega = \sum a_I dx^I.
+\]
+$\omega$ is \empha{smooth} if all $a_I \colon U \to \bb{R}$ are smooth. The vector space of $C^\infty$  differential $k$-forms on $U$ is denoted by $\Omega^k(U)$. If $k = 0$, $\Omega^0(U) = C^\infty(U)$.
+
+\subsubsection{Wedge product of differential forms [Definition \ref{wedge-product-of-differential-forms}]}\label{wedge-product-of-differential-forms}
+For differential $k$-form $\omega$ and $\ell$-form $\tau$ on $U \in \usualtop$, their \empha{wedge product} $\omega \wedge \tau$ is a differential $(k+\ell)$-form defined by
+\[
+(\omega \wedge \tau)_p = \omega_p \wedge \tau_p.
+\]
+If $\omega = \sum a_I dx^I$, $\tau = \sum b_J dx^J$,
+\begin{align*}
+\omega \wedge \tau &= \sum_{I,J} (a_I b_J) dx^I \wedge dx^J \\
+&= \sum_{\text{disjoint}\ I, J} (a_I b_J) dx^I \wedge dx^J.
+\end{align*}
+For $\omega \in \Omega^k (U)$, $\tau \in \Omega^\ell (U)$, the wedge product is a bilinear map
+\[
+\wedge \colon \Omega^k(U) \times \Omega^\ell(U) \to \Omega^{k+\ell}(U).
+\]
+In particular, if $f \in C^\infty (U)$ and $\omega \in \Omega^k(U)$, then $f \wedge \omega = f \omega$.
+
+\subsubsection{Graded algebra with smooth differential forms [Definition \ref{graded-algebra-with-smooth-differential-forms}]}\label{graded-algebra-with-smooth-differential-forms}
+For $U \in \usualtop$, the direct sum $\Omega^* (U) = \bigoplus_{k = 0}^n \Omega^k(U)$ is an anticommutative graded algebra over $\bb{R}$ with the wedge product as multiplication, which is also a module over $C^\infty (U)$.
