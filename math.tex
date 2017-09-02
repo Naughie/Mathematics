@@ -1,4 +1,4 @@
-\documentclass[uplatex,dvipdfmx,ja=standard,jafont=hiragino-elcapitan-pron,13pt,b5paper]{bxjsarticle}
+\documentclass[autodetect-engine,dvipdfmx-if-dvi,ja=standard,jafont=hiragino-elcapitan-pron,13pt,b5paper]{bxjsarticle}
 \input{packages}
 \input{my_commands}
 \begin{document}
@@ -13,10 +13,7 @@
 
 
 
-\nocite{loring}
-\nocite{gouvea}
-\nocite{samu}
-\nocite{awodey}
+{\fontfamily{lmr}\selectfont
 \bibliographystyle{jplain}
-\bibliography{biblio}
+\bibliography{biblio}}
 \end{document}

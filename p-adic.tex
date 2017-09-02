@@ -1,4 +1,4 @@
-\section{P-adic Numbers}
+\section{P-adic Numbers\cite{gouvea}}
 \subsection{Fundations}
 \subsubsection{Absolute value on a field [Definition \ref{absolute-value-on-a-field}]}\label{absolute-value-on-a-field}
 An \empha{absolute value} on a field $\bb{K}$ is a function $\mid \ \ \mid \colon \bb{K} \to \bb{R}_{\ge0}$ that satisfies:
@@ -18,10 +18,10 @@ is said to be \empha{non-archimedean}; otherwise, it is said to be \empha{archim
 \subsubsection{Trivial absolute value [Definition \ref{trivial-absolute-value}]}\label{trivial-absolute-value}
 The \empha{trivial absolute value} on a field $\bb{K}$ is a absolute value on $\bb{K}$ such that
 \[
-\abs{x} = \left\{ \begin{array}{ll}
+\abs{x} = \begin{cases}
  1 & \text{for}\ x \neq 0 \\
  0 & \text{for}\ x = 0
- \end{array} \right..
+ \end{cases}
 \]
 
 An absolute value on a finite field must be trivial.
@@ -37,12 +37,12 @@ A function $v \colon \bb{A}^\times \to \bb{R}$ with an integral domain $\bb{A}$ 
 The image of a valuation $v$ on a field is an additive subgroup of $\bb{R}$. $\im v$ is called the \empha{value group} of $v$.
 
 \subsubsection{Correspondence between valuations and non-archimedean absolute values [Proposition \ref{correspondence-between-valuations-and-non-archimedean-absolute-values}]}\label{correspondence-between-valuations-and-non-archimedean-absolute-values}
-Let $\bb{A}$ be an integral domain and $\bb{K} = \mathrm{Frac} \,\bb{A}$. Let $v\colon \bb{A}^\times \to \bb{R}$ be a valuation on $\bb{A}$ and extend $v$ to $\bb{K}$ by setting $v(a/b) = v(a) - v(b)$, then the function $\mid\ \ \mid_v \colon \bb{K} \to \bb{R}_{\ge 0}$ defined by
+Let $\bb{A}$ be an integral domain and $\bb{K} = \mathrm{fr} \,\bb{A}$. Let $v\colon \bb{A}^\times \to \bb{R}$ be a valuation on $\bb{A}$ and extend $v$ to $\bb{K}$ by setting $v(a/b) = v(a) - v(b)$, then the function $\mid\ \ \mid_v \colon \bb{K} \to \bb{R}_{\ge 0}$ defined by
 \[
-\abs{x}_v = \left\{ \begin{array}{cl}
+\abs{x}_v = \begin{cases}
  e^{-v(x)} & \text{for}\ x \neq 0 \\
  0 & \text{for}\ x = 0
- \end{array} \right.
+ \end{cases}
  \] is a non-archimedean absolute value on $\bb{K}$. Conversely, $-\log \mid \,\ \mid$ is a valuation on $\bb{K}$ for a non-archimedean absolute value $\mid\ \ \mid$ on $\bb{K}$.
 
 

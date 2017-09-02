@@ -1,4 +1,4 @@
-\section{Manifolds}
+\section{Manifolds\cite{loring}}
 \subsection{Manifolds on Euclidean Spaces}
 \subsubsection{Taylor's theorem with remainder [Theorem \ref{taylors-theorem-with-remainder}]}\label{taylors-theorem-with-remainder}
 A smooth function $f$ on an open ball $U \in \mathcal{O}_n$ can be written as
@@ -15,13 +15,13 @@ The \empha{tangent space} $T_p (\bb{R}^n)$ at $p \in \bb{R}^n$ is the set of arr
 \subsubsection{Directional derivative [Definition \ref{directional-derivative}]}\label{directional-derivative}
 The \empha{directional derivative} of a smooth function $f$ in the direction $v \in T_p(\bb{R}^n)$ at $p \in \bb{R}^n$ is
 \[
-D_v f = \lim_{t \to 0} \frac{f(c(t)) - f(p)}{t} = \left. \frac{d}{dt}\right|_{t=0} f(c(t))
+D_v f = \lim_{t \to 0} \fr{f(c(t)) - f(p)}{t} = \left. \fr{d}{dt}\right|_{t=0} f(c(t))
 \]
 with $c^i(t) = p^i + tv^i$.
 
 By the chain rule,
 \[
-D_v f = \sum \frac{dc^i}{dt}(0)\pfrac{f}{x^i}(p) = \sum v^i \pfrac{f}{x^i}(p).
+D_v f = \sum \fr{dc^i}{dt}(0)\pfr{f}{x^i}(p) = \sum v^i \pfr{f}{x^i}(p).
 \]
 
 \subsubsection{Derivation at a point [Definition \& Proposition \ref{derivation-at-a-point}]}\label{derivation-at-a-point}
@@ -38,21 +38,21 @@ The linear map $\phi \to T_p(\bb{R}^n) \to \mathcal{D}_p(\bb{R}^n)$ in \ref{deri
 \subsubsection{Tangent vector as a derivation [Definition \ref{tangent-vector-as-a-derivation}]}\label{tangent-vector-as-a-derivation}
 By \ref{tangent-space-is-isomorphic-to-the-set-of-point-derivations}, $v \in T_p(\bb{R}^n)$ is identified as
 \[
-v = \sum v^i \left.\pfrac{}{x^i}\right|_p \in \mathcal{D}_p(\bb{R}^n).
+v = \sum v^i \left.\pfr{}{x^i}\right|_p \in \mathcal{D}_p(\bb{R}^n).
 \]
 
 \subsubsection{Vector fields on an open set [Definition \ref{vector-fields-on-an-open-set}]}\label{vector-fields-on-an-open-set}
 A \empha{vector field} on $U \in \mathcal{O}_n$ is a map $X \colon U \to T_p(\bb{R}^n)$. $X = \sum a^i \partial / \partial x^i$ means
 \[
-X(p) = X_p = \sum a^i(p) \left. \pfrac{}{x^i} \right|_p \quad \text{with } a^i (p) \in \bb{R}
+X(p) = X_p = \sum a^i(p) \left. \pfr{}{x^i} \right|_p \quad \text{with } a^i (p) \in \bb{R}
 \]
 $X$ is said to be $C^\infty$ if all $a^i$s are $C^\infty$ on $U$. The set of all smooth vector fields on $U$ is denoted by $\g X(U)$.
 
 \subsubsection{Multiplication of a smooth vector field and function [Definition \& Proposition \ref{multiplication-of-a-smooth-vector-field-and-function}]}\label{multiplication-of-a-smooth-vector-field-and-function}
 For $X \in \g X(U)$ and $f \in C^\infty(U)$, define $fX \in \g X(U)$ and $Xf \in C^\infty(U)$ as follows:
 \begin{align*}
-(fX)_p &= f(p)X_p = \sum (f(p)a^i(p)) \left. \pfrac{}{x^i}\right|_p,\\
-(Xf)(p) &= X_p f = \sum a^i (p) \pfrac{f}{x^i} (p).
+(fX)_p &= f(p)X_p = \sum (f(p)a^i(p)) \left. \pfr{}{x^i}\right|_p,\\
+(Xf)(p) &= X_p f = \sum a^i (p) \pfr{f}{x^i} (p).
 \end{align*}
 
 \subsubsection{Leibniz rule for a vector field [Proposition \ref{leibniz-rule-for-a-vector-field}]}\label{leibniz-rule-for-a-vector-field}
@@ -89,11 +89,11 @@ An alternating $k$-tensor on a vector space $V$ is also called a \empha{k-covect
 \subsubsection{Symmetrizing and alternating operators on k-covectors [Definition \& Proposition \ref{symmetrizing-and-alternating-operators-on-k-covectors}]}\label{symmetrizing-and-alternating-operators-on-k-covectors}
 For a $f \in A_k(V)$ on a vector space $V$,
 \[
-Sf = \sum_{\sigma \in \g S_n} \sigma f
+ Sf = \sum_{\sigma \in \g S_n} \sigma f
 \]
 is symmetric, and
 \[
-Af = \sum_{\sigma \in \g S_n} (\sgn \sigma) \sigma f
+ Af = \sum_{\sigma \in \g S_n} (\sgn \sigma) \sigma f
 \]
 is alternating.
 
@@ -113,14 +113,14 @@ where $g_{ij} = \langle e_i, e_j \rangle$.
 \subsubsection{Wedge product of two multilinear functions [Definition \ref{wedge-product-of-two-multilinear-functions}]}\label{wedge-product-of-two-multilinear-functions}
 For $f \in A_k(V), g \in A_\ell(V)$ on a vector space $V$, their \empha{wedge product} or \empha{exterior product} is
 \begin{align*}
-f \wedge g &= \frac1{k!\, \ell!} A( f \otimes g).
+f \wedge g &= \fr1{k!\, \ell!} A( f \otimes g).
 \end{align*}
 $f \wedge g$ is alternating.
 
 Explicitly,
 \begin{align*}
-(f \wedge g) (v_1,\dotsc,v_{k+\ell}) &= \frac1{k!\,\ell!} \sum_{\sigma \in \g S_{k+\ell}} (\sgn \sigma)f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+\ell)}) \\
-&= \sum_{(k,\ell)\text{-shuffle}\ \sigma} (\sgn \sigma) f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+\ell)}),
+(f \wedge g) (v_1,\dotsc,v_{k+\ell}) &= \fr1{k!\,\ell!} \sum_{\sigma \in \g S_{k+\ell}} (\sgn \sigma)f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+\ell)}) \\
+&= \sum_{\substack{(k,\ell)\text{-shuffle}\\ \sigma}} (\sgn \sigma) f(v_{\sigma(1)},\dotsc,v_{\sigma(k)}) g(v_{\sigma(k+1)},\dotsc,v_{\sigma(k+\ell)}),
 \end{align*}
 where a $(k,\ell)$-shuffle means $\sigma(1)<\dotsb<\sigma(k)$ and $\sigma(k+1)<\dotsb < \sigma(k+\ell)$.
 
@@ -147,7 +147,7 @@ For $f \in A_k(V), g \in A_\ell(V), h \in A_m(V)$ on a real vector space $V$,
 
 Similarly, for $f_i \in A_{d_i}(V)$ $(i = 1, \dotsc, r)$,
 \[
-f_1 \wedge \dotsb \wedge f_r = \frac1{(d_1)!\dotsm (d_r)!} A(f_1 \otimes \dotsm \otimes f_r).
+f_1 \wedge \dotsb \wedge f_r = \fr1{(d_1)!\dotsm (d_r)!} A(f_1 \otimes \dotsm \otimes f_r).
 \]
 
 \subsubsection{Wedge product of covectors is the determinant [Proposition \ref{wedge-product-of-covectors-is-the-determinant}]}\label{wedge-product-of-covectors-is-the-determinant}
@@ -206,3 +206,7 @@ In the expression
 T_p(\bb{R}^n) \times C^\infty_p (\bb{R}^n) \ni (X_p, f) \mapsto \langle X_p, f \rangle = X_p f \in \bb{R},
 \]
 a tangent vector is considered as $\langle X_p, \cdot \rangle$; a differential at $p$ is considered as $df|_p = (df)_p = \langle \cdot, f \rangle$.
+
+
+\subsubsection{Differentials of coordinates is the dual basis for the cotangent space [Proposition \ref{differentials-of-the-coordinates-is-the-dual-basis-for-the-cotangent-space}]}\label{differentials-of-the-coordinates-is-the-dual-basis-for-the-cotangent-space}
+For $p \in \bb{R}^n$, $\{ (dx^1)_p, \dotsc, (dx^n)_p \} $ is the dual basis for $T_p^* (\bb{R}^n)$ to $\{ \partial / \partial x^1|_p, \dotsc, \partial/\partial x^n|_p \} \subset T_p (\bb{R}^n)$, where $x^1, \dotsc, x^n$ are the standard coordinates on $\bb{R}^n$.

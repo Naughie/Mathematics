@@ -1,21 +1,22 @@
+\makeatletter
+\def\@cite#1{\textsuperscript{\,[#1]}}
+\makeatother
 \renewcommand{\familydefault}{\rmdefault}
 \renewcommand{\sfdefault}{phv}
-\renewcommand{\rmdefault}{lmr}
+\renewcommand{\rmdefault}{cmbr}
+\newcommand{\empha}[1]{{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont #1}}
+\renewcommand{\labelenumi}{\roman{enumi})}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newcommand{\bb}[1]{\mathbb{#1}}
-\newcommand{\farc}[2]{\frac{#1}{#2}}
-\newcommand{\pfrac}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\fr}[2]{#1 / #2}\everydisplay{\let\fr\frac}
+\newcommand{\pfr}[2]{\fr{\partial #1}{\partial #2}}
 \newcommand{\abs}[1]{\left|  #1 \right|}
-\newcommand{\im}{\mathrm{im}\,}
 \newcommand{\g}[1]{\mathfrak{#1}}
-\newcommand{\tr}{\mathrm{tr}\,}
-\newcommand{\sgn}{\mathrm{sgn}\,}
 \newcommand{\s}[1]{\mathscr{#1}}
-\renewcommand{\labelenumi}{\roman{enumi})}
-\newenvironment{assert}{}{}
-\newenvironment{assume}{}{}
-\newcommand{\empha}[1]{{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont #1}}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sgn}{sgn}
