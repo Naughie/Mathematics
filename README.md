@@ -8,7 +8,7 @@ This repository consists of these files:
 - `biblio.bib` (the bib file)
 - `math.pdf` (the output file)
 
-To compile this, run `latexmk math.tex` with a `.latexmkrc` like:
+To compile this via `uplatex`, run `latexmk math.tex` with a `.latexmkrc` like:
 
 ```perl
 #!/usr/bin/env perl
@@ -23,4 +23,6 @@ $pdf_mode = 3;
 $pvc_view_file_via_temporary = 0;
 $pdf_previewer = 'open -ga /Applications/Skim.app';
 ```
-An engine other than `uplatex` may not work well. In the future, I will support `lualatex` as well.
+
+If you would like to typeset via `lualatex`, run `latexmk -lualatex math.tex`.
+An engine other than `uplatex` and `lualatex` may not work well. In the future, I will support `xelatex`, `platex` and `pdflatex` as well.
