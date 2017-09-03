@@ -1,8 +1,12 @@
 \usepackage{ifthen}
 \usepackage{ifxetex,ifluatex,ifuptex}
+\ifluatex
+\usepackage{fontspec}
+\usepackage[lutf8x]{luainputenc}
+\else
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-%\usepackage{lmodern}
+\fi
 \usepackage{cmbright}
 \usepackage[scale=1]{tgcursor}
 \usepackage{geometry}
@@ -21,6 +25,11 @@
 \usepackage{cite}
 \usepackage{authblk}
 \usepackage{exscale}
+\ifupTeX
 \usepackage[uplatex]{otf}
 \usepackage[prefernoncjk]{pxcjkcat}
-\usepackage[dvipdfmx]{hyperref}
+\usepackage[dvipdfmx,pdfencoding=auto]{hyperref}
+\else\ifluatex
+\usepackage{luatexja-otf}
+\usepackage[pdfencoding=auto]{hyperref}
+\fi\fi

@@ -4,15 +4,37 @@
 \def\includeall#1{{%
 \@for\next:=#1\do{\include{\next}}
 }}
+\def\my@enparen#1#2;{%
+  \ifx\relax#2\relax%
+    #1%
+  \else%
+    (#1#2)%
+  \fi}
+%\newcommand{\myfrac}{\@ifstar{\@myfrac}{\@@myfrac}}
+%\newcommand{\@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
+%\newcommand{\@@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}}
 \makeatother
-\renewcommand{\familydefault}{cmbr}
+\ifupTeX
+\renewcommand{\rmdefault}{cmbr}
 \renewcommand{\sfdefault}{phv}
-\renewcommand{\rmdefault}{lmr}
-\newcommand{\empha}[1]{{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont #1}}
-\newcommand{\myTitle}{{\rmfamily Notes of Mathematics}}
-\newcommand{\myAuthor}{{\rmfamily Masato Nakata}}
-\newcommand{\myAffil}{{\rmfamily Department of Science, Kyoto University}}
-\newcommand{\myDate}{{\rmfamily Since Aug 27, 2017}}
+\newcommand{\empha}[1]{{\fontfamily{ptm}\selectfont\textbf{\textit{#1}}}}
+\newcommand{\roma}[1]{{\fontfamily{lmr}\selectfont #1}}
+\else\ifluatex
+\setmainfont[Numbers = Uppercase,
+             Ligatures = TeX,
+             BoldFont  = CMU Bright SemiBold,
+             ItalicFont = CMU Bright Oblique,
+            ]{CMU Bright Roman}
+\setsansfont[Ligatures=TeX]{TeXGyreHeros}
+\newcommand{\empha}[1]{{\setmainfont[Ligatures=TeX]{TeXGyreTermes}\textbf{\textit{#1}}}}
+\newcommand{\roma}[1]{{\setmainfont[Ligatures=TeX]{Latin Modern Roman} #1\relax}}
+\fi
+\fi
+\renewcommand{\familydefault}{\rmdefault}
+\newcommand{\myTitle}{{\roma{Notes of Mathematics}}}
+\newcommand{\myAuthor}{{\roma{Masato Nakata}}}
+\newcommand{\myAffil}{{\roma{Department of Science, Kyoto University}}}
+\newcommand{\myDate}{{\roma{Since Aug 27, 2017}}}
 \renewcommand{\refname}{References}
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\labelenumi}{\roman{enumi})}
@@ -22,7 +44,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newcommand{\bb}[1]{\mathbb{#1}}
-\newcommand{\fr}[2]{#1 / #2}\everydisplay{\let\fr\frac}
+\newcommand{\fr}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1 / #2}}
 \newcommand{\pfr}[2]{\fr{\partial #1}{\partial #2}}
 \newcommand{\abs}[1]{\left|  #1 \right|}
 \newcommand{\g}[1]{\mathfrak{#1}}
