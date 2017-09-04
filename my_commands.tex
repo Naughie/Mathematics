@@ -18,7 +18,6 @@
 \renewcommand{\rmdefault}{cmbr}
 \renewcommand{\sfdefault}{phv}
 \newcommand{\empha}[1]{{\fontfamily{ptm}\selectfont\textbf{\textit{#1}}}}
-\newcommand{\roma}[1]{{\fontfamily{lmr}\selectfont #1}}
 \else\ifluatex
 \setmainfont[Numbers = Uppercase,
              Ligatures = TeX,
@@ -26,10 +25,20 @@
              ItalicFont = CMU Bright Oblique,
             ]{CMU Bright Roman}
 \setsansfont[Ligatures=TeX]{TeXGyreHeros}
-\newcommand{\empha}[1]{{\setmainfont[Ligatures=TeX]{TeXGyreTermes}\textbf{\textit{#1}}}}
-\newcommand{\roma}[1]{{\setmainfont[Ligatures=TeX]{Latin Modern Roman} #1\relax}}
-\fi
-\fi
+\newcommand{\empha}[1]{{\setmainfont{Times New Roman Bold Italic}#1}}
+\else\ifxetex
+\setmainfont[
+    Extension=.otf,
+    UprightFont=*mr,
+    ItalicFont=*mo,
+    BoldFont=*sr,
+    BoldItalicFont=*so,
+    NFSSFamily=cmbr
+    ]{cmunb}
+\setsansfont{Helvetica}
+\newcommand{\empha}[1]{{\setmainfont{Times New Roman Bold Italic}#1}}
+\fi\fi\fi
+\newcommand{\roma}[1]{{\fontfamily{lmr}\selectfont #1\relax}}
 \renewcommand{\familydefault}{\rmdefault}
 \newcommand{\myTitle}{{\roma{Notes of Mathematics}}}
 \newcommand{\myAuthor}{{\roma{Masato Nakata}}}

@@ -1,12 +1,12 @@
 \usepackage{ifthen}
 \usepackage{ifxetex,ifluatex,ifuptex}
 \ifluatex
-\usepackage{fontspec}
 \usepackage[lutf8x]{luainputenc}
+\else\ifxetex
 \else
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\fi
+\fi\fi
 \usepackage{cmbright}
 \usepackage[scale=1]{tgcursor}
 \usepackage{geometry}
@@ -32,4 +32,6 @@
 \else\ifluatex
 \usepackage{luatexja-otf}
 \usepackage[pdfencoding=auto]{hyperref}
-\fi\fi
+\else\ifxetex
+\usepackage[pdfencoding=auto]{hyperref}
+\fi\fi\fi
