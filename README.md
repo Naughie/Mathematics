@@ -24,5 +24,10 @@ $pvc_view_file_via_temporary = 0;
 $pdf_previewer = 'open -ga /Applications/Skim.app';
 ```
 
-If you would like to typeset via `lualatex`, run `latexmk -lualatex math.tex`.
-An engine other than `uplatex` and `lualatex` may not work well. In the future, I will support `xelatex`, `platex` and `pdflatex` as well.
+If you would like to typeset via `lualatex`, run `latexmk -lualatex math.tex`; if `xelatex`, run `latexmk -xelatex math.tex`.
+
+Supported engines:
+
+- `uplatex`,
+- `lualatex`,
+- `xelatex`.
