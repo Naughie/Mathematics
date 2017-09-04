@@ -17,7 +17,7 @@
 \ifupTeX
 \renewcommand{\rmdefault}{cmbr}
 \renewcommand{\sfdefault}{phv}
-\newcommand{\empha}[1]{{\fontfamily{ptm}\selectfont\textbf{\textit{#1}}}}
+\newcommand{\myemph}{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont}
 \else\ifluatex
 \setmainfont[Numbers = Uppercase,
              Ligatures = TeX,
@@ -25,7 +25,7 @@
              ItalicFont = CMU Bright Oblique,
             ]{CMU Bright Roman}
 \setsansfont[Ligatures=TeX]{TeXGyreHeros}
-\newcommand{\empha}[1]{{\setmainfont{Times New Roman Bold Italic}#1}}
+\newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
 \else\ifxetex
 \setmainfont[
     Extension=.otf,
@@ -36,8 +36,9 @@
     NFSSFamily=cmbr
     ]{cmunb}
 \setsansfont{Helvetica}
-\newcommand{\empha}[1]{{\setmainfont{Times New Roman Bold Italic}#1}}
+\newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
 \fi\fi\fi
+\newcommand{\empha}[1]{{\myemph #1}}
 \newcommand{\roma}[1]{{\fontfamily{lmr}\selectfont #1\relax}}
 \renewcommand{\familydefault}{\rmdefault}
 \newcommand{\myTitle}{{\roma{Notes of Mathematics}}}
@@ -62,3 +63,5 @@
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\der}{Der}
