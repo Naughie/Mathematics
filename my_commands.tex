@@ -19,22 +19,11 @@
 \renewcommand{\sfdefault}{phv}
 \newcommand{\myemph}{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont}
 \else\ifluatex
-\setmainfont[Numbers = Uppercase,
-             Ligatures = TeX,
-             BoldFont  = CMU Bright SemiBold,
-             ItalicFont = CMU Bright Oblique,
-            ]{CMU Bright Roman}
+\setmainfont[Ligatures=TeX]{URWClassico}
 \setsansfont[Ligatures=TeX]{TeXGyreHeros}
 \newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
 \else\ifxetex
-\setmainfont[
-    Extension=.otf,
-    UprightFont=*mr,
-    ItalicFont=*mo,
-    BoldFont=*sr,
-    BoldItalicFont=*so,
-    NFSSFamily=cmbr
-    ]{cmunb}
+\setmainfont{URWClassico-Regular.otf}
 \setsansfont{Helvetica}
 \newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
 \fi\fi\fi
