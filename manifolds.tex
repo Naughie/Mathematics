@@ -10,10 +10,10 @@ where $p \in U$ and $g_i \in C^\infty (U)$ with $g_i(p) = (\partial f / \partial
 Adapting this to $g_i$ repeatedly gives the Taylor's expansion of $f$.
 
 \subsubsection{Tangent vector as an arrow from a point [Definition \ref{tangent-vector-as-an-arrow-from-a-point}]}\label{tangent-vector-as-an-arrow-from-a-point}
-The \empha{tangent space} $T_p (\bb{R}^n)$ at $p \in \bb{R}^n$ is the set of arrows from $p$.
+The \EMPH{tangent space} $T_p (\bb{R}^n)$ at $p \in \bb{R}^n$ is the set of arrows from $p$.
 
 \subsubsection{Directional derivative [Definition \ref{directional-derivative}]}\label{directional-derivative}
-The \empha{directional derivative} of a smooth function $f$ in the direction $v \in T_p(\bb{R}^n)$ at $p \in \bb{R}^n$ is
+The \EMPH{directional derivative} of a smooth function $f$ in the direction $v \in T_p(\bb{R}^n)$ at $p \in \bb{R}^n$ is
 \[
 D_v f = \lim_{t \to 0} \fr{f(c(t)) - f(p)}{t} = \left. \fr{d}{dt}\right|_{t=0} f(c(t))
 \]
@@ -25,9 +25,9 @@ D_v f = \sum \fr{dc^i}{dt}(0)\pfr{f}{x^i}(p) = \sum v^i \pfr{f}{x^i}(p).
 \]
 
 \subsubsection{Derivation at a point [Definition \& Proposition \ref{derivation-at-a-point}]}\label{derivation-at-a-point}
-A linear map $D \colon C_p^\infty \to \bb{R}$ satisfying the Leibniz rule (i.e., $D(fg) = (D f)g(p) + f(p)D g$ for any $f, g \in C_p^\infty$) is called a \empha{derivation} at $p$ or a \empha{point-derivation} of $C_p^\infty$.
+A linear map $D \colon C_p^\infty \to \bb{R}$ satisfying the Leibniz rule (i.e., $D(fg) = (D f)g(p) + f(p)D g$ for any $f, g \in C_p^\infty$) is called a \EMPH{derivation} at $p$ or a \EMPH{point-derivation} of $C_p^\infty$.
 
-The set of all derivations at $p$ $\mathcal{D}_p(\bb{R}^n)$ is a real vector space, and a map $\phi \colon T_p(\bb{R}^n) \to \mathcal{D}_p(\bb{R}^n)$ assigning $D_v$ to each $v$ is a linear map.
+The set of all derivations at $p$ denoted by $\mathcal{D}_p(\bb{R}^n)$ is a real vector space, and a map $\phi \colon T_p(\bb{R}^n) \to \mathcal{D}_p(\bb{R}^n)$ assigning $D_v$ to each $v$ is a linear map.
 
 \subsubsection{Point-derivation of a constant is zero [Lemma \ref{point-derivation-of-a-constant-is-zero}]}\label{point-derivation-of-a-constant-is-zero}
 If $D$ is a point-derivation of $C_p^\infty$, then $D(c) = 0$ for any constant function $c$.
@@ -42,7 +42,7 @@ v = \sum v^i \left.\pfr{}{x^i}\right|_p \in \mathcal{D}_p(\bb{R}^n).
 \]
 
 \subsubsection{Vector fields on an open set [Definition \ref{vector-fields-on-an-open-set}]}\label{vector-fields-on-an-open-set}
-A \empha{vector field} on $U \in \usualtop$ is a map $X \colon U \to T_p(\bb{R}^n)$. $X = \sum a^i \partial / \partial x^i$ means
+A \EMPH{vector field} on $U \in \usualtop$ is a map $X \colon U \to T_p(\bb{R}^n)$. $X = \sum a^i \partial / \partial x^i$ means
 \[
 X(p) = X_p = \sum a^i(p) \left. \pfr{}{x^i} \right|_p \quad \text{with } a^i (p) \in \bb{R}
 \]
@@ -65,7 +65,7 @@ X(fg) = (Xf)g + fXg.
 $\varphi \colon \g X(U) \ni X \mapsto (f \mapsto Xf) \in \mathrm{Der}\, (C^\infty(U))$ is an linear isomorphism.
 
 \subsubsection{k-tensor on a vector space [Definition \ref{k-tensor-on-a-vector-space}]}\label{k-tensor-on-a-vector-space}
-A $k$-linear function on a vector space $V$ $f \colon V^k \to \bb{R}$ is called a \empha{k-tensor} on $V$. The vector space of all $k$-tensors on $V$ is denoted by $L_k(V)$. $k$ is called the degree of $f$.
+A $k$-linear function on a vector space $V$ $f \colon V^k \to \bb{R}$ is called a \EMPH{k-tensor} on $V$. The vector space of all $k$-tensors on $V$ is denoted by $L_k(V)$. $k$ is called the degree of $f$.
 
 \subsubsection{Permutation action on k-tensors [Definition \ref{permutation-action-on-k-tensors}]}\label{permutation-action-on-k-tensors}
 For $f \in L_k(V)$ on a vector space $V$ and $\sigma \in \g S_n$, an action of $\sigma $ on $f$ is defined by
@@ -74,17 +74,17 @@ For $f \in L_k(V)$ on a vector space $V$ and $\sigma \in \g S_n$, an action of $
 \]
 
 \subsubsection{Symmetric and alternating k-tensor [Definition \ref{symmetric-and-alternating-k-tensor}]}\label{symmetric-and-alternating-k-tensor}
-A $k$-tensor $f \colon V^k \to \bb{R}$ is \empha{symmetric} if
+A $k$-tensor $f \colon V^k \to \bb{R}$ is \EMPH{symmetric} if
 \[
 \forall \sigma \in \g S_k,\ \sigma f  =f,
 \]
-and $f$ is \empha{alternating} if
+and $f$ is \EMPH{alternating} if
 \[
 \forall \sigma \in \g S_k,\ \sigma f = (\sgn \sigma) f.
 \]
 
 \subsubsection{The set of all alternating k-tensors [Definition \ref{the-set-of-all-alternating-k-tensor}]}\label{the-set-of-all-alternating-k-tensor}
-An alternating $k$-tensor on a vector space $V$ is also called a \empha{k-covector} or a \empha{multicovector of degree k} on $V$. The set of all $k$-covectors on $V$ is denoted by $A_k(v)$ for $k > 0$; for $k = 0$, $A_0 (V) = \bb{R}$.
+An alternating $k$-tensor on a vector space $V$ is also called a \EMPH{k-covector} or a \EMPH{multicovector of degree k} on $V$. The set of all $k$-covectors on $V$ is denoted by $A_k(v)$ for $k > 0$; for $k = 0$, $A_0 (V) = \bb{R}$.
 
 \subsubsection{Symmetrizing and alternating operators on k-covectors [Definition \& Proposition \ref{symmetrizing-and-alternating-operators-on-k-covectors}]}\label{symmetrizing-and-alternating-operators-on-k-covectors}
 For a $f \in A_k(V)$ on a vector space $V$,
@@ -98,7 +98,7 @@ is symmetric, and
 is alternating.
 
 \subsubsection{Tensor product of two multilinear functions [Definition \ref{tensor-product-of-two-multilinear-functions}]}\label{tensor-product-of-two-multilinear-functions}
-For $f \in L_k(V), g \in L_\ell(V)$ on a vector space $V$, the \empha{tensor product} $f \otimes g \in L_{k+\ell}(V)$ is defined by
+For $f \in L_k(V), g \in L_\ell(V)$ on a vector space $V$, the \EMPH{tensor product} $f \otimes g \in L_{k+\ell}(V)$ is defined by
 \[
 (f \otimes g) (v_1, \dotsc, v_{k+\ell}) = f(v_1,\dotsc,v_k)g(v_{k+1},\dotsc,v_{k+\ell}).
 \]
@@ -111,7 +111,7 @@ Let $e_1,\dotsc,e_n$ be a basis for a vector space $V$, $\alpha^1,\dotsc,\alpha^
 where $g_{ij} = \langle e_i, e_j \rangle$.
 
 \subsubsection{Wedge product of two multilinear functions [Definition \ref{wedge-product-of-two-multilinear-functions}]}\label{wedge-product-of-two-multilinear-functions}
-For $f \in A_k(V), g \in A_\ell(V)$ on a vector space $V$, their \empha{wedge product} or \empha{exterior product} is
+For $f \in A_k(V), g \in A_\ell(V)$ on a vector space $V$, their \EMPH{wedge product} or \EMPH{exterior product} is
 \begin{align*}
 f \wedge g &= \fr1{k!\, \ell!} A( f \otimes g).
 \end{align*}
@@ -153,18 +153,18 @@ f_1 \wedge \dotsb \wedge f_r = \fr1{(d_1)!\dotsm (d_r)!} A(f_1 \otimes \dotsm \o
 \subsubsection{Wedge product of covectors is the determinant [Proposition \ref{wedge-product-of-covectors-is-the-determinant}]}\label{wedge-product-of-covectors-is-the-determinant}
 For covectors $\alpha^1, \dotsc , \alpha^k$ on a vector space $V$,
 \[
-(\alpha^1\wedge \dotsm \alpha^k)(v_1,\dotsc, v_k) = \det (\alpha^i (v_j))_{ij}.
+(\alpha^1\wedge \dotsm \wedge \alpha^k)(v_1,\dotsc, v_k) = \det (\alpha^i (v_j))_{ij}.
 \]
 
 \subsubsection{Graded algebra over a field [Definition \ref{graded-algebra-over-a-field}]}\label{graded-algebra-over-a-field}
-An algebra $\bb{A}$ over a field $\bb{K}$ is said to be \empha{graded} if $\bb{A} = \bigoplus_{k = 0}^\infty A^k$ is a direct sum of vector spaces over $\bb{K}$ such that the multiplication sends $A^k \times A^l$ to $A^{k+l}$. $A = \bigoplus_{k = 0}^\infty A^k$ means each nonzero $a \in \bb{A}$ is uniquely a finite sum $a = a_{i_1} + \dotsb a_{i_m}$ where nonzero $a_{i_j} \in A^{i_j}$.
+An algebra $\bb{A}$ over a field $\bb{K}$ is said to be \EMPH{graded} if $\bb{A} = \bigoplus_{k = 0}^\infty A^k$ is a direct sum of vector spaces over $\bb{K}$ such that the multiplication sends $A^k \times A^l$ to $A^{k+l}$. $A = \bigoplus_{k = 0}^\infty A^k$ means each nonzero $a \in \bb{A}$ is uniquely a finite sum $a = a_{i_1} + \dotsb a_{i_m}$ where nonzero $a_{i_j} \in A^{i_j}$.
 
-$\bb{A}$ is \empha{anticommutative} or \empha{graded commutative} if $\forall a \in A^k, b \in A^\ell$, $ab = (-1)^{k\ell} ba$.
+$\bb{A}$ is \EMPH{anticommutative} or \EMPH{graded commutative} if $\forall a \in A^k, b \in A^\ell$, $ab = (-1)^{k\ell} ba$.
 
-A \empha{homomorphism} of graded algebras is an algebra homomorphism that preserves the degree.
+A \EMPH{homomorphism} of graded algebras is an algebra homomorphism that preserves the degree.
 
 \subsubsection{Grassmann algebra of multicovectors on a vector space [Definition \& Proposition \ref{grassmann-algebra-of-multicovectors-on-a-vector-space}]}\label{grassmann-algebra-of-multicovectors-on-a-vector-space}
-For a vector space $V$ of degree $n < \infty$, the \empha{exterior algebra} or the \empha{Grassmann algebra} of multicovectors on $V$ is the anticommutative graded algebra
+For a vector space $V$ of degree $n < \infty$, the \EMPH{exterior algebra} or the \EMPH{Grassmann algebra} of multicovectors on $V$ is the anticommutative graded algebra
 \[
 A_* (V) = \bigoplus_{k = 0}^\infty A_k(V) = \bigoplus_{k = 0}^n A_k(V)
 \]
@@ -189,13 +189,13 @@ which implies
 \]
 
 \subsubsection{Cotangent space to an Euclidean space at a point [Definition \ref{cotangent-space-to-an-euclidean-space-at-a-point}]}\label{cotangent-space-to-an-euclidean-space-at-a-point}
-The \empha{cotangent space} to $\bb{R}^n$ at $p$ is $T^*_p (\bb{R}^n) = (T_p(\bb{R}^n))^*$.
+The \EMPH{cotangent space} to $\bb{R}^n$ at $p$ is $T^*_p (\bb{R}^n) = (T_p(\bb{R}^n))^*$.
 
 \subsubsection{Differential 1-form on an open subset of an Euclidean space [Definition \ref{differential-1-form-on-an-open-subset-of-an-euclidean-space}]}\label{differential-1-form-on-an-open-subset-of-an-euclidean-space}
-A \empha{covector field} or a \empha{differential 1-form} on $U \in \usualtop$ is $\omega \colon U \to \bigcup_{p \in U} T^*_p (\bb{R}^n)$ that maps $U \ni p \mapsto \omega_p \in T^*_p (\bb{R}^n)$.
+A \EMPH{covector field} or a \EMPH{differential 1-form} on $U \in \usualtop$ is $\omega \colon U \to \bigcup_{p \in U} T^*_p (\bb{R}^n)$ that maps $U \ni p \mapsto \omega_p \in T^*_p (\bb{R}^n)$.
 
 \subsubsection{Differential of a smooth function [Definition \ref{differential-of-a-smooth-function}]}\label{differential-of-a-smooth-function}
-For $f \in C^\infty (U)$ on $U \in \usualtop$, the \empha{differential} $df$ of $f$ is a differential 1-form defined by
+For $f \in C^\infty (U)$ on $U \in \usualtop$, the \EMPH{differential} $df$ of $f$ is a differential 1-form defined by
 \[
 (df)_p (X_p) = X_p f.
 \]
@@ -203,9 +203,9 @@ For $f \in C^\infty (U)$ on $U \in \usualtop$, the \empha{differential} $df$ of 
 
 In the expression
 \[
-T_p(\bb{R}^n) \times C^\infty_p (\bb{R}^n) \ni (X_p, f) \mapsto \langle X_p, f \rangle = X_p f \in \bb{R},
+\langle \ ,\  \rangle \colon T_p(\bb{R}^n) \times C^\infty_p (\bb{R}^n) \ni (X_p, f) \mapsto \langle X_p, f \rangle = X_p f \in \bb{R},
 \]
-a tangent vector is considered as $\langle X_p, \cdot \rangle$; a differential at $p$ is considered as $df|_p = (df)_p = \langle \cdot, f \rangle$.
+a tangent vector is considered as $\langle X_p, \cdot \rangle$; a differential at $p$ as $df|_p = (df)_p = \langle \cdot, f \rangle$.
 
 
 \subsubsection{Differentials of coordinates is the dual basis for the cotangent space [Proposition \ref{differentials-of-the-coordinates-is-the-dual-basis-for-the-cotangent-space}]}\label{differentials-of-the-coordinates-is-the-dual-basis-for-the-cotangent-space}
@@ -218,7 +218,7 @@ For any differential 1-form $\omega$ on $U \in \usualtop$ and $p \in U$,
 for some $a_i (p)$. In this case, $\omega$ is written as $\omega = \sum a_i dx^i$.
 
 \subsubsection{Smoothness of a differential 1-form [Definition \ref{smoothness-of-a-differential-1-form}]}\label{smoothness-of-a-differential-1-form}
-A differential 1-form $\omega = \sum a_i dx^i$ on $U \in \usualtop$ is \empha{smooth} if all $a_i \colon U \to \bb{R}$ are smooth.
+A differential 1-form $\omega = \sum a_i dx^i$ on $U \in \usualtop$ is \EMPH{smooth} if all $a_i \colon U \to \bb{R}$ are smooth.
 
 \subsubsection{Differentials can be written in terms of partial derivatives [Proposition \ref{differentials-can-be-written-in-terms-of-partial-derivatives}]}\label{differentials-can-be-written-in-terms-of-partial-derivatives}
 For $f \in C^\infty(U)$ on $U \in \usualtop$,
@@ -228,17 +228,17 @@ df = \sum \pfr{f}{x^i} dx^i.
 Smoothness of $f$ implies that of $df$.
 
 \subsubsection{Differential $k$-forms on an Euclidean space [Definition \ref{differential-k-forms-on-an-euclidean-space}]}\label{differential-k-forms-on-an-euclidean-space}
-A \empha{differential k-form} or \empha{differential form of degree k} on $U \in \usualtop$ is $\omega \colon U \ni p \mapsto \omega_p \in A_k (T_p(\bb{R}^n))$.
+A \EMPH{differential k-form} or \EMPH{differential form of degree k} on $U \in \usualtop$ is $\omega \colon U \ni p \mapsto \omega_p \in A_k (T_p(\bb{R}^n))$.
 
 \subsubsection{Basis for differential forms [Definition \& Proposition \ref{basis-for-differential-forms}]}\label{basis-for-differential-forms}
 Since $\{ dx^I_p \mid I = (1 \le i_1 < \dotsb < i_k \le n) \}$ is a basis for $A_k (T_p(\bb{R}^n)$, for a differential $k$-form $\omega$ on $U \in \usualtop$ and $p \in U$,
 \[
 \omega_p = \sum a_I (p) dx^I_p,\quad \omega = \sum a_I dx^I.
 \]
-$\omega$ is \empha{smooth} if all $a_I \colon U \to \bb{R}$ are smooth. The vector space of $C^\infty$  differential $k$-forms on $U$ is denoted by $\Omega^k(U)$. If $k = 0$, $\Omega^0(U) = C^\infty(U)$.
+$\omega$ is \EMPH{smooth} if all $a_I \colon U \to \bb{R}$ are smooth. The vector space of $C^\infty$  differential $k$-forms on $U$ is denoted by $\Omega^k(U)$. If $k = 0$, $\Omega^0(U) = C^\infty(U)$.
 
 \subsubsection{Wedge product of differential forms [Definition \ref{wedge-product-of-differential-forms}]}\label{wedge-product-of-differential-forms}
-For differential $k$-form $\omega$ and $\ell$-form $\tau$ on $U \in \usualtop$, their \empha{wedge product} $\omega \wedge \tau$ is a differential $(k+\ell)$-form defined by
+For differential $k$-form $\omega$ and $\ell$-form $\tau$ on $U \in \usualtop$, their \EMPH{wedge product} $\omega \wedge \tau$ is a differential $(k+\ell)$-form defined by
 \[
 (\omega \wedge \tau)_p = \omega_p \wedge \tau_p.
 \]
@@ -255,3 +255,45 @@ In particular, if $f \in C^\infty (U)$ and $\omega \in \Omega^k(U)$, then $f \we
 
 \subsubsection{Graded algebra with smooth differential forms [Definition \ref{graded-algebra-with-smooth-differential-forms}]}\label{graded-algebra-with-smooth-differential-forms}
 For $U \in \usualtop$, the direct sum $\Omega^* (U) = \bigoplus_{k = 0}^n \Omega^k(U)$ is an anticommutative graded algebra over $\bb{R}$ with the wedge product as multiplication, which is also a module over $C^\infty (U)$.
+
+
+\subsubsection{Differential forms as linear maps on a vector field [Definition \ref{differential-forms-as-linear-maps-on-a-vector-field}]}\label{differential-forms-as-linear-maps-on-a-vector-field}
+For a differential $k$-form $\omega$ on $U \in \usualtop$ and $X_1, \dotsc, X_k \in \g X(U)$, define $\omega (X_1, \dotsc, X_k) \in C^\infty(U)$ by
+\[
+(\omega (X_1, \dotsc, X_k))_p = \omega_p ((X_1)_p, \dotsc, (X_k)_p).
+\]
+The map
+\[
+\g X(U) \times \dotsm \times \g X(U) \ni (X_1, \dotsc, X_k) \mapsto \omega(X_1, \dotsc, X_k) \in C^\infty(U)
+\]
+is $k$-linear over $C^\infty(U)$.
+
+\subsubsection{Exterior derivatives of differential forms [Definition \ref{exterior-derivatives-of-differential-forms}]}\label{exterior-derivatives-of-differential-forms}
+For $k \ge 1$ and $\omega = \sum a_I dx^I \in \Omega^k(U)$, the \EMPH{exterior derivative} of $\omega$ is
+\[
+d\omega = \sum_I da_I \wedge dx^I = \sum_{I,j} \pfr{a_I}{x^j} dx^j \wedge dx^I \in \Omega^{k+1}(U);
+\]
+for $k = 0$ and $f \in C^\infty(U)$, its exterior derivative is
+\[
+df = \sum \pfr{f}{x^i} dx^i\in \Omega^1 (U).
+\]
+
+\subsubsection{Antiderivation of a graded algebra [Definition \ref{antiderivation-of-a-graded-algebra}]}\label{antiderivation-of-a-graded-algebra}
+An \EMPH{antiderivation} of a graded algebra $\bb A = \bigoplus_{k=0}^\infty A^k$ is a linear map $D \colon \bb A \to \bb A$ such that for $a \in A^k, b \in A^\ell$,
+\[
+D(ab) = D(a)b + (-1)^k aD(b).
+\]
+If $m$ is an integer such that $D$ sends $A^k$ to $A^{k+m}$ for all $k$, then $m$ is called the \EMPH{degree} of $D$.
+
+\subsubsection{Properties of the exterior differentiation [Proposition \ref{properties-of-the-exterior-differentiation}]}\label{properties-of-the-exterior-differentiation}
+\begin{enumerate}
+\item The exterior differentiation $d \colon \Omega^*(U) \to \Omega^*(U)$ on $U \in \usualtop$ is an antiderivation of degree 1:
+\[
+d(\omega \wedge \tau) = (d\omega)\wedge \tau + (-1)^{\deg \omega} \omega \wedge d \tau.
+\]
+\item $d^2 = 0$.
+\item For $f \in C^\infty(U)$ and $X \in \g X(U)$, $(df)(X) = Xf$.
+\end{enumerate}
+
+\subsubsection{Characterization of the exterior differentiation [Proposition \ref{characterization-of-the-exterior-differentiation}]}\label{characterization-of-the-exterior-differentiation}
+The only antiderivation $D\colon \Omega^*(U) \to \Omega^*(U)$ on $U \in \usualtop$ of degree 1 satisfying \ref{properties-of-the-exterior-differentiation} is $d$.

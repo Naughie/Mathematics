@@ -23,17 +23,17 @@
 \setsansfont[Ligatures=TeX]{TeXGyreHeros}
 \newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
 \else\ifxetex
-\setmainfont{URWClassico-Regular.otf}
-\setsansfont{Helvetica}
+\setmainfont[Ligatures=TeX]{URWClassico-Regular.otf}
+\setsansfont[Ligatures=TeX]{Helvetica}
 \newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
 \fi\fi\fi
-\newcommand{\empha}[1]{{\myemph #1}}
-\newcommand{\roma}[1]{{\fontfamily{lmr}\selectfont #1\relax}}
+\newcommand{\EMPH}[1]{{\myemph #1}}
+\newcommand{\ROMAN}[1]{{\fontfamily{lmr}\selectfont #1\relax}}
 \renewcommand{\familydefault}{\rmdefault}
-\newcommand{\myTitle}{{\roma{Notes of Mathematics}}}
-\newcommand{\myAuthor}{{\roma{Masato Nakata}}}
-\newcommand{\myAffil}{{\roma{Department of Science, Kyoto University}}}
-\newcommand{\myDate}{{\roma{Since Aug 27, 2017}}}
+\newcommand{\myTitle}{{\ROMAN{Notes of Mathematics}}}
+\newcommand{\myAuthor}{{\ROMAN{Masato Nakata}}}
+\newcommand{\myAffil}{{\ROMAN{Department of Science, Kyoto University}}}
+\newcommand{\myDate}{{\ROMAN{Since Aug 27, 2017}}}
 \renewcommand{\refname}{References}
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\labelenumi}{\roman{enumi})}
@@ -54,3 +54,4 @@
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\ad}{ad}
 \DeclareMathOperator{\der}{Der}
+\DeclareMathOperator{\enfrac}{Frac}
