@@ -58,3 +58,34 @@ The \EMPH{p-adic absolute value} $\mid\ \ \mid_p \colon \bb{Q} \to \bb{R}_{\ge0}
 \]
 
 The usual absolute value is looked as $\mid\ \ \mid = \mid\ \ \mid_\infty$.
+
+\subsubsection{Absolute values on a field of rational functions [Definition \ref{absolute-values-on-a-field-of-rational-functions}]}\label{absolute-values-on-a-field-of-rational-functions}
+
+Here are some absolute values on a field $\bb F(t)$ of rational functions over a field $\bb F$.
+
+\begin{enumerate}
+\item For $f(t) \in \bb F[t]$, $v_\infty (f) = -\deg f$, and for $f(t)/g(t) \in \bb F(t)$, $v_\infty (f/g) = v_\infty(f) - v_\infty (g)$ with $v_\infty (0) = \infty$. Then,
+\[
+\abs{f(t)}_\infty = e^{-v_\infty (f)}.
+\]
+\item For an irreducible polynomial $p(t) \in \bb F[t]$, define the $p(t)$-adic valuation and absolute value.
+\end{enumerate}
+
+\subsubsection{Properties of absolute values on fields [Lemma \ref{properties-of-absolute-values-on-fields}]}\label{properties-of-absolute-values-on-fields}
+For an absolute value $|\ \ |$ on a field $\bb K$,
+\begin{enumerate}
+\item $\abs{1} = 1$,
+\item $\forall x \in \bb K,\ \abs{x^n} = 1 \Rightarrow \abs x = 1$,
+\item $\forall x \in \bb K,\ \abs{-x} = \abs x$,
+\item If $\bb K$ is finite, then $|\ \ |$ is trivial.    
+\end{enumerate}
+
+\subsubsection{Necessary and sufficient conditions of a non-archimedean absolute value [Theorem \ref{necessary-and-sufficient-conditions-of-a-non-archimedean-absolute-value}]}\label{necessary-and-sufficient-conditions-of-a-non-archimedean-absolute-value}
+
+Let $\bb K$ be a field, $|\ \ |$ an absolute value on $\bb K$. Then,
+\begin{align*}
+|\ \ |\ \text{is non-archimedean} &\Longleftrightarrow \forall n = 1 + \dotsb + 1 \in \bb K,\ \abs n \le 1 \\
+&\Longleftrightarrow \sup \{ \abs n \mid n \in \bb Z \} = 1.
+\end{align*}
+
+Furthermore, $\sup \{ \abs n \mid n \in \bb Z \} = \infty$ if $|\ \ |$ is archimedean.
