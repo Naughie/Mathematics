@@ -76,3 +76,43 @@ For a Lie algebra $\g g$, an ideal $\g a \subset \g g$, a Lie subalgebra $\g h \
 \[
 \g h / (\g h \cap \g a) \cong (\g h + \g a)/\g a.
 \]
+
+\subsection{Solvable and Nilpotent Lie algebra}
+\subsubsection{Solvable Lie algebra [Definition \ref{solvable-lie-algebra}]}\label{solvable-lie-algebra}
+Let $\g g$ be a Lie algebra, and
+\[
+D^0\g g = \g g,\quad D^k \g g = D(D^{k-1}\g g),\quad k = 1, 2, \dotsc
+\]
+$\g g$ is said to be \EMPH{solvable} if $D^r\g g = \{ 0 \}$ for some $r$ called the \EMPH{length} of $\g g$.
+
+\subsubsection{Lie algebra of triangular matrices is solvable [Example \ref{lie-algebra-of-triangular-matrices-is-solvable}]}\label{lie-algebra-of-triangular-matrices-is-solvable}
+Let
+\begin{align*}
+\g g_0 &= \{ \xi = (\xi_{ij}) \in \gl_n(\bb{R}) \mid \xi\ \text{is upper triangular} \}, \\
+\g g_k &= \{ \xi = (\xi_{ij}) \in \gl_n(\bb{R}) \mid \xi_{ij} = 0 \ \text{for}\ j - i < k \}.
+\end{align*}
+Then, $[\g g_0, \g g_0] \subset \g g_1$, $[\g g_k, \g g_\ell] \subset \g g_{k+\ell}$, $k, \ell = 0, 1, \dotsc$, and $\g g_0$ is a solvable Lie algebra of length $\le n$.
+
+\subsubsection{Lie subalgebra of a solvable Lie algebra is also solvable [Theorem \ref{lie-subalgebra-of-a-solvable-lie-algebra-is-also-solvable}]}\label{lie-subalgebra-of-a-solvable-lie-algebra-is-also-solvable}
+For a solvable Lie algebra $\g g$, its Lie subalgebra $\g h \subset \g g$ is also solvable, and if $\g h$ is an ideal, $\g g / \g h$ is also solvable.
+
+\subsubsection{Lie algebra whose ideal and quotient algebra over it are solvable is solvable [Theorem \ref{lie-algebra-whose-ideal-and-quotient-algebra-over-it-are-solvable-is-solvable}]}\label{lie-algebra-whose-ideal-and-quotient-algebra-over-it-are-solvable-is-solvable}
+For a Lie algebra $\g g$ and its ideal $\g a \subset \g g$, if $\g a$ and $\g g / \g a$ are both solvable, then $\g g$ is also solvable.
+
+\subsubsection{Nilpotent Lie algebra [Definition \ref{nilpotent-lie-algebra}]}\label{nilpotent-lie-algebra}
+Let $\g g$ be a Lie algebra, and
+\[
+C^0 \g g = \g g,\quad C^k \g g = [\g g, C^{k-1}\g g],\quad k = 1, 2, \dotsc
+\]
+$\g g$ is said to be \EMPH{nilpotent} if $C^s \g g = \{ 0 \}$ for some $s$ called the \EMPH{length} of $\g g$.
+
+Since $D^k \g g \subset C^k \g g$, a nilpotent Lie algebra is solvable.
+
+\subsubsection{Lie algebra of strictly triangular matrices is nilpotent [Example \ref{lie-algebra-of-strictly-triangular-matrices-is-nilpotent}]}\label{lie-algebra-of-strictly-triangular-matrices-is-nilpotent}
+$\g g_1$ in \ref{lie-algebra-of-triangular-matrices-is-solvable} is nilpotent while $\g g_0$ there is not.
+
+\subsubsection{Lie subalgebra of a nilpotent Lie algebra is also nilpotent [Theorem \ref{lie-subalgebra-of-a-nilpotent-lie-algebra-is-also-nilpotent}]}\label{lie-subalgebra-of-a-nilpotent-lie-algebra-is-also-nilpotent}
+For a nilpotent Lie algebra $\g g$, its Lie subalgebra $\g h \subset \g g$ is also nilpotent, and if $\g h$ is an ideal, $\g g/ \g h$ is also nilpotent.
+
+\subsubsection{Center of a nilpotent Lie algebra has a nonzero vector [Theorem \ref{center-of-a-nilpotent-lie-algebra-has-a-nonzero-vector}]}\label{center-of-a-nilpotent-lie-algebra-has-a-nonzero-vector}
+For a Lie algebra $\g g$ and its center $\g z$, $\g z \neq \{ 0 \}$ if $\g g$ is nilpotent while $\g g$ is nilpotent if $\g g / \g z$ is nilpotent.
