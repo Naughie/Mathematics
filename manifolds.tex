@@ -297,3 +297,49 @@ d(\omega \wedge \tau) = (d\omega)\wedge \tau + (-1)^{\deg \omega} \omega \wedge 
 
 \subsubsection{Characterization of the exterior differentiation [Proposition \ref{characterization-of-the-exterior-differentiation}]}\label{characterization-of-the-exterior-differentiation}
 The exterior differentiation $d \colon \Omega^*(U) \to \Omega^*(U)$ on $U \in \usualtop$ is the only antideriavtion of $\Omega^*(U)$.
+
+\subsubsection{Closed and exact forms [Definition \ref{closed-and-exact-forms}]}\label{closed-and-exact-forms}
+A differential $k$-form $\omega$ on $U \in \usualtop$ is said to be \EMPH{closed} if $d\omega = 0$, and said to be \EMPH{exact} if $\omega = d \tau$ for some $(k-1)$-form $\tau$ on $U$.
+
+Every exact form is closed.
+
+\subsubsection{Cochain complex and de Rham complex [Definition \ref{cochain-complex-and-de-rham-complex}]}\label{cochain-complex-and-de-rham-complex}
+A collection of vector spaces $\{ V^k \}_{k=0}^\infty$ with linear maps $d_k \colon V^k \to V^{k+1}$ such that $d_{k+1} \circ d_k = 0$ is called a \EMPH{cochain complex} or a \EMPH{differential complex}.
+
+The \EMPH{de Rham complex} of $U \in \usualtop$ is a cochain complex
+\[
+0 \rightarrow \Omega^0 (U) \xrightarrow{d} \Omega^1(U) \xrightarrow{d} \Omega^2 (U) \xrightarrow{d} \cdots.
+\]
+
+The closed forms are the elements of $\ker d$, and the exact forms are the elements of $\im d$.
+
+\subsubsection{Vector calculus as differential forms [Proposition \ref{vector-calculus-as-differential-forms}]}\label{vector-calculus-as-differential-forms}
+Under the identifications, for $U \in \usualtop[3]$, $f \in C^\infty(U)$ and $X = [P\ Q\ R] \in \g X(U)$,
+\[
+1\text{-form}\ Pdx + Qdy + Rdz \longleftrightarrow X,
+\]
+\[
+2\text{-form}\ Pdy\wedge dz + Qdz\wedge dx + Rdx\wedge dy \longleftrightarrow X,
+\]
+\[
+3\text{-form}\ f dx\wedge dy\wedge dz \longleftrightarrow f,
+\]
+there are correspondences between the exterior derivatives and $\grad$, $\rot$, and $\div$:
+\[
+df \longleftrightarrow \grad f,
+\]
+\[
+d(Pdx + Qdy + Rdz) \longleftrightarrow \rot X,
+\]
+\[
+d(Pdy\wedge dz + Qdz\wedge dx + Rdx\wedge dy) \longleftrightarrow \div X.    
+\]
+
+\subsubsection{k-th de Rham cohomology [Definition \ref{k-th-de-rham-cohomology}]}\label{k-th-de-rham-cohomology}
+For $U \in \usualtop$, the $k$-th \EMPH{de Rham cohomology} of $U$ is the quotient vector space
+\[
+H^k (U) = \fr{\{ \text{closed}\ k\text{-forms on}\ U\}}{\{\text{exact}\ k\text{-forms on}\ U\}}.
+\]
+
+\subsubsection{Poincar\'e lemma [Proposition \ref{poincare-lemma}]}\label{poincare-lemma}
+For $k \ge 1$, every closed $k$-form on $\bb R^n$ is exact, i.e., $H^k (\bb R^n)$ vanishes.
