@@ -343,3 +343,28 @@ H^k (U) = \fr{\{ \text{closed}\ k\text{-forms on}\ U\}}{\{\text{exact}\ k\text{-
 
 \subsubsection{Poincar\'e lemma [Proposition \ref{poincare-lemma}]}\label{poincare-lemma}
 For $k \ge 1$, every closed $k$-form on $\bb R^n$ is exact, i.e., $H^k (\bb R^n)$ vanishes.
+
+\subsection{Manifolds}
+\subsubsection{Locally Euclidean space [Definition \ref{locally-euclidean-space}]}\label{locally-euclidean-space}
+A topological space $M$ is \EMPH{locally Euclidean of dimension n} if $\forall p \in M,\exists (U, \phi)$, where a neighborhood $U$ at p and a homeomorphism $\phi \colon U \to V \in \usualtop$, called a \EMPH{chart}, a \EMPH{coordinate neighborhood} or a \EMPH{coordinate open set}, and $\phi$ a \EMPH{coordinate map} or a \EMPH{coordinate system} on $U$.
+
+A chart $(U, \phi)$ is said to be \EMPH{centered} at $p \in U$ if $\phi(p) = 0$.
+
+\subsubsection{Topological manifold [Definition \ref{topological-manifold}]}\label{topological-manifold}
+A \EMPH{topological manifold of dimension n} is a Hausdorff, second countable, locally Euclidean space of dimension $n$.
+
+\subsubsection{Compatible chart [Definition \ref{compatible-chart}]}\label{compatible-chart}
+Two charts $(U, \phi \colon U \to \bb R^n)$, $(V, \psi \colon V \to \bb R^n)$ of a topological manifold are said to be $C^\infty$-\EMPH{compatible} or simply \EMPH{compatible} if
+\[
+\phi \circ \psi^{-1} \colon \psi(U \cap V) \to \phi (U \cap V),\quad \psi \circ \phi^{-1} \colon \phi(U\cap V) \to \psi(U\cap V)
+\]
+called the \EMPH{transition functions} between charts are $C^\infty$. If $U \cap V = \emptyset$, they are $C^\infty$-compatible.
+
+\subsubsection{Atlas on a locally Euclidean space [Definition \ref{atlas-on-a-locally-euclidean-space}]}\label{atlas-on-a-locally-euclidean-space}
+A $C^\infty$ \EMPH{atlas} or simply an \EMPH{atlas} on a locally Euclidean space $M$ is a collection $\g U = \{ (U_\alpha, \phi_\alpha) \}$ of pairwise compatible charts that cover $M$.
+
+\subsubsection{Compatibility of a chart with an atlas [Definition \ref{compatibility-of-a-chart-with-an-atlas}]}\label{compatibility-of-a-chart-with-an-atlas}
+For a locally Euclidean space, a chart $(V, \psi)$ is compatible with an atlas $\{(U_\alpha, \phi_\alpha)\}$ if all charts $(U_\alpha, \phi_\alpha)$ are compatible with $(V, \psi)$.
+
+\subsubsection{Charts compatible with the same atlas are compatible with each other [Lemma \ref{charts-compatible-with-the-same-atlas-are-compatible-with-each-other}]}\label{charts-compatible-with-the-same-atlas-are-compatible-with-each-other}
+For a locally Euclidean space, charts $(V, \psi)$, $(W, \sigma)$, and an atlas $\{( U_\alpha, \phi_\alpha)\}$ on it, if $(V, \psi)$ and $(W, \sigma)$ are both compatible with $\{(U_\alpha, \phi_\alpha)\}$, then they are compatible with each other.
