@@ -1,15 +1,8 @@
 \makeatletter
 \def\@cite#1{\textsuperscript{\,[#1]}}
 \def\@biblabel#1{[#1]}
-\def\includeall#1{{%
-\@for\next:=#1\do{\include{\next}}
-}}
-\def\my@enparen#1#2;{%
-  \ifx\relax#2\relax%
-    #1%
-  \else%
-    (#1#2)%
-  \fi}
+\def\includeall#1{{\@for\next:=#1\do{\include{\next}}}}
+\def\my@enparen#1#2;{\ifx\relax#2\relax #1 \else (#1#2) \fi}
 %\newcommand{\myfrac}{\@ifstar{\@myfrac}{\@@myfrac}}
 %\newcommand{\@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
 %\newcommand{\@@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}}
@@ -28,7 +21,7 @@
 \newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
 \fi\fi\fi
 \newcommand{\EMPH}[1]{{\myemph #1}}
-\newcommand{\ROMAN}[1]{{\fontfamily{lmr}\selectfont #1\relax}}
+\newcommand{\ROMAN}[1]{{\fontfamily{lmr}\selectfont #1}}
 \renewcommand{\familydefault}{\rmdefault}
 \newcommand{\myTitle}{{\ROMAN{Notes of Mathematics}}}
 \newcommand{\myAuthor}{{\ROMAN{Masato Nakata}}}
@@ -43,7 +36,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newcommand{\bb}[1]{\mathbb{#1}}
-\newcommand{\fr}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1 / #2}}
+\newcommand{\fr}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
 \newcommand{\pfr}[2]{\fr{\partial #1}{\partial #2}}
 \newcommand{\abs}[1]{\left| #1 \right|}
 \newcommand{\g}[1]{\mathfrak{#1}}
