@@ -368,3 +368,28 @@ For a locally Euclidean space, a chart $(V, \psi)$ is compatible with an atlas $
 
 \subsubsection{Charts compatible with the same atlas are compatible with each other [Lemma \ref{charts-compatible-with-the-same-atlas-are-compatible-with-each-other}]}\label{charts-compatible-with-the-same-atlas-are-compatible-with-each-other}
 For a locally Euclidean space, charts $(V, \psi)$, $(W, \sigma)$, and an atlas $\{( U_\alpha, \phi_\alpha)\}$ on it, if $(V, \psi)$ and $(W, \sigma)$ are both compatible with $\{(U_\alpha, \phi_\alpha)\}$, then they are compatible with each other.
+
+\subsubsection{Maximal Atlas on a locally Euclidean space [Definition \ref{maximal-atlas-on-a-locally-euclidean-space}]}\label{maximal-atlas-on-a-locally-euclidean-space}
+An atlas $\g M$ on a locally Euclidean space is \EMPH{maximal} if for another atlas $\g U$, $\g M \subset \g U$ implies $\g M = \g U$.
+
+\subsubsection{Smooth manifold [Definition \ref{smooth-manifold}]}\label{smooth-manifold}
+A \EMPH{smooth} or $C^\infty$ \EMPH{manifold} is a topological manifold $M$ with a maximal atlas called a \EMPH{differentiable structure} on $M$. $M$ is said to be of dimension $n$ if all of its connected components are of dimension $n$, and then $M$ is called a \EMPH{n-manifold}. A $1$-manifold is also called a \EMPH{curve}, a $2$-manifold a \EMPH{surface}.
+
+\subsubsection{A locally Euclidean space with an atlas has a maximal atlas [Proposition \ref{a-locally-euclidean-space-with-an-atlas-has-a-maximal-atlas}]}\label{a-locally-euclidean-space-with-an-atlas-has-a-maximal-atlas}
+In a locally Euclidean space, any atlas is contained in a unique maximal atlas.
+
+\subsubsection{Conventions of manifold [Definition \ref{convections-of-manifold}]}\label{convections-of-manifold}
+\begin{enumerate}
+  \item A manifold means a smooth manifold.
+  \item The standard coordinates on $\bb R^n$ is denoted by $r^1, \dotsc, r^n$.
+  \item For a chart $(U, \phi)$ of a manifold, let $x^i = r^i \circ \phi$ the $i$-th component of $\phi$, and write $\phi = (x^1, \dotsc, x^n)$ and $(U, \phi) = (U, x^1, \dotsc, x^n)$. $x^1, \dotsc, x^n$ are called \EMPH{coordinates} or \EMPH{local coordinates} on $U$.
+  \item The notation $(x^1, \dotsc, x^n)$ means alternately the local coordinates on $U$ and a point in $\bb R^n$
+  \item A \EMPH{chart} $(U, \phi)$ \EMPH{about p} in a manifold $M$ means a chart in the differentiable structure of $M$ such that $p \in U$.
+\end{enumerate}
+
+\subsubsection{Product manifold [Proposition \ref{product-manifold}]}\label{product-manifold}
+For a $m$-manifold $M$ and $n$-manifold $N$, and charts $\{(U_\alpha,\phi_\alpha)\}$ of $M$ and $\{(V_{\alpha'},\psi_{\alpha'})\}$ of $N$, the collection
+\begin{align*}
+  \{(U_\alpha \times V_{\alpha'}, \phi_\alpha \times \psi_{\alpha'} \colon U_\alpha \times V_{\alpha'} \to \bb R^m \times \bb R^n)\}
+\end{align*}
+is an atlas on $M \times N$, and therefore $M\times N$ is a manifold of dimension $m + n$.
