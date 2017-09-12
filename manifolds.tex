@@ -393,3 +393,43 @@ For a $m$-manifold $M$ and $n$-manifold $N$, and atlases $\{(U_\alpha,\phi_\alph
   \{(U_\alpha \times V_{\alpha'}, \phi_\alpha \times \psi_{\alpha'} \colon U_\alpha \times V_{\alpha'} \to \bb R^m \times \bb R^n)\}
 \end{align*}
 is an atlas on $M \times N$, and therefore $M\times N$ is a manifold of dimension $m + n$.
+
+\DEF{Smooth function on a manifold,smooth-function-on-a-manifold}
+For a smooth $n$-manifold $M$, a function $f \colon M \to \bb R$ is said to be $C^\infty$ or \EMPH{smooth at a point} $p \in M$ if, for some chart $(U,\phi)$ about $p$, $f \circ \phi^{-1} \colon \phi(U) \to \bb R^n$ is $C^\infty$ at $\phi(p)$; $C^\infty$ \EMPH{on} $M$ if it is smooth at every point.
+
+\PROP{Smoothness of real-valued functions,smoothness-of-real-valued-functions}
+For a $n$-manifold $M$ and a function $f \colon M \to \bb R$, the following are equivalent:
+\begin{enumerate}
+\item $f$ is $C^\infty$.
+\item There exists an atlas $\g U$ for $M$, for any $(U, \phi) \in \g U$, $f \circ \phi^{-1}$ is $C^\infty$.
+\item For any chart $(U,\phi)$ on $M$, $f \circ \phi^{-1}$ is $C^\infty$.
+\end{enumerate}
+
+\DEF{Pullback of a function by a map,pullback-of-a-function-by-a-map}
+For manifolds $M$, $N$, the \EMPH{pullback} of $h \colon M \to \bb R$ by $F \colon N \to M$ is $F^* h = h \circ F$.
+
+\DEF{Smooth map between manifolds,smooth-map-between-manifolds}
+For a $m$-manifold $M$ and $n$-manifold $N$, a continuous map $F \colon N \to M$ is $C^\infty$ \EMPH{at a point} $p \in N$ if, for some chats $(U, \phi)$ about $p$ and $(V, \psi)$ about $F(p)$, $\psi \circ F \circ \phi^{-1}$ is $C^\infty$ at $\phi(p)$; $C^\infty$ if it is $C^\infty$ at every point.
+
+\PROP{Smoothness of maps is independent of charts,smoothness-of-maps-is-independent-of-charts}
+Let $M$ be a $m$-manifold, $N$ a $n$-manifold, and $F \colon N \to M$ be $C^\infty$ at $p \in N$. Then, for any charts $(U, \phi)$ about $p$ and $(V,\psi)$ about $F(p)$, $\psi \circ F \circ \phi^{-1}$ is $C^\infty$ at $\phi(p)$.
+
+\PROP{Smoothness of a map in terms of charts,smoothness-of-a-map-in-terms-of-charts}
+For a $m$-manifold $M$ and $n$-manifold $N$, and a continuous map $F \colon N \to M$, the following are equivalent:
+\begin{enumerate}
+\item $F$ is $C^\infty$.
+\item There exists atlases $\g U$ for $N$ and $\g V$ for $M$, for any $(U,\phi) \in \g U$ and $(V,\psi) \in \g V$, $\psi \circ F \circ \phi^{-1}$ is $C^\infty$.
+\item For any chart $(U,\phi)$ on $N$ and $(V,\psi)$ on $M$, $\psi \circ F \circ \phi^{-1}$ is $C^\infty$.
+\end{enumerate}
+
+\PROP{Composite of smooth maps is also smooth,composite-of-smooth-maps-is-also-smooth}
+For manifolds $M$, $N$, $P$ and $C^\infty$ maps $F \colon N \to M$, $G \colon M \to P$, $G \circ F \colon N \to P$ is also $C^\infty$.
+
+\DEF{Diffeomorphism of manifolds,diffeomorphism-of-manifolds}
+A \EMPH{diffeomorphism} of manifolds is a bijective $C^\infty$ map whose inverse is also $C^\infty$.
+
+\PROP{Coordinate map is a diffeomorphism,coordinate-map-is-a-diffeomorphism}
+A coordinate map $\phi \colon U \to \phi(U) \subset \bb R^n$ for a manifold with a chart $(U, \phi)$ is a diffeomorphism.
+
+\PROP{Diffeomorphism into an Euclidean space is a coordinate map,diffeomorphism-into-an-euclidean-space-is-a-coordinate-map}
+For an open subset $U$ of a manifold $M$ with the differentiable structure $\g U$, if $F \colon U \to F(U)$ is a diffeomorphism, then $(U, F) \in \g U$.
