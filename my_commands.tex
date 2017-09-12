@@ -30,13 +30,19 @@
 \renewcommand{\refname}{References}
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\labelenumi}{\roman{enumi})}
-\newcommand{\SUBSUBSECTION}[3]{\subsubsection{#1 [#2 \ref{#3}]}\label{#3}}
-\newcommand{\DEF}[2]{\SUBSUBSECTION{#1}{Definition}{#2}}
-\newcommand{\PROP}[2]{\SUBSUBSECTION{#1}{Proposition}{#2}}
-\newcommand{\DPROP}[2]{\SUBSUBSECTION{#1}{Definition \& Proposition}{#2}}
-\newcommand{\EX}[2]{\SUBSUBSECTION{#1}{Example}{#2}}
-\newcommand{\LEM}[2]{\SUBSUBSECTION{#1}{Lemma}{#2}}
-\newcommand{\THM}[2]{\SUBSUBSECTION{#1}{Theorem}{#2}}
+\def\mysubsubsection#1#2#3{\subsubsection{#2 [#1 \ref{#3}]}\label{#3}}
+\def\mythm#1,#2;{\mysubsubsection{Theorem}{#1}{#2}}
+\def\mydef #1,#2;{\mysubsubsection{Definition}{#1}{#2}}
+\def\myprop #1,#2;{\mysubsubsection{Proposition}{#1}{#2}}
+\def\mydprop #1,#2;{\mysubsubsection{Definition \& Proposition}{#1}{#2}}
+\def\myex #1,#2;{\mysubsubsection{Example}{#1}{#2}}
+\def\mylem #1,#2;{\mysubsubsection{Lemma}{#1}{#2}}
+\newcommand{\THM}[1]{\mythm #1;}
+\newcommand{\DEF}[1]{\mydef #1;}
+\newcommand{\PROP}[1]{\myprop #1;}
+\newcommand{\DPROP}[1]{\mydprop #1;}
+\newcommand{\EX}[1]{\myex #1;}
+\newcommand{\LEM}[1]{\mylem #1;}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
@@ -48,6 +54,7 @@
 \newcommand{\abs}[1]{\left| #1 \right|}
 \let\g\mathfrak
 \let\s\mathscr
+\let\BAR\overline
 \newcommand{\usualtop}[1][n]{\mathcal{O}_{#1}}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\tr}{tr}

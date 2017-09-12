@@ -1,7 +1,7 @@
 \newcommand{\sets}{\mathbf{Sets}}
 \section{Categories\cite{awodey}}
 \subsection{Fundations}
-\subsubsection{Category [Definition \ref{category}]}\label{category}
+\DEF{Category,category}
 A \EMPH{category} consists of the followings:
 \begin{itemize}
 \item \EMPH{Objects} $A$, $B$, $C, \dotsc$
@@ -15,7 +15,7 @@ satisfying the following laws:
 \item $\forall \text{arrow}\ f \colon A \to B,\ f \circ 1_A = f = 1_B \circ f$.
 \end{enumerate}
 
-\subsubsection{Functor between categories [Definition \ref{functor-between-categories}]}\label{functor-between-categories}
+\DEF{Functor between categories,functor-between-categories}
 A \EMPH{functor} $F\colon \s A \to \s B$ between categories $\s A$ and $\s B$ is a mapping between objects and between arrows in the following ways:
 \begin{enumerate}
 \item $F(f\colon A \to B) = F(f) \colon F(A) \to F(B)$,
@@ -23,7 +23,7 @@ A \EMPH{functor} $F\colon \s A \to \s B$ between categories $\s A$ and $\s B$ is
 \item $F(g \circ f) = F(g) \circ F(f)$.
 \end{enumerate}
 
-\subsubsection{Isomorphism between categories [Definition \ref{isomorphism-between-categories}]}\label{isomorphism-between-categories}
+\DEF{Isomorphism between categories,isomorphism-between-categories}
 In a category $\s C$, an arrow $f \colon A \to B$ is called an \EMPH{isomorphism} if
 \[
 \exists g = f^{-1} \colon B \to A,\ g \circ f = 1_A,\ f \circ g = 1_B.

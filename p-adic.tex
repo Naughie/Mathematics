@@ -1,6 +1,6 @@
 \section{P-adic Numbers\cite{gouvea}}
 \subsection{Fundations}
-\DEF{Absolute value on a field}{absolute-value-on-a-field}
+\DEF{Absolute value on a field,absolute-value-on-a-field}
 An \EMPH{absolute value} on a field $\bb{K}$ is a function $\mid \ \ \mid \colon \bb{K} \to \bb{R}_{\ge0}$ that satisfies:
 \begin{enumerate}
 \item $\abs{x} = 0$ iff $x = 0$
@@ -15,7 +15,7 @@ An absolute value that satisfies the condition
 \end{enumerate}
 is said to be \EMPH{non-archimedean}; otherwise, it is said to be \EMPH{archimedean}.
 
-\DEF{Trivial absolute value}{trivial-absolute-value}
+\DEF{Trivial absolute value,trivial-absolute-value}
 The \EMPH{trivial absolute value} on a field $\bb{K}$ is a absolute value on $\bb{K}$ such that
 \[
 \abs{x} = \begin{cases}
@@ -26,17 +26,17 @@ The \EMPH{trivial absolute value} on a field $\bb{K}$ is a absolute value on $\b
 
 An absolute value on a finite field must be trivial.
 
-\DEF{Valuation on a field}{valuation-on-a-field}
+\DEF{Valuation on a field,valuation-on-a-field}
 A function $v \colon \bb{A}^\times \to \bb{R}$ with an integral domain $\bb{A}$ is called a \EMPH{valuation} on $\bb{A}$ if it satisfies the following conditions:
 \begin{enumerate}
 \item $\forall x, y \in \bb{A}^\times,\ v(xy) = v(x) + v(y)$
 \item $\forall x, y \in \bb{A}^\times,\ v(x+y) \ge \min \{ v(x), v(y) \}$
 \end{enumerate}
 
-\DPROP{Value group of a valuation}{value-group-of-a-valuation}
+\DPROP{Value group of a valuation,value-group-of-a-valuation}
 The image of a valuation $v$ on a field is an additive subgroup of $\bb{R}$. $\im v$ is called the \EMPH{value group} of $v$.
 
-\PROP{Correspondence between valuations and non-archimedean absolute values}{correspondence-between-valuations-and-non-archimedean-absolute-values}
+\PROP{Correspondence between valuations and non-archimedean absolute values,correspondence-between-valuations-and-non-archimedean-absolute-values}
 Let $\bb{A}$ be an integral domain and $\bb{K} = \enfrac\bb{A}$. Let $v\colon \bb{A}^\times \to \bb{R}$ be a valuation on $\bb{A}$ and extend $v$ to $\bb{K}$ by setting $v(a/b) = v(a) - v(b)$, then the function $\mid\ \ \mid_v \colon \bb{K} \to \bb{R}_{\ge 0}$ defined by
 \[
 \abs{x}_v = \begin{cases}
@@ -46,12 +46,12 @@ Let $\bb{A}$ be an integral domain and $\bb{K} = \enfrac\bb{A}$. Let $v\colon \b
  \] is a non-archimedean absolute value on $\bb{K}$. Conversely, $-\log \mid \,\ \mid$ is a valuation on $\bb{K}$ for a non-archimedean absolute value $\mid\ \ \mid$ on $\bb{K}$.
 
 
-\DEF{p-adic valuation}{p-adic-valuation}
+\DEF{p-adic valuation,p-adic-valuation}
 The \EMPH{p-adic valuation} on $\bb{Q}$ with a prime $p$ is a valuation $v_p \colon \bb{Q}^\times \to \bb{R}$ defined as follows: for each $n \in \bb{Z}^\times$, let $v_p(n)$ be the greatest integer such that $p^{v_p(n)} \mid n$, and for each $x = a / b \in \bb{Q}^\times$, $v_p(x) = v_p(a) - v_p(b)$.
 
 We often set $v_p(0) = \infty$.
 
-\DEF{p-adic absolute value}{p-adic-absolute-value}
+\DEF{p-adic absolute value,p-adic-absolute-value}
 The \EMPH{p-adic absolute value} $\mid\ \ \mid_p \colon \bb{Q} \to \bb{R}_{\ge0}$ with a prime $p$ is defined as
 \[
 \abs{x}_p = p^{-v_p(x)},\quad |0| = 0.
@@ -59,7 +59,7 @@ The \EMPH{p-adic absolute value} $\mid\ \ \mid_p \colon \bb{Q} \to \bb{R}_{\ge0}
 
 The usual absolute value is looked as $\mid\ \ \mid = \mid\ \ \mid_\infty$.
 
-\DEF{Absolute values on a field of rational functions}{absolute-values-on-a-field-of-rational-functions}
+\DEF{Absolute values on a field of rational functions,absolute-values-on-a-field-of-rational-functions}
 
 Here are some absolute values on a field $\bb F(t)$ of rational functions over a field $\bb F$.
 
@@ -71,7 +71,7 @@ Here are some absolute values on a field $\bb F(t)$ of rational functions over a
 \item For an irreducible polynomial $p(t) \in \bb F[t]$, define the $p(t)$-adic valuation and absolute value.
 \end{enumerate}
 
-\LEM{Properties of absolute values on fields}{properties-of-absolute-values-on-fields}
+\LEM{Properties of absolute values on fields,properties-of-absolute-values-on-fields}
 For an absolute value $|\ \ |$ on a field $\bb K$,
 \begin{enumerate}
 \item $\abs{1} = 1$,
@@ -80,7 +80,7 @@ For an absolute value $|\ \ |$ on a field $\bb K$,
 \item If $\bb K$ is finite, then $|\ \ |$ is trivial.
 \end{enumerate}
 
-\THM{Necessary and sufficient conditions of a non-archimedean absolute value}{necessary-and-sufficient-conditions-of-a-non-archimedean-absolute-value}
+\THM{Necessary and sufficient conditions of a non-archimedean absolute value,necessary-and-sufficient-conditions-of-a-non-archimedean-absolute-value}
 
 Let $\bb K$ be a field, $|\ \ |$ an absolute value on $\bb K$. Then,
 \begin{align*}
