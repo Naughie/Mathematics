@@ -23,24 +23,31 @@
 \newcommand{\EMPH}[1]{{\myemph #1}}
 \newcommand{\ROMAN}[1]{{\fontfamily{lmr}\selectfont #1}}
 \renewcommand{\familydefault}{\rmdefault}
-\newcommand{\myTitle}{{\ROMAN{Notes of Mathematics}}}
-\newcommand{\myAuthor}{{\ROMAN{Masato Nakata}}}
-\newcommand{\myAffil}{{\ROMAN{Department of Science, Kyoto University}}}
-\newcommand{\myDate}{{\ROMAN{Since Aug 27, 2017}}}
+\newcommand{\myTitle}{\ROMAN{Notes of Mathematics}}
+\newcommand{\myAuthor}{\ROMAN{Masato Nakata}}
+\newcommand{\myAffil}{\ROMAN{Department of Science, Kyoto University}}
+\newcommand{\myDate}{\ROMAN{Since Aug 27, 2017}}
 \renewcommand{\refname}{References}
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\labelenumi}{\roman{enumi})}
+\newcommand{\SUBSUBSECTION}[3]{\subsubsection{#1 [#2 \ref{#3}]}\label{#3}}
+\newcommand{\DEF}[2]{\SUBSUBSECTION{#1}{Definition}{#2}}
+\newcommand{\PROP}[2]{\SUBSUBSECTION{#1}{Proposition}{#2}}
+\newcommand{\DPROP}[2]{\SUBSUBSECTION{#1}{Definition \& Proposition}{#2}}
+\newcommand{\EX}[2]{\SUBSUBSECTION{#1}{Example}{#2}}
+\newcommand{\LEM}[2]{\SUBSUBSECTION{#1}{Lemma}{#2}}
+\newcommand{\THM}[2]{\SUBSUBSECTION{#1}{Theorem}{#2}}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
-\newcommand{\bb}[1]{\mathbb{#1}}
+\let\bb\mathbb
 \newcommand{\fr}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
 \newcommand{\pfr}[2]{\fr{\partial #1}{\partial #2}}
 \newcommand{\abs}[1]{\left| #1 \right|}
-\newcommand{\g}[1]{\mathfrak{#1}}
-\newcommand{\s}[1]{\mathscr{#1}}
+\let\g\mathfrak
+\let\s\mathscr
 \newcommand{\usualtop}[1][n]{\mathcal{O}_{#1}}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\tr}{tr}
