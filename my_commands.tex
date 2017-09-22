@@ -9,7 +9,7 @@
 \makeatother
 \ifupTeX
 \renewcommand{\rmdefault}{uop}
-\renewcommand{\sfdefault}{phv}
+\renewcommand{\sfdefault}{zhsf}
 \newcommand{\myemph}{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont}
 \else\ifluatex
 \setmainfont[Ligatures=TeX]{URWClassico}
@@ -20,9 +20,16 @@
 \setsansfont[Ligatures=TeX]{Helvetica}
 \newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
 \fi\fi\fi
+\newcommand{\mybold}{\fontfamily{zhsf}\fontseries{bx}\selectfont}
+\newcommand{\mysans}{\fontfamily{zhmg}\fontshape{it}\selectfont}
 \newcommand{\EMPH}[1]{{\myemph #1}}
 \newcommand{\ROMAN}[1]{{\fontfamily{lmr}\selectfont #1}}
+\newcommand{\BOLD}[1]{{\mybold #1}}
+\newcommand{\SANS}[1]{{\mysans #1}}
+\def\SANS[#1]{{\mysans #1}}
+\newcommand{\FLOAT}[1]{\vspace{18pt}{#1}\par}
 \renewcommand{\familydefault}{\rmdefault}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
 \newcommand{\myTitle}{\ROMAN{Notes of Mathematics}}
 \newcommand{\myAuthor}{\ROMAN{Masato Nakata}}
 \newcommand{\myAffil}{\ROMAN{Department of Science, Kyoto University}}
@@ -30,7 +37,13 @@
 \renewcommand{\refname}{References}
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\labelenumi}{\roman{enumi})}
-\def\mysubsubsection#1#2#3{\subsubsection{#2 [#1 \ref{#3}]}\label{#3}}
+\newcounter{myTheoremCounter}
+\setcounter{myTheoremCounter}{0}
+\newcounter{mythmcounter}
+\newcommand{\mysubsubsection}[3]{\stepcounter{myTheoremCounter}%
+  \expandafter\def\expandafter\themythmcounter{[#1 \thesubsection.\themyTheoremCounter]}%
+  \refstepcounter{mythmcounter}%
+  \FLOAT{\expandafter\SANS\themythmcounter\quad\BOLD{#2}}\label{#3}}
 \def\mythm#1,#2;{\mysubsubsection{Theorem}{#1}{#2}}
 \def\mydef #1,#2;{\mysubsubsection{Definition}{#1}{#2}}
 \def\myprop #1,#2;{\mysubsubsection{Proposition}{#1}{#2}}
@@ -43,6 +56,7 @@
 \newcommand{\DPROP}[1]{\mydprop #1;}
 \newcommand{\EX}[1]{\myex #1;}
 \newcommand{\LEM}[1]{\mylem #1;}
+\newcommand{\subsec}[1]{\setcounter{myTheoremCounter}{0}\subsection{#1}\vspace{-13pt}}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
