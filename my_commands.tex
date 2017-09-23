@@ -7,42 +7,44 @@
 %\newcommand{\@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
 %\newcommand{\@@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}}
 \ifupTeX
-\renewcommand{\rmdefault}{uop}
-\renewcommand{\sfdefault}{zhsf}
-\newcommand{\my@emph}{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont}
+\renewcommand\rmdefault{uop}
+\renewcommand\sfdefault{zhsf}
+\newcommand\my@emph{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont}
 \else\ifluatex
 \setmainfont[Ligatures=TeX]{URWClassico}
 \setsansfont[Ligatures=TeX]{TeXGyreHeros}
-\newcommand{\my@emph}{\setmainfont{Times New Roman Bold Italic}}
+\newcommand\my@emph{\setmainfont{Times New Roman Bold Italic}}
 \else\ifxetex
 \setmainfont[Ligatures=TeX]{URWClassico-Regular.otf}
 \setsansfont[Ligatures=TeX]{Helvetica}
-\newcommand{\my@emph}{\setmainfont{Times New Roman Bold Italic}}
+\newcommand\my@emph{\setmainfont{Times New Roman Bold Italic}}
 \fi\fi\fi
-\newcommand{\my@bold}{\fontfamily{zhsf}\fontseries{bx}\selectfont}
-\newcommand{\my@sans}{\fontfamily{zhmg}\fontshape{it}\selectfont}
-\newcommand{\my@roman}{\fontfamily{lmr}\selectfont\mcfamily}
-\newcommand{\EMPH}[1]{{\my@emph #1}}
-\newcommand{\ROMAN}[1]{{\my@roman #1}}
-\newcommand{\BOLD}[1]{{\my@bold #1}}
+\newcommand\my@bold{\fontfamily{zhsf}\fontseries{bx}\selectfont}
+\newcommand\my@sans{\fontfamily{zhmg}\fontshape{it}\selectfont}
+\newcommand\my@roman{\fontfamily{lmr}\selectfont\mcfamily}
+\newcommand\EMPH[1]{{\my@emph #1}}
+\newcommand\ROMAN[1]{{\my@roman #1}}
+\newcommand\BOLD[1]{{\my@bold #1}}
 \def\SANS[#1]{{\my@sans #1}}
-\newcommand{\FLOAT}[1]{\vspace{18pt}\begin{screen}{#1}\end{screen}\par}
-\renewcommand{\familydefault}{\rmdefault}
-\renewcommand{\kanjifamilydefault}{\gtdefault}
-\newcommand{\myTitle}{\ROMAN{Notes of Mathematics}}
-\newcommand{\myAuthor}{\ROMAN{Masato Nakata}}
-\newcommand{\myAffil}{\ROMAN{Department of Science, Kyoto University}}
-\newcommand{\myDate}{\ROMAN{Since Aug 27, 2017}}
-\renewcommand{\refname}{References}
-\renewcommand{\contentsname}{Contents}
-\newcommand{\prepend}{%
-  \title{\myTitle}\date{\myDate}\author[*]{\myAuthor}\affil[*]{\myAffil}
-  {\fontfamily{zhsf}\selectfont\maketitle\tableofcontents}
+\newcommand\FLOAT[1]{\vspace{18pt}\begin{screen}{#1}\end{screen}\par}
+\renewcommand\familydefault{\rmdefault}
+\renewcommand\kanjifamilydefault{\gtdefault}
+\def\defineTitle(#1;#2;#3){\csname #1\endcsname#3{\ROMAN{#2}}}
+\def\myTitle{(title;Notes of Mathematics;)}
+\def\myAuthor{(author;Masato Nakata;[*])}
+\def\myAffil{(affil;Department of Science, Kyoto University;[*])}
+\def\myDate{(date;Since Aug 27, 2017;)}
+\@for\next:=\myTitle,\myAuthor,\myAffil,\myDate\do{%
+  \expandafter\expandafter\expandafter\defineTitle\next}
+\renewcommand\refname{References}
+\renewcommand\contentsname{Contents}
+\newcommand\prepend{%
+  {\fontfamily{zhsf}\selectfont\maketitle\tableofcontents}%
   \pagenumbering{roman}\newpage\pagenumbering{arabic}}
-\renewcommand{\labelenumi}{\roman{enumi})}
+\renewcommand\labelenumi{\roman{enumi})}
 \bibliographystyle{jplain}
 \newcounter{my@TheoremCounter}\newcounter{my@thmcounter}\setcounter{my@TheoremCounter}{0}
-\newcommand{\my@subsubsection}[3]{\stepcounter{my@TheoremCounter}%
+\newcommand\my@subsubsection[3]{\stepcounter{my@TheoremCounter}%
   \expandafter\def\expandafter\themy@thmcounter{[#1 \thesubsection.\themy@TheoremCounter]}%
   \refstepcounter{my@thmcounter}\setcounter{my@thmcounter}{0}%
   \FLOAT{\expandafter\SANS\themy@thmcounter\quad\BOLD{#2}}\label{#3}}
@@ -52,13 +54,13 @@
 \def\my@dprop #1,#2;{\my@subsubsection{Definition \& Proposition}{#1}{#2}}
 \def\my@ex #1,#2;{\my@subsubsection{Example}{#1}{#2}}
 \def\my@lem #1,#2;{\my@subsubsection{Lemma}{#1}{#2}}
-\newcommand{\THM}[1]{\my@thm #1;}
-\newcommand{\DEF}[1]{\my@def #1;}
-\newcommand{\PROP}[1]{\my@prop #1;}
-\newcommand{\DPROP}[1]{\my@dprop #1;}
-\newcommand{\EX}[1]{\my@ex #1;}
-\newcommand{\LEM}[1]{\my@lem #1;}
-\newcommand{\subsec}[1]{\setcounter{my@TheoremCounter}{0}\subsection{#1}\vspace{-13pt}}
+\newcommand\THM[1]{\my@thm #1;}
+\newcommand\DEF[1]{\my@def #1;}
+\newcommand\PROP[1]{\my@prop #1;}
+\newcommand\DPROP[1]{\my@dprop #1;}
+\newcommand\EX[1]{\my@ex #1;}
+\newcommand\LEM[1]{\my@lem #1;}
+\newcommand\subsec[1]{\setcounter{my@TheoremCounter}{0}\subsection{#1}\vspace{-13pt}}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
@@ -66,22 +68,22 @@
 \newtheorem{definition}{Definition}[section]
 \makeatother
 \let\bb\mathbb
-\newcommand{\fr}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
-\newcommand{\pfr}[2]{\fr{\partial #1}{\partial #2}}
-\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand\fr[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
+\newcommand\pfr[2]{\fr{\partial #1}{\partial #2}}
+\newcommand\abs[1]{\left| #1 \right|}
 \let\g\mathfrak
 \let\s\mathscr
 \let\BAR\overline
-\newcommand{\usualtop}[1][n]{\mathcal{O}_{#1}}
-\DeclareMathOperator{\im}{im}
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\sgn}{sgn}
-\DeclareMathOperator{\ad}{ad}
-\DeclareMathOperator{\der}{Der}
-\DeclareMathOperator{\enfrac}{Frac}
-\DeclareMathOperator{\grad}{grad}
-\DeclareMathOperator{\rot}{rot}
 \let\div\relax
-\DeclareMathOperator{\div}{div}
-\DeclareMathOperator{\dom}{dom}
-\DeclareMathOperator{\cod}{cod}
+\newcommand\usualtop[1][n]{\mathcal{O}_{#1}}
+\DeclareMathOperator\im{im}
+\DeclareMathOperator\tr{tr}
+\DeclareMathOperator\sgn{sgn}
+\DeclareMathOperator\ad{ad}
+\DeclareMathOperator\der{Der}
+\DeclareMathOperator\enfrac{Frac}
+\DeclareMathOperator\grad{grad}
+\DeclareMathOperator\rot{rot}
+\DeclareMathOperator\div{div}
+\DeclareMathOperator\dom{dom}
+\DeclareMathOperator\cod{cod}
