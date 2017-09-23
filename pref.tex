@@ -52,24 +52,3 @@
 \@for\next:=[THM;Theorem],[DEF;Definition],[PROP;Proposition],[DPROP;Definition \& Proposition],[EX;Example],[LEM;Lemma]\do{%
   \expandafter\expandafter\expandafter\my@defineThm\next}
 \newcommand\subsec[1]{\setcounter{my@TheoremCounter}{0}\subsection{#1}\vspace{-13pt}}
-\let\bb\mathbb
-\newcommand\fr[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
-\newcommand\pfr[2]{\fr{\partial #1}{\partial #2}}
-\newcommand\abs[1]{\left| #1 \right|}
-\let\g\mathfrak
-\let\s\mathscr
-\let\BAR\overline
-\let\div\relax
-\newcommand\usualtop[1][n]{\mathcal{O}_{#1}}
-\DeclareMathOperator\im{im}
-\DeclareMathOperator\tr{tr}
-\DeclareMathOperator\sgn{sgn}
-\DeclareMathOperator\ad{ad}
-\DeclareMathOperator\der{Der}
-\DeclareMathOperator\enfrac{Frac}
-\DeclareMathOperator\grad{grad}
-\DeclareMathOperator\rot{rot}
-\DeclareMathOperator\div{div}
-\DeclareMathOperator\dom{dom}
-\DeclareMathOperator\cod{cod}
-\makeatother
