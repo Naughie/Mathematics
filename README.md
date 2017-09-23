@@ -3,7 +3,8 @@ This repository consists of these files:
 
 - `math.tex` (the root file)
 - `packages.tex` (all `\usepackage`)
-- `my_commands.tex` (global macros)
+- `pref.tex` (preferences)
+- `commands.tex` (commands used in a document)
 - `*.tex` (the other source file)
 - `biblio.bib` (the bib file)
 - `math.pdf` (the output file)
