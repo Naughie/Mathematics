@@ -21,8 +21,9 @@
 \fi\fi\fi
 \newcommand{\my@bold}{\fontfamily{zhsf}\fontseries{bx}\selectfont}
 \newcommand{\my@sans}{\fontfamily{zhmg}\fontshape{it}\selectfont}
+\newcommand{\my@roman}{\fontfamily{lmr}\selectfont\mcfamily}
 \newcommand{\EMPH}[1]{{\my@emph #1}}
-\newcommand{\ROMAN}[1]{{\fontfamily{lmr}\selectfont #1}}
+\newcommand{\ROMAN}[1]{{\my@roman #1}}
 \newcommand{\BOLD}[1]{{\my@bold #1}}
 \def\SANS[#1]{{\my@sans #1}}
 \newcommand{\FLOAT}[1]{\vspace{18pt}\begin{screen}{#1}\end{screen}\par}
@@ -34,7 +35,12 @@
 \newcommand{\myDate}{\ROMAN{Since Aug 27, 2017}}
 \renewcommand{\refname}{References}
 \renewcommand{\contentsname}{Contents}
+\newcommand{\prepend}{%
+  \title{\myTitle}\date{\myDate}\author[*]{\myAuthor}\affil[*]{\myAffil}
+  {\fontfamily{zhsf}\selectfont\maketitle\tableofcontents}
+  \pagenumbering{roman}\newpage\pagenumbering{arabic}}
 \renewcommand{\labelenumi}{\roman{enumi})}
+\bibliographystyle{jplain}
 \newcounter{my@TheoremCounter}\newcounter{my@thmcounter}\setcounter{my@TheoremCounter}{0}
 \newcommand{\my@subsubsection}[3]{\stepcounter{my@TheoremCounter}%
   \expandafter\def\expandafter\themy@thmcounter{[#1 \thesubsection.\themy@TheoremCounter]}%
