@@ -2,10 +2,6 @@
 \def\@cite#1{\textsuperscript{\,[#1]}}
 \def\@biblabel#1{[#1]}
 \def\includeall#1{{\@for\next:=#1\do{\include{\next}}}}
-\def\my@enparen#1#2;{\ifx\relax#2\relax #1 \else (#1#2) \fi}
-%\newcommand{\myfrac}{\@ifstar{\@myfrac}{\@@myfrac}}
-%\newcommand{\@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
-%\newcommand{\@@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}}
 \ifupTeX
 \renewcommand\rmdefault{uop}
 \renewcommand\sfdefault{zhsf}
@@ -29,13 +25,16 @@
 \newcommand\FLOAT[1]{\vspace{18pt}\begin{screen}{#1}\end{screen}\par}
 \renewcommand\familydefault{\rmdefault}
 \renewcommand\kanjifamilydefault{\gtdefault}
-\def\defineTitle(#1;#2;#3){\csname #1\endcsname#3{\ROMAN{#2}}}
-\def\myTitle{(title;Notes of Mathematics;)}
-\def\myAuthor{(author;Masato Nakata;[*])}
-\def\myAffil{(affil;Department of Science, Kyoto University;[*])}
-\def\myDate{(date;Since Aug 27, 2017;)}
-\@for\next:=\myTitle,\myAuthor,\myAffil,\myDate\do{%
-  \expandafter\expandafter\expandafter\defineTitle\next}
+\def\my@defineTitle(#1;#2;#3){\csname #1\endcsname#3{\ROMAN{#2}}}
+\newcommand\my@defineMytitle{\@ifstar{\my@@defineMytitle}{\my@@@defineMytitle}}
+\newcommand\my@@defineMytitle[2]{\expandafter\def\csname my@#1\endcsname{(#1;#2;[*])}}
+\newcommand\my@@@defineMytitle[2]{\expandafter\def\csname my@#1\endcsname{(#1;#2;)}}
+\my@defineMytitle{title}{Notes of Mathematics}
+\my@defineMytitle*{author}{Masato Nakata}
+\my@defineMytitle*{affil}{Department of Science, Kyoto University}
+\my@defineMytitle{date}{Since Aug 27, 2017}
+\@for\next:=\my@title,\my@author,\my@affil,\my@date\do{%
+  \expandafter\expandafter\expandafter\my@defineTitle\next}
 \renewcommand\refname{References}
 \renewcommand\contentsname{Contents}
 \newcommand\prepend{%
@@ -48,25 +47,11 @@
   \expandafter\def\expandafter\themy@thmcounter{[#1 \thesubsection.\themy@TheoremCounter]}%
   \refstepcounter{my@thmcounter}\setcounter{my@thmcounter}{0}%
   \FLOAT{\expandafter\SANS\themy@thmcounter\quad\BOLD{#2}}\label{#3}}
-\def\my@thm#1,#2;{\my@subsubsection{Theorem}{#1}{#2}}
-\def\my@def #1,#2;{\my@subsubsection{Definition}{#1}{#2}}
-\def\my@prop #1,#2;{\my@subsubsection{Proposition}{#1}{#2}}
-\def\my@dprop #1,#2;{\my@subsubsection{Definition \& Proposition}{#1}{#2}}
-\def\my@ex #1,#2;{\my@subsubsection{Example}{#1}{#2}}
-\def\my@lem #1,#2;{\my@subsubsection{Lemma}{#1}{#2}}
-\newcommand\THM[1]{\my@thm #1;}
-\newcommand\DEF[1]{\my@def #1;}
-\newcommand\PROP[1]{\my@prop #1;}
-\newcommand\DPROP[1]{\my@dprop #1;}
-\newcommand\EX[1]{\my@ex #1;}
-\newcommand\LEM[1]{\my@lem #1;}
+\def\my@defineThm[#1;#2]{\expandafter\def\csname my@#1\endcsname ##1,##2;{\my@subsubsection{#2}{##1}{##2}}%
+  \expandafter\newcommand\csname #1\endcsname[1]{\csname my@#1\endcsname ##1;}}
+\@for\next:=[THM;Theorem],[DEF;Definition],[PROP;Proposition],[DPROP;Definition \& Proposition],[EX;Example],[LEM;Lemma]\do{%
+  \expandafter\expandafter\expandafter\my@defineThm\next}
 \newcommand\subsec[1]{\setcounter{my@TheoremCounter}{0}\subsection{#1}\vspace{-13pt}}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{proposition}{Proposition}[section]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
-\makeatother
 \let\bb\mathbb
 \newcommand\fr[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
 \newcommand\pfr[2]{\fr{\partial #1}{\partial #2}}
@@ -87,3 +72,4 @@
 \DeclareMathOperator\div{div}
 \DeclareMathOperator\dom{dom}
 \DeclareMathOperator\cod{cod}
+\makeatother
