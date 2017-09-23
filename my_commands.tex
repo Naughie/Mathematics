@@ -6,28 +6,26 @@
 %\newcommand{\myfrac}{\@ifstar{\@myfrac}{\@@myfrac}}
 %\newcommand{\@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
 %\newcommand{\@@myfrac}[2]{\mathchoice{\frac{#1}{#2}}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}{\my@enparen#1;/\my@enparen#2;}}
-\makeatother
 \ifupTeX
 \renewcommand{\rmdefault}{uop}
 \renewcommand{\sfdefault}{zhsf}
-\newcommand{\myemph}{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont}
+\newcommand{\my@emph}{\fontfamily{ptm}\fontseries{b}\fontshape{it}\selectfont}
 \else\ifluatex
 \setmainfont[Ligatures=TeX]{URWClassico}
 \setsansfont[Ligatures=TeX]{TeXGyreHeros}
-\newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
+\newcommand{\my@emph}{\setmainfont{Times New Roman Bold Italic}}
 \else\ifxetex
 \setmainfont[Ligatures=TeX]{URWClassico-Regular.otf}
 \setsansfont[Ligatures=TeX]{Helvetica}
-\newcommand{\myemph}{\setmainfont{Times New Roman Bold Italic}}
+\newcommand{\my@emph}{\setmainfont{Times New Roman Bold Italic}}
 \fi\fi\fi
-\newcommand{\mybold}{\fontfamily{zhsf}\fontseries{bx}\selectfont}
-\newcommand{\mysans}{\fontfamily{zhmg}\fontshape{it}\selectfont}
-\newcommand{\EMPH}[1]{{\myemph #1}}
+\newcommand{\my@bold}{\fontfamily{zhsf}\fontseries{bx}\selectfont}
+\newcommand{\my@sans}{\fontfamily{zhmg}\fontshape{it}\selectfont}
+\newcommand{\EMPH}[1]{{\my@emph #1}}
 \newcommand{\ROMAN}[1]{{\fontfamily{lmr}\selectfont #1}}
-\newcommand{\BOLD}[1]{{\mybold #1}}
-\newcommand{\SANS}[1]{{\mysans #1}}
-\def\SANS[#1]{{\mysans #1}}
-\newcommand{\FLOAT}[1]{\vspace{18pt}{#1}\par}
+\newcommand{\BOLD}[1]{{\my@bold #1}}
+\def\SANS[#1]{{\my@sans #1}}
+\newcommand{\FLOAT}[1]{\vspace{18pt}\begin{screen}{#1}\end{screen}\par}
 \renewcommand{\familydefault}{\rmdefault}
 \renewcommand{\kanjifamilydefault}{\gtdefault}
 \newcommand{\myTitle}{\ROMAN{Notes of Mathematics}}
@@ -37,31 +35,30 @@
 \renewcommand{\refname}{References}
 \renewcommand{\contentsname}{Contents}
 \renewcommand{\labelenumi}{\roman{enumi})}
-\newcounter{myTheoremCounter}
-\setcounter{myTheoremCounter}{0}
-\newcounter{mythmcounter}
-\newcommand{\mysubsubsection}[3]{\stepcounter{myTheoremCounter}%
-  \expandafter\def\expandafter\themythmcounter{[#1 \thesubsection.\themyTheoremCounter]}%
-  \refstepcounter{mythmcounter}%
-  \FLOAT{\expandafter\SANS\themythmcounter\quad\BOLD{#2}}\label{#3}}
-\def\mythm#1,#2;{\mysubsubsection{Theorem}{#1}{#2}}
-\def\mydef #1,#2;{\mysubsubsection{Definition}{#1}{#2}}
-\def\myprop #1,#2;{\mysubsubsection{Proposition}{#1}{#2}}
-\def\mydprop #1,#2;{\mysubsubsection{Definition \& Proposition}{#1}{#2}}
-\def\myex #1,#2;{\mysubsubsection{Example}{#1}{#2}}
-\def\mylem #1,#2;{\mysubsubsection{Lemma}{#1}{#2}}
-\newcommand{\THM}[1]{\mythm #1;}
-\newcommand{\DEF}[1]{\mydef #1;}
-\newcommand{\PROP}[1]{\myprop #1;}
-\newcommand{\DPROP}[1]{\mydprop #1;}
-\newcommand{\EX}[1]{\myex #1;}
-\newcommand{\LEM}[1]{\mylem #1;}
-\newcommand{\subsec}[1]{\setcounter{myTheoremCounter}{0}\subsection{#1}\vspace{-13pt}}
+\newcounter{my@TheoremCounter}\newcounter{my@thmcounter}\setcounter{my@TheoremCounter}{0}
+\newcommand{\my@subsubsection}[3]{\stepcounter{my@TheoremCounter}%
+  \expandafter\def\expandafter\themy@thmcounter{[#1 \thesubsection.\themy@TheoremCounter]}%
+  \refstepcounter{my@thmcounter}\setcounter{my@thmcounter}{0}%
+  \FLOAT{\expandafter\SANS\themy@thmcounter\quad\BOLD{#2}}\label{#3}}
+\def\my@thm#1,#2;{\my@subsubsection{Theorem}{#1}{#2}}
+\def\my@def #1,#2;{\my@subsubsection{Definition}{#1}{#2}}
+\def\my@prop #1,#2;{\my@subsubsection{Proposition}{#1}{#2}}
+\def\my@dprop #1,#2;{\my@subsubsection{Definition \& Proposition}{#1}{#2}}
+\def\my@ex #1,#2;{\my@subsubsection{Example}{#1}{#2}}
+\def\my@lem #1,#2;{\my@subsubsection{Lemma}{#1}{#2}}
+\newcommand{\THM}[1]{\my@thm #1;}
+\newcommand{\DEF}[1]{\my@def #1;}
+\newcommand{\PROP}[1]{\my@prop #1;}
+\newcommand{\DPROP}[1]{\my@dprop #1;}
+\newcommand{\EX}[1]{\my@ex #1;}
+\newcommand{\LEM}[1]{\my@lem #1;}
+\newcommand{\subsec}[1]{\setcounter{my@TheoremCounter}{0}\subsection{#1}\vspace{-13pt}}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{proposition}{Proposition}[section]
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
+\makeatother
 \let\bb\mathbb
 \newcommand{\fr}[2]{\mathchoice{\frac{#1}{#2}}{#1/#2}{#1/#2}{#1/#2}}
 \newcommand{\pfr}[2]{\fr{\partial #1}{\partial #2}}
