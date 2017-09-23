@@ -29,5 +29,3 @@ If you would like to typeset via `lualatex`, run `latexmk -lualatex math.tex`; i
 Supported engines:
 
 - `uplatex`,
-- `lualatex`,
-- `xelatex`.
