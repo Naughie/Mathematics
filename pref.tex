@@ -52,7 +52,8 @@
 \newcommand\prepend{%
   \thispagestyle{onContentsPage}\pagestyle{onContentsPage}\pagenumbering{roman}\maketitle\tableofcontents
   \newpage\pagestyle{onDocumentsPage}\pagenumbering{arabic}}
-\renewcommand\labelenumi{\roman{enumi})}
+\setlist[enumerate,1]{label={\fontfamily{pnc}\fontseries{b}\selectfont\roman{enumi}})}
+\setlist[itemize,1]{label={\fontfamily{lmr}\selectfont\textleaf}}
 \bibliographystyle{jplain}
 \newcounter{my@TheoremCounter}\newcounter{my@thmcounter}\setcounter{my@TheoremCounter}{0}
 \newcommand\my@subsubsection[3]{\stepcounter{my@TheoremCounter}%
