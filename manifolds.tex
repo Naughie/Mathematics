@@ -1,4 +1,4 @@
-\section{Manifolds\cite{loring}}
+\section{Manifolds}\cite{loring}
 \subsec{Manifolds on Euclidean Spaces}
 \THM{Taylor's theorem with remainder,taylors-theorem-with-remainder}
 A smooth function $f$ on an open ball $U \in \usualtop$ can be written as
@@ -65,7 +65,7 @@ X(fg) = (Xf)g + fXg.
 $\varphi \colon \g X(U) \ni X \mapsto (f \mapsto Xf) \in \mathrm{Der}\, (C^\infty(U))$ is an linear isomorphism.
 
 \DEF{k-tensor on a vector space,k-tensor-on-a-vector-space}
-A $k$-linear function on a vector space $V$ $f \colon V^k \to \bb{R}$ is called a \EMPH{k-tensor} on $V$. The vector space of all $k$-tensors on $V$ is denoted by $L_k(V)$. $k$ is called the degree of $f$.
+A $k$-linear function $f \colon V^k \to \bb R$ on a vector space $V$ is called a \EMPH{k-tensor} on $V$. The vector space of all $k$-tensors on $V$ is denoted by $L_k(V)$. $k$ is called the degree of $f$.
 
 \DEF{Permutation action on k-tensors,permutation-action-on-k-tensors}
 For $f \in L_k(V)$ on a vector space $V$ and $\sigma \in \g S_n$, an action of $\sigma $ on $f$ is defined by
@@ -133,7 +133,7 @@ f \wedge g = (-1)^{k\ell} g \wedge f.
 If the degree of $f$ is odd, then $f \wedge f = 0$.
 
 \LEM{Properties of nesting alternating operators,properties-of-nesting-alternating-operators}
-For a $k$-tensor $f$ and $\ell$-tensor $g$ on a vector space $V$,
+For $f \in L_k(V)$ and $g \in L_\ell(V)$ on a vector space $V$,
 \begin{enumerate}
 \item $A(A(f)\otimes g) = k!\,A(f\otimes g)$,
 \item $A(f\otimes A(g)) = \ell!\,A(f\otimes g)$.
@@ -157,7 +157,7 @@ For covectors $\alpha^1, \dotsc , \alpha^k$ on a vector space $V$,
 \]
 
 \DEF{Graded algebra over a field,graded-algebra-over-a-field}
-An algebra $\bb{A}$ over a field $\bb{K}$ is said to be \EMPH{graded} if $\bb{A} = \bigoplus_{k = 0}^\infty A^k$ is a direct sum of vector spaces over $\bb{K}$ such that the multiplication sends $A^k \times A^\ell$ to $A^{k+\ell}$. $A = \bigoplus_{k = 0}^\infty A^k$ means each nonzero $a \in \bb{A}$ is uniquely a finite sum $a = a_{i_1} + \dotsb a_{i_m}$ where nonzero $a_{i_j} \in A^{i_j}$.
+An algebra $\bb{A}$ over a field $\bb{K}$ is said to be \EMPH{graded} if $\bb{A} = \bigoplus_{k = 0}^\infty A^k$ is a direct sum of vector spaces over $\bb{K}$ such that the multiplication sends $A^k \times A^\ell$ to $A^{k+\ell}$. $A = \bigoplus_{k = 0}^\infty A^k$ means each nonzero $a \in \bb{A}$ is a unique finite sum $a = a_{i_1} + \dotsb a_{i_m}$ with nonzero $a_{i_j} \in A^{i_j}$.
 
 $\bb{A}$ is \EMPH{anticommutative} or \EMPH{graded commutative} if $\forall a \in A^k, b \in A^\ell$, $ab = (-1)^{k\ell} ba$.
 
@@ -264,7 +264,7 @@ For a differential $k$-form $\omega$ on $U \in \usualtop$ and $X_1, \dotsc, X_k 
 \]
 The map
 \[
-\g X(U) \times \dotsm \times \g X(U) \ni (X_1, \dotsc, X_k) \mapsto \omega(X_1, \dotsc, X_k) \in C^\infty(U)
+\g X^k(U)  \ni (X_1, \dotsc, X_k) \mapsto \omega(X_1, \dotsc, X_k) \in C^\infty(U)
 \]
 is $k$-linear over $C^\infty(U)$.
 
