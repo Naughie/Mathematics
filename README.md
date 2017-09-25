@@ -1,7 +1,7 @@
 # About
 This repository consists of these files:
 
-- `math.tex` (the root file)
+- `root.tex` (the root file)
 - `packages.tex` (all `\usepackage`)
 - `pref.tex` (preferences)
 - `commands.tex` (commands used in a document)
@@ -9,7 +9,7 @@ This repository consists of these files:
 - `biblio.bib` (the bib file)
 - `math.pdf` (the output file)
 
-To compile this via `uplatex`, run `latexmk math.tex` with a `.latexmkrc` like:
+To compile this via `uplatex`, run `latexmk root.tex` with a `.latexmkrc` like:
 
 ```perl
 #!/usr/bin/env perl
@@ -25,7 +25,7 @@ $pvc_view_file_via_temporary = 0;
 $pdf_previewer = 'open -ga /Applications/Skim.app';
 ```
 
-If you would like to typeset via `lualatex`, run `latexmk -lualatex math.tex`; if `xelatex`, run `latexmk -xelatex math.tex` (it may halt on error with `xelatex`).
+If you would like to typeset via `lualatex`, run `latexmk -lualatex root.tex`; if `xelatex`, run `latexmk -xelatex root.tex` (it may halt on error with `xelatex`).
 
 Supported engines:
 
