@@ -1,6 +1,6 @@
 \sect{Functional Analysis}\cite{brezis}
 \subsec{Hahn-Banach Theorems}
-\THM{Hahn-Banach analytic form,helly-hahn-banach-analytic-form}
+\THM{Hahn-Banach of analytic form,hahn-banach-of-analytic-form}
 Let $p \colon E \to \bb R$ be a sublinear function on a vector space $E$ (i.e., $\forall \lambda > 0, x, y \in E,\ p(\lambda x) = \lambda p(x), p(x+y) \le p(x) + p(y)$), $G \subset E$ a linear subspace, and $g \colon G \to \bb R$ a linear functional such that $\forall x \in G,\ g(x) \le p(x)$. Then, $\exists$ a linear functional $f \colon E \to \bb R$ that extends $g$ and that $\forall x \in E,\ f(x) \le p(x)$.
 
 \DEF{Norm on the dual space of a normed space,norm-on-the-dual-space-of-a-normed-space}
@@ -15,7 +15,7 @@ For a vector space $E$ and its dual space $E^*$, $\scal\ \  \colon E^* \times E 
 \DEF{Strictly convex normed space,strictly-convex-normed-space}
 A normed space $E$ is said to be \EMPH{strictly convex} if $\forall t \in (0, 1), x, y \in E$ with $\norm x = \norm y = 1$, $\norm{tx + (1-t)y} < 1$ except for $x = y$.
 
-\COR{Alternate form of Hahn-Banach,alternate-form-of-hahn-banach}
+\COR{Hahn-Banach of alternate form,hahn-banach-of-alternate-form}
 For a continuous linear functional $g \colon G \to \bb R$ on a linear subspace $G \subset E$ of a normed space $E$, $\exists f \in E^*$ that extends $g$ and that $\norm f_{E^*} = \norm g_{G^*}$.
 
 In the case when $G = \bb R x_0$ and $g(tx_0) = t \norm{x_0}^2$ for a given $x_0 \in E$, $\exists f_0 \in E^*$ such that $\norm{f_0} = \norm{x_0}$ and $\scal{f_0}{x_0} = \norm{x_0}^2$. If $E^*$ is strictly convex, then $f_0$ is unique.
@@ -32,3 +32,44 @@ For a normed space $E$ and $x \in E$,
 \[
   \norm x = \sup_{\substack{f \in E^* \\ \norm f \le 1}} \abs{\scal fx} = \max_{\substack{f \in E^* \\ \norm f \le 1}} \abs{\scal fx}.
 \]
+
+\DEF{Affine hyperplane of a normed space,affine-hyperplane-of-a-normed-space}
+For a normed space $E$ and a linear functional $f \colon E \to \bb R$, an affine \EMPH{hyperplane} is a subset $H = \{ x \in E \mid f(x) = \alpha \} \subset E$ with $\alpha \in \bb R$, written $H = [f = \alpha]$. $f = \alpha$ is called the \EMPH{equation}.
+
+\PROP{Linear functional is continuous iff its hyperplane is closed,linear-functional-is-continuous-iff-its-hyperplane-is-closed}
+For a linear functional $f \colon E \to \bb R$ on a normed space $E$ and $\alpha \in \bb R$, $[f = \alpha]$ is closed iff $f$ is continuous.
+
+\DEF{Separation by a hyperplane,separation-by-a-hyperplane}
+For two subsets $A, B \subset E$ of a normed space $E$, the hyperplane $[f = \alpha] \subset E$ \EMPH{separates} $A$ and $B$ if
+\[
+  \forall x \in A, y \in B,\ f(x) \le \alpha \le f(y);
+\]
+\EMPH{strictly separates} if
+\[
+  \exists \epsilon > 0, \forall x \in A, y \in B,\ f(x) \le \alpha - \epsilon < \alpha + \epsilon \le f(y).
+\]
+
+\DEF{Convex subset of a normed space,convex-subset-of-a-normed-space}
+A subset $A \subset E$ of a normed space $E$ is said to be \EMPH{convex} if
+\[
+  \forall t \in [0, 1], x, y \in A,\ tx + (1-t)y \in A.
+\]
+
+\THM{Hahn-Banach of first geometric form,hahn-banach-of-first-geometric-form}
+For two disadjoint nonempty convex subsets $A, B \subset E$ of a normed space $E$ with one of them open, $\exists$ a closed hyperplane that separates $A$ and $B$.
+
+\DPROP{Minkowski functional of an open convex set,minkowski-functional-of-an-open-convex-set}
+Let $C \subset E$ be an open convex subset of a normed space $E$ with $0 \in C$, and for $x \in E$
+\[
+  p(x) = \inf \{ \alpha > 0 \mid \alpha^{-1} x \in C \},
+\]
+called the \EMPH{gauge} or the \EMPH{Minkowski functional} of $C$.
+Then, $p$ satisfies the folowing properties:
+\begin{enumerate}
+\item $p$ is sublinear,
+\item $\exists M, \forall x \in E,\ 0 \le p(x) \le M \norm x$,
+\item $C = \{ x \in E \mid p(x) < 1\}$.
+\end{enumerate}
+
+\LEM{There exists a hyperplane that separates an open convex and outside point,there-exists-a-hyperplane-that-separetes-an-open-convex-and-outside-point}
+For a nonempty open convex $C \subset E$ of a normed space $E$ and $x \in E \setminus C$, $\exists f \in E^*$ such that $\forall x \in C,\ f(x) < f(x_0)$. In particular, the hyperplane $[f = f(x_0)]$ separetes $\{ x_0 \}$ and $C$.
