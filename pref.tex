@@ -19,6 +19,7 @@
 \newcommand\my@sans{\fontfamily{zhmg}\fontshape{it}\selectfont}
 \newcommand\my@roman{\fontfamily{lmr}\selectfont\mcfamily}
 \newcommand\my@pagefont{\fontfamily{clmj}\selectfont}
+\newcommand\my@sectionfont{\fontfamily{pnc}\fontshape{sc}\selectfont}
 \newcommand\EMPH[1]{{\my@emph #1}}
 \newcommand\ROMAN[1]{{\my@roman #1}}
 \newcommand\BOLD[1]{{\my@bold #1}}
@@ -47,8 +48,7 @@
 \fancypagestyle{onContentsPage}{\renewcommand{\headrulewidth}{0pt}}
 \fancypagestyle{onDocumentsPage}{%
   \renewcommand{\headrulewidth}{0.3pt}%
-  \lhead{{\my@pagefont\scshape\nouppercase{\leftmark}}}%
-  \rhead{{\my@pagefont\rightmark}}}
+  \lhead{{\nouppercase{\leftmark}}}\rhead{\rightmark}}
 \newcommand\prepend{%
   \thispagestyle{onContentsPage}\pagestyle{onContentsPage}\pagenumbering{roman}\maketitle\tableofcontents
   \newpage\pagestyle{onDocumentsPage}\pagenumbering{arabic}}
@@ -64,4 +64,5 @@
   \expandafter\newcommand\csname #1\endcsname[1]{\csname my@#1\endcsname ##1;}}
 \@for\next:=[THM;Theorem],[DEF;Definition],[PROP;Proposition],[DPROP;Definition \& Proposition],[EX;Example],[LEM;Lemma],[COR;Corollary]\do{%
   \expandafter\expandafter\expandafter\my@defineThm\next}
-\newcommand\subsec[1]{\setcounter{my@TheoremCounter}{0}\subsection{#1}\vspace{-13pt}}
+\newcommand\subsec[1]{\setcounter{my@TheoremCounter}{0}\subsection{{\sffamily #1}}\vspace{-13pt}}
+\newcommand\sect[1]{\section{{\my@sectionfont #1}}}
