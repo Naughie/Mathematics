@@ -64,5 +64,8 @@
   \expandafter\newcommand\csname #1\endcsname[1]{\csname my@#1\endcsname ##1;}}
 \@for\next:=[THM;Theorem],[DEF;Definition],[PROP;Proposition],[DPROP;Definition \& Proposition],[EX;Example],[LEM;Lemma],[COR;Corollary]\do{%
   \expandafter\expandafter\expandafter\my@defineThm\next}
-\newcommand\subsec[1]{\setcounter{my@TheoremCounter}{0}\subsection{{\sffamily #1}}\vspace{-13pt}}
-\newcommand\sect[1]{\section{{\my@sectionfont #1}}}
+\let\my@oldsection\section\let\my@oldsubsection\subsection
+\newcommand\my@@section{\@ifstar{\my@oldsection}{\my@oldsection*}}\newcommand\my@@subsection{\@ifstar{\my@oldsubsection}{\my@oldsubsection*}}
+\newcommand\my@section[1]{\my@oldsection{{\my@sectionfont #1}}}
+\newcommand\my@subsection[1]{\setcounter{my@TheoremCounter}{0}\my@oldsubsection{{\sffamily #1}}\vspace{-13pt}}
+\renewcommand\subsection{\@ifstar{\my@@subsection}{\my@subsection}}\renewcommand\section{\@ifstar{\my@@section}{\my@section}}
