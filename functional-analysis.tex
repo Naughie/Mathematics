@@ -73,3 +73,36 @@ Then, $p$ satisfies the folowing properties:
 
 \LEM{There exists a hyperplane that separates an open convex and outside point,there-exists-a-hyperplane-that-separetes-an-open-convex-and-outside-point}
 For a nonempty open convex $C \subset E$ of a normed space $E$ and $x \in E \setminus C$, $\exists f \in E^*$ such that $\forall x \in C,\ f(x) < f(x_0)$. In particular, the hyperplane $[f = f(x_0)]$ separetes $\{ x_0 \}$ and $C$.
+
+\THM{Hahn-Banach of second geometric form,hahn-banach-of-second-geometric-form}
+For two disadjoint nonempty convex subsets $A, B \subset E$ of a normed space $E$ with $A$ closed and $B$ compact, $\exists$ a closed hyperplane that strictly separates $A$ and $B$.
+
+\COR{Some linear functional can vanish on a linear subspace,some-linear-functional-can-vanish-on-a-linear-subspace}
+For a linear subspace $F \subset E$ of a normed space $E$ with $\BAR F \neq E$, $\exists f \in E^*$ such that
+\[
+  \forall x \in F,\ \scal fx = 0,\quad f \not\equiv 0.
+\]
+
+\DEF{Notation of a bidual space,notation-of-a-bidual-space}
+Let $E$ be a normed space, and $J \colon E \ni x \mapsto Jx \in E^{**}$ a \EMPH{canonical injection} (i.e., $Jx \colon f \mapsto \scal fx$, or $\scal{Jx}{f} = \scal fx$). Then, $J$ is an \EMPH{isometry}:
+\[
+  \norm{Jx}_{E^{**}} = \sup_{\substack{f \in E^* \\ \norm f \le 1}} \abs{\scal{Jx}{f}} = \sup_{\substack{f \in E^* \\ \norm f \le 1}} \abs{\scal fx} = \norm x_E.
+\]
+
+$J$ can be not surjective; if $J$ is surjective, $E$ is said to be \EMPH{reflexive}.
+
+\DEF{Orthogonal complement,orthogonal-complement}
+For a linear subspace $M \subset E$ of a normed space $E$ and a linear subspace $N \subset E^*$, their \EMPH{orthogonal complements} are
+\begin{align*}
+  M^\perp &= \{ f \in E^* \mid \forall x \in M,\ \scal fx = 0\} \subset E^* \\
+  N^\perp &= \{ x \in E \mid \forall f \in N,\ \scal fx = 0\} \subset E,
+\end{align*}
+respectively.
+
+\PROP{Relation between a linear subspace and its orthogonal complement,relation-between-a-linear-subspace-and-its-orthogonal-complement}
+For a linear subspace $M \subset E$ of a normed space $E$ and a linear subspace $N \subset E^*$,
+\[
+  (M^\perp)^\perp = \BAR M,\quad (N^\perp)^\perp \supset \BAR N.
+\]
+
+If $E$ is reflexive, then $(N^\perp)^\perp = \BAR N$.

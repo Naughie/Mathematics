@@ -433,3 +433,30 @@ A coordinate map $\phi \colon U \to \phi(U) \subset \bb R^n$ for a manifold with
 
 \PROP{Diffeomorphism into an Euclidean space is a coordinate map,diffeomorphism-into-an-euclidean-space-is-a-coordinate-map}
 For an open subset $U$ of a manifold $M$ with the differentiable structure $\g U$, if $F \colon U \to F(U)$ is a diffeomorphism, then $(U, F) \in \g U$.
+
+\PROP{Smoothness of a vector-valued function,smoothness-of-a-vector-valued-function}
+For a continuous map $F \colon N \to \bb R^m$ on a manifold $M$, the following are equivalent:
+\begin{enumerate}
+\item $F$ is $C^\infty$.
+\item There exists an atlas $\g U$ for M, for any $(U, \phi) \in \g U$, $F \circ \phi^{-1}$ is $C^\infty$.
+\item For any chart $(U, \phi)$ on $M$, $F \circ \phi^{-1}$ is $C^\infty$.
+\end{enumerate}
+
+\PROP{Vector-valued function is smooth iff its components are all smooth,vector-valued-function-is-smooth-iff-its-components-are-all-smooth}
+For a vector-valued function $F = (F^1, \dotsc, F^m) \colon M \to \bb R^m$ on a manifold $M$, $F$ is $C^\infty$ iff $F^1, \dotsc, F^m$ are all $C^\infty$.
+
+\PROP{Smoothness of a map in terms of vector-valued functions,smoothness-of-a-map-in-terms-of-vector-valued-functions}
+For a continuous map $F \colon N \to M$ between a $m$-manifold $M$ and $n$-manifold $N$, the following are equivalent:
+\begin{enumerate}
+\item $F$ is $C^\infty$.
+\item There exists an atlas $\g U$ for $M$, for any $(U, \phi) \in \g U$, $\phi \circ F$ is $C^\infty$.
+\item For any chart $(U, \phi)$ on $M$, $\phi \circ F$ is $C^\infty$.
+\end{enumerate}
+
+\PROP{Smoothness of a map in terms of components,smoothness-of-a-map-in-terms-of-components}
+For a continuous map $F \colon N \to M$ between a $m$-manifold $M$ and $n$-manifold $N$, the following are equivalent:
+\begin{enumerate}
+\item $F$ is $C^\infty$.
+\item There exists an atlas $\g U$ for $M$, for any $(U, \phi^1, \dotsc, \phi^m) \in \g U$, the components $\phi^i \circ F$ of $F$ relative to the chart are all $C^\infty$.
+\item For any chart $(U, \phi^1, \dotsc, \phi^m)$ on $M$, the components $\phi^i \circ F$ of $F$ relative to the chart are al $C^\infty$.
+\end{enumerate}
