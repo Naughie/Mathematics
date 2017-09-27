@@ -1,7 +1,7 @@
 \makeatletter
-\def\@cite#1{{\fontseries{n}\selectfont\textsuperscript{\,[#1]}}}
-\def\@biblabel#1{[#1]}
-\def\includeall#1{{\@for\next:=#1\do{\include{\next}}}}
+\newcommand\includeall[1]{{\@for\next:=#1\do{\include{\next}}}}
+\newcommand\my@expandafter[2]{\expandafter\expandafter\expandafter\expandafter\expandafter\expandafter\csname #1\endcsname#2}
+%===BEGIN===
 \ifupTeX
 \renewcommand\rmdefault{uop}
 \renewcommand\sfdefault{zhsf}
@@ -20,23 +20,26 @@
 \newcommand\my@roman{\fontfamily{lmr}\selectfont\mcfamily}
 \newcommand\my@pagefont{\fontfamily{clmj}\selectfont}
 \newcommand\my@sectionfont{\fontfamily{pnc}\fontshape{sc}\selectfont}
-\newcommand\EMPH[1]{{\my@emph #1}}
-\newcommand\ROMAN[1]{{\my@roman #1}}
-\newcommand\BOLD[1]{{\my@bold #1}}
-\def\SANS[#1]{{\my@sans #1}}
-\newcommand\FLOAT[1]{\vspace{18pt}\begin{screen}{#1}\end{screen}\par}
+\newcommand\my@float[1]{\vspace{18pt}\begin{screen}{#1}\end{screen}\par}
+\def\@cite#1{{\fontseries{n}\selectfont\textsuperscript{\,[#1]}}}
+\def\@biblabel#1{[#1]}
+\setlist[enumerate,1]{label={\fontfamily{pnc}\fontseries{b}\selectfont\roman{enumi}})}
+\setlist[itemize,1]{label={\fontfamily{lmr}\selectfont\textleaf}}
+%===END===
+\def\my@defineFontstyle[#1;#2]{\expandafter\newcommand\csname #1\endcsname[1]{{\csname my@#2\endcsname ##1}}}
+\@for\next:=[EMPH;emph],[ROMAN;roman],[BOLD;bold],[SANS;sans]\do{\my@expandafter{my@defineFontstyle}{\next}}
+\def\my@thmSans[#1]{\SANS{#1}}
 \renewcommand\familydefault{\rmdefault}
 \renewcommand\kanjifamilydefault{\gtdefault}
 \def\my@defineTitle(#1;#2;#3){\csname #1\endcsname#3{\ROMAN{#2}}}
 \newcommand\my@defineMytitle{\@ifstar{\my@@defineMytitle}{\my@@@defineMytitle}}
-\newcommand\my@@defineMytitle[2]{\expandafter\def\csname my@#1\endcsname{(#1;#2;[*])}}
-\newcommand\my@@@defineMytitle[2]{\expandafter\def\csname my@#1\endcsname{(#1;#2;)}}
+\newcommand\my@@defineMytitle[2]{\expandafter\newcommand\csname my@#1\endcsname{(#1;#2;[*])}}
+\newcommand\my@@@defineMytitle[2]{\expandafter\newcommand\csname my@#1\endcsname{(#1;#2;)}}
 \my@defineMytitle{title}{Notes of Mathematics}
 \my@defineMytitle*{author}{Masato Nakata}
 \my@defineMytitle*{affil}{Department of Science, Kyoto University}
 \my@defineMytitle{date}{Since Aug 27, 2017}
-\@for\next:=\my@title,\my@author,\my@affil,\my@date\do{%
-  \expandafter\expandafter\expandafter\my@defineTitle\next}
+\@for\next:=\my@title,\my@author,\my@affil,\my@date\do{\my@expandafter{my@defineTitle}{\next}}
 \renewcommand\refname{References}
 \renewcommand\contentsname{Contents}
 \renewcommand\cfttoctitlefont{\sffamily\Large}
@@ -52,20 +55,17 @@
 \newcommand\prepend{%
   \thispagestyle{onContentsPage}\pagestyle{onContentsPage}\pagenumbering{roman}\maketitle\tableofcontents
   \newpage\pagestyle{onDocumentsPage}\pagenumbering{arabic}}
-\setlist[enumerate,1]{label={\fontfamily{pnc}\fontseries{b}\selectfont\roman{enumi}})}
-\setlist[itemize,1]{label={\fontfamily{lmr}\selectfont\textleaf}}
 \bibliographystyle{jplain}
 \newcounter{my@TheoremCounter}\newcounter{my@thmcounter}\setcounter{my@TheoremCounter}{0}
 \newcommand\my@subsubsection[3]{\stepcounter{my@TheoremCounter}%
-  \expandafter\def\expandafter\themy@thmcounter{[#1 \thesubsection.\themy@TheoremCounter]}%
+  \expandafter\renewcommand\expandafter\themy@thmcounter{[#1 \thesubsection.\themy@TheoremCounter]}%
   \refstepcounter{my@thmcounter}\label{#3}%
-  \FLOAT{\expandafter\SANS\themy@thmcounter\quad\BOLD{#2}}}
+  \my@float{\expandafter\my@thmSans\themy@thmcounter\quad\BOLD{#2}}}
 \def\my@defineThm[#1;#2]{\expandafter\def\csname my@#1\endcsname ##1,##2;{\my@subsubsection{#2}{##1}{##2}}%
   \expandafter\newcommand\csname #1\endcsname[1]{\csname my@#1\endcsname ##1;}}
-\@for\next:=[THM;Theorem],[DEF;Definition],[PROP;Proposition],[DPROP;Definition \& Proposition],[EX;Example],[LEM;Lemma],[COR;Corollary]\do{%
-  \expandafter\expandafter\expandafter\my@defineThm\next}
+\@for\next:=[THM;Theorem],[DEF;Definition],[PROP;Proposition],[DPROP;Definition \& Proposition],[EX;Example],[LEM;Lemma],[COR;Corollary]\do{\my@expandafter{my@defineThm}{\next}}
 \let\my@oldsection\section\let\my@oldsubsection\subsection
-\newcommand\my@@section{\@ifstar{\my@oldsection}{\my@oldsection*}}\newcommand\my@@subsection{\@ifstar{\my@oldsubsection}{\my@oldsubsection*}}
 \newcommand\my@section[1]{\my@oldsection{{\my@sectionfont #1}}}
 \newcommand\my@subsection[1]{\setcounter{my@TheoremCounter}{0}\my@oldsubsection{{\sffamily #1}}\vspace{-13pt}}
-\renewcommand\subsection{\@ifstar{\my@@subsection}{\my@subsection}}\renewcommand\section{\@ifstar{\my@@section}{\my@section}}
+\newcommand\my@defineSection[1]{\expandafter\renewcommand\csname #1\endcsname{\@ifstar{\@ifstar{\csname my@old#1\endcsname}{\csname my@old#1\endcsname*}}{\csname my@#1\endcsname}}}
+\my@defineSection{section}\my@defineSection{subsection}
