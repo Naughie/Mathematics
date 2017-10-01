@@ -23,6 +23,7 @@
 \newcommand\my@sectionfont{\fontfamily{pnc}\fontshape{sc}\selectfont}
 \newcommand\my@subsecfont{\sffamily}
 \newcommand\my@float[1]{\vspace{18pt}\begin{screen}{#1}\end{screen}\par}
+\newcommand\my@biblio[1]{{\my@roman \bibliography{#1}}}
 \def\@cite#1{{\fontseries{n}\selectfont\textsuperscript{\,[#1]}}}
 \def\@biblabel#1{[#1]}
 \setlist[enumerate,1]{label={\fontfamily{pnc}\fontseries{b}\selectfont\roman{enumi}})}
@@ -31,6 +32,7 @@
 \def\my@defineFontstyle[#1;#2]{\expandafter\newcommand\csname #1\endcsname[1]{{\csname my@#2\endcsname ##1}}}
 \@for\next:=[EMPH;emph],[ROMAN;roman],[BOLD;bold],[SANS;sans],[SECTION;sectionfont],[SUBSEC;subsecfont]\do{\my@exps{my@defineFontstyle}{\next}}
 \def\my@thmSans[#1]{\SANS{#1}}\let\FLOAT\my@float
+\let\BIBLIOGRAPHY\my@biblio
 \renewcommand\familydefault{\rmdefault}
 \renewcommand\kanjifamilydefault{\gtdefault}
 \newcommand\my@defineTitle[3]{\csname #1\endcsname#3{\ROMAN{#2}}}

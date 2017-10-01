@@ -1,7 +1,7 @@
 \newcommand{\gl}{\g{gl}}
 \renewcommand{\sl}{\g{sl}}
 \renewcommand{\o}{\g{o}}
-\section{Lie Algebra}\cite{samu}
+\section{Lie Algebras}\cite{samu}
 \subsection{Foundations}
 \DEF{Lie algebra,lie-algebra}
 A vector space $\g g$ over a field $\bb{K}$ with the Lie bracket satisfying the conditions
@@ -77,7 +77,7 @@ For a Lie algebra $\g g$, an ideal $\g a \subset \g g$, a Lie subalgebra $\g h \
 \g h / (\g h \cap \g a) \cong (\g h + \g a)/\g a.
 \]
 
-\subsection{Solvable and Nilpotent Lie algebra}
+\subsection{Solvable and Nilpotent Lie algebras}
 \DEF{Solvable Lie algebra,solvable-lie-algebra}
 Let $\g g$ be a Lie algebra, and
 \[
@@ -114,5 +114,14 @@ $\g g_1$ in \ref{lie-algebra-of-triangular-matrices-is-solvable} is nilpotent wh
 \THM{Lie subalgebra of a nilpotent Lie algebra is also nilpotent,lie-subalgebra-of-a-nilpotent-lie-algebra-is-also-nilpotent}
 For a nilpotent Lie algebra $\g g$, its Lie subalgebra $\g h \subset \g g$ is also nilpotent, and if $\g h$ is an ideal, $\g g/ \g h$ is also nilpotent.
 
-\THM{Center of a nilpotent Lie algebra has a nonzero vector,center-of-a-nilpotent-lie-algebra-has-a-nonzero-vector}
+\THM{Center of a nilpotent Lie algebra is nontrivial,center-of-a-nilpotent-lie-algebra-is-nontrivial}
 For a Lie algebra $\g g$ and its center $\g z$, $\g z \neq \{ 0 \}$ if $\g g$ is nilpotent while $\g g$ is nilpotent if $\g g / \g z$ is nilpotent.
+
+\LEM{Adjoint representation in a nilpotent Lie algebra is nilpotent,adjoint-representation-in-a-nilpotent-lie-algebra-is-nilpotent}
+For a nilpotent Lie algebra $\g g$ and $x \in \g g$, $\ad x$ is nilpotent. (i.e., $(\ad x)^s = 0$ for some $s$).
+
+\THM{Engel's Theorem,engels-theorem}
+For a Lie algebra $\g g$, if $\ad x$ is nilpotent for any $x \in \g g$, then $\g g$ is nilpotent.
+
+\THM{Matrix of a representation of a Lie algebra whose representations are all nilpotent is strictly upper triangular,matrix-of-a-representation-of-a-lie-algebra-whose-representations-are-all-nilpotent-is-strictly-upper-triangular}
+For a representation $\rho \colon \g g \to \gl (V)$ of a Lie algebra $\g g$ on a vector space $V$, if $\rho(x)$ is nilpotent for any $x \in \g g$, then a matrix of $\rho(x)$ is strictly upper triangular for some basis for $V$.

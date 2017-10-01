@@ -1,0 +1,12 @@
+\section{Homological Algebra}\cite{weibel}
+\subsection{Chain Complexes}
+\DEF{Chain complex of R-modules,chain-complex-of-r-modules}
+A \EMPH{chain complex} $C_\cdot$ of $R$-modules is a family $\{ C_n \}_{n \in \bb Z}$ of $R$-modules with $R$-module maps $d_n \colon C_n \to C_{n-1}$ such that $d_{n-1} \circ d_{n} = 0$, called the \EMPH{differential}. $Z_n = Z_n(C_\cdot) \defeq \ker d_n$ is the module of $n$-\EMPH{cycles} of $C_\cdot$, and $B_n = B_n(C_\cdot) \defeq \im d_{n+1}$ is the module of $n$-\EMPH{boundaries} of $C_\cdot$. The $n$-th \EMPH{homology module} of $C_\cdot$ is $H_n(C_\cdot) \defeq Z_n / B_n$.
+
+A \EMPH{chain complex map} $u \colon C_\cdot \to D_\cdot$ is a family of $R$-module homomorphisms $u_n \colon C_n \to D_n$ commuting with $d$ (i.e., $u_{n-1}d_n = d_n u_n$).
+
+\DPROP{A category of chain complexes of R-modules,a-category-of-chain-complexes-of-r-modules}
+$\ch(\modb R)$ is a category whose objects are chain complexes of (right) $R$-modules and whose arrows are chain complex maps. An arrow $u \colon C_\cdot \to D_\cdot$ of $\ch(\modb R)$ sends boundaries to boundaries and cycles to cycles. $H_n \colon \ch(\modb R) \to \modb R$ is a functor.
+
+\PROP{Split exact sequence of vector spaces,split-exact-sequence-of-vector-spaces}
+For a family $\{ B_n, H_n \}$ of vector spaces, $\{ C_n = B_n \oplus H_n \oplus B_{n-1} \}$ with projection-inclusions $\pi_n \colon C_n \to B_{n-1} \subset C_{n-1}$ is a chain complex. Every chain complex of vector spaces is isomorphic to such a complex.
