@@ -88,3 +88,47 @@ Let $\bb K$ be a field, $|\ \ |$ an absolute value on $\bb K$. Then,
 \end{align*}
 
 Furthermore, $\sup \{ \abs n \mid n \in \bb Z \} = \infty$ if $|\ \ |$ is archimedean.　
+
+\DEF{Distance induced from an absolute value on a field,distance-induced-from-an-absolute-value-on-a-field}
+Given a field $\bb K$ with an absolute value $|\ \ |$, define the distance $d \colon \bb K \times \bb K \to \bb R$ by $d(x,y) = \abs{x-y}$, which makes $\bb K$ into a metric space.
+
+\PROP{Field can be a topological field with the induced distance,field-can-be-a-topological-field-with-the-induced-distance}
+For a field $\bb K$ with the distance $d \colon \bb K \times \bb K \to \bb R$ induced from an absolute value on $\bb K$, addition, multiplication and taking inverse are all continuous: fix points $x_0, y_0 \in \bb K$, then
+\begin{itemize}
+  \item $\forall \epsilon > 0, \exists \delta > 0, \forall x, y \in \bb K,\ d(x, x_0), d(y, y_0) < \delta \Longrightarrow d(x+y, x_0 + y_0) < \epsilon$,
+  \item $\forall \epsilon > 0, \exists \delta > 0, \forall x, y \in \bb K,\ d(x, x_0), d(y, y_0) < \delta \Longrightarrow d(x-y, x_0 - y_0) < \epsilon$,
+  \item $\forall \epsilon > 0, \exists \delta > 0, \forall x \in \bb K,\ d(x, x_0) < \delta \Longrightarrow d(\fr1x, \fr1{x_0}) < \epsilon$.
+\end{itemize}
+
+\DPROP{Ultrametric space with a non-archimedean absolute value,ultrametric-space-with-a-non-archimedean-absolute-value}
+For a field $\bb K$ with the distance $d$ induced from an absolute value $|\ \ |$ on $\bb K$, $|\ \ |$ is non-archimedean iff $d(x,y) \le \max\{ d(x,z), d(z,y)\}$. This inequality is called the \EMPH{ultrametric inequality}, a metric which holds the ultrametric inequality an \EMPH{ultrametric}, and a space with an ultrametric an \EMPH{ultrametric space}.
+
+\PROP{Non-archimedean absolute value of a sum is the max of the two,non-archimedean-absolute-value-of-a-sum-is-the-max-of-the-two}
+For a field $\bb K$ with a non-archimedean absolute value $|\ \ |$ on $\bb K$, and $x, y \in \bb K$ with $\abs x \neq \abs y$,
+\[
+  \abs{x+y} = \max\{ \abs x, \abs y \}.
+\]
+
+\COR{Triangle on an ultrametric space is isosceles,triangle-on-an-ultrametric-space-is-isosceles}
+In an ultrametric space, all triangles are isosceles.
+
+\DEF{Open ball and closed ball on a field with an absolute value,open-ball-and-closed-ball-on-a-field-with-an-absolute-value}
+In a field $\bb K$ with an absolute value $|\ \ |$, an \EMPH{open ball} of radius $r > 0$ and center $a \in \bb K$ is
+\[
+  B(a, r) = \{ x \in \bb K \mid \abs{x - a} < r \};
+\]
+a \EMPH{closed ball} is
+\[
+  \BAR B(a, r) = \{ x \in  \bb K \mid \abs{x - a} \le r \}.
+\]
+
+\PROP{Properties of an open ball and closed ball with a non-archimedean absolute value,properties-of-an-open-ball-and-closed-ball-with-a-non-archimedean-absolute-value}
+Let $\bb K$ be a field with a non-archimedean absolute value, and $a, b \in \bb K,\ r, s > 0$.
+\begin{enumerate}
+  \item $b \in B(a, r) \Longrightarrow B(a, r) = B(b, r)$,
+  \item $b \in \BAR B(a, r) \Longrightarrow \BAR B(a, r) = \BAR B(b, r)$,
+  \item $B(a, r)$ is clopen,
+  \item $\BAR B(a, r)$ is clopen,
+  \item $B(a, r) \cap B(b, s) \Longleftrightarrow B(a, r) \subset B(b, s) \ \text{or}\ B(a, r) \supset B(b, s)$.
+  \item $\BAR B(a, r) \cap \BAR B(b, s) \Longleftrightarrow \BAR B(a, r) \subset \BAR B(b, s) \ \text{or}\ \BAR B(a, r) \supset \BAR B(b, s)$.
+\end{enumerate}
