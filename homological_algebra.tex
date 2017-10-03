@@ -10,3 +10,9 @@ $\ch(\modb R)$ is a category whose objects are chain complexes of (right) $R$-mo
 
 \PROP{Split exact sequence of vector spaces,split-exact-sequence-of-vector-spaces}
 For a family $\{ B_n, H_n \}$ of vector spaces, $\{ C_n = B_n \oplus H_n \oplus B_{n-1} \}$ with projection-inclusions $\pi_n \colon C_n \to B_{n-1} \subset C_{n-1}$ is a chain complex. Every chain complex of vector spaces is isomorphic to such a complex.
+
+\DEF{Quasi-isomorphism between chain complexes,quasi-isomorphism-between-chain-complexes}
+A chain map $C_\cdot \to D_\cdot$ between chain complexes $C_\cdot, D_\cdot$ is called a \EMPH{quasi-isomorphism} if the maps $H_n(C_\cdot) \to H_n(D_\cdot)$ are all isomorphisms.
+
+\DEF{Cochain complex of R-modules,cochain-complex-of-r-modules}
+A \EMPH{cochain complex} $C^\cdot$ of $R$-modules is a family $\{C^n\}$ of $R$-modules with $R$-module maps $d^n \colon C^n \to C^{n+1}$ such that $d^{n+1}d^n = 0$. $Z^n(C^\cdot) \defeq \ker d^n$ is the module of $n$-\EMPH{cocycles}, and $B^n(C^\cdot) \defeq \im d^{n-1}$ is the module of $n$-\EMPH{coboundaries}. The $n$-th \EMPH{cohomology module} of $C^\cdot$ is $H^n(C^\cdot) \defeq Z^n/B^n$.
